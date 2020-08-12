@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS 基础 - 面向对象编程 | DXSIX的技术博客</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="ZPC_SCC">
+    <link rel="preload" href="/assets/css/0.styles.7c30fa0a.css" as="style"><link rel="preload" href="/assets/js/app.7ef5f052.js" as="script"><link rel="preload" href="/assets/js/3.b218254d.js" as="script"><link rel="preload" href="/assets/js/1.952a17b8.js" as="script"><link rel="preload" href="/assets/js/38.9cbc2587.js" as="script"><link rel="prefetch" href="/assets/js/10.63ef9368.js"><link rel="prefetch" href="/assets/js/11.0e21a3d1.js"><link rel="prefetch" href="/assets/js/12.52ad476e.js"><link rel="prefetch" href="/assets/js/13.bc2ee41a.js"><link rel="prefetch" href="/assets/js/14.5f920701.js"><link rel="prefetch" href="/assets/js/15.d0924161.js"><link rel="prefetch" href="/assets/js/16.00778744.js"><link rel="prefetch" href="/assets/js/17.21b0b2fa.js"><link rel="prefetch" href="/assets/js/18.86c77bb0.js"><link rel="prefetch" href="/assets/js/19.52e4c53f.js"><link rel="prefetch" href="/assets/js/20.a0a981d6.js"><link rel="prefetch" href="/assets/js/21.ef4fc3a4.js"><link rel="prefetch" href="/assets/js/22.4978a9e4.js"><link rel="prefetch" href="/assets/js/23.dadf479d.js"><link rel="prefetch" href="/assets/js/24.bd24c3d0.js"><link rel="prefetch" href="/assets/js/25.0a4101e1.js"><link rel="prefetch" href="/assets/js/26.8aaba4e3.js"><link rel="prefetch" href="/assets/js/27.93ac218e.js"><link rel="prefetch" href="/assets/js/28.2fef1ce6.js"><link rel="prefetch" href="/assets/js/29.85f72e80.js"><link rel="prefetch" href="/assets/js/30.fc266fb1.js"><link rel="prefetch" href="/assets/js/31.a24d059a.js"><link rel="prefetch" href="/assets/js/32.b6e2255a.js"><link rel="prefetch" href="/assets/js/33.36bbce09.js"><link rel="prefetch" href="/assets/js/34.f5092916.js"><link rel="prefetch" href="/assets/js/35.c8294ced.js"><link rel="prefetch" href="/assets/js/36.a22feea1.js"><link rel="prefetch" href="/assets/js/37.dfa0b993.js"><link rel="prefetch" href="/assets/js/39.97b6429f.js"><link rel="prefetch" href="/assets/js/4.a8d2f204.js"><link rel="prefetch" href="/assets/js/40.deb27291.js"><link rel="prefetch" href="/assets/js/41.1f2de8b5.js"><link rel="prefetch" href="/assets/js/42.539b392b.js"><link rel="prefetch" href="/assets/js/43.65b043f2.js"><link rel="prefetch" href="/assets/js/44.fbc01248.js"><link rel="prefetch" href="/assets/js/45.5a18caa7.js"><link rel="prefetch" href="/assets/js/46.417e4ff6.js"><link rel="prefetch" href="/assets/js/47.2df1f7f2.js"><link rel="prefetch" href="/assets/js/48.8aa6a79b.js"><link rel="prefetch" href="/assets/js/49.08cc51b1.js"><link rel="prefetch" href="/assets/js/5.f6442280.js"><link rel="prefetch" href="/assets/js/50.493e7777.js"><link rel="prefetch" href="/assets/js/51.bfd99b43.js"><link rel="prefetch" href="/assets/js/52.41e9f209.js"><link rel="prefetch" href="/assets/js/53.14371e32.js"><link rel="prefetch" href="/assets/js/6.572356b0.js"><link rel="prefetch" href="/assets/js/7.d316c2b9.js"><link rel="prefetch" href="/assets/js/8.379a1c43.js"><link rel="prefetch" href="/assets/js/9.f02e7ed0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7c30fa0a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-dad8a512><div data-v-dad8a512><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-dad8a512 data-v-dad8a512><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-dad8a512 data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>DXSIX的技术博客</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>dxsix</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div class="hide" data-v-dad8a512><header class="navbar" data-v-dad8a512><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">DXSIX的技术博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/frontEnd/" class="nav-link"><i class="iconfont undefined"></i>
+  frontEnd
+</a></li><li class="dropdown-item"><!----> <a href="/categories/dev/" class="nav-link"><i class="iconfont undefined"></i>
+  dev
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发/" class="nav-link"><i class="iconfont undefined"></i>
+  开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日常/" class="nav-link"><i class="iconfont undefined"></i>
+  日常
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      前端学习
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/前端/html/" class="nav-link"><i class="iconfont undefined"></i>
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/前端/css/" class="nav-link"><i class="iconfont undefined"></i>
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/前端/javascript/" class="nav-link"><i class="iconfont undefined"></i>
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4>其他</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/前端/分享/" class="nav-link"><i class="iconfont undefined"></i>
+  分享
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/开发/git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/开发/gitbook/" class="nav-link"><i class="iconfont undefined"></i>
+  GitBook
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      日常
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/日常/日记/" class="nav-link"><i class="iconfont undefined"></i>
+  日记
+</a></li></ul></div></div> <a href="https://github.com/dxsixpc/blog" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask" data-v-dad8a512></div> <aside class="sidebar" data-v-dad8a512><div class="personal-info-wrapper" data-v-ca798c94 data-v-dad8a512><img src="/avatar.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    dxsix
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>43</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>9</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/frontEnd/" class="nav-link"><i class="iconfont undefined"></i>
+  frontEnd
+</a></li><li class="dropdown-item"><!----> <a href="/categories/dev/" class="nav-link"><i class="iconfont undefined"></i>
+  dev
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发/" class="nav-link"><i class="iconfont undefined"></i>
+  开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日常/" class="nav-link"><i class="iconfont undefined"></i>
+  日常
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      前端学习
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/前端/html/" class="nav-link"><i class="iconfont undefined"></i>
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/前端/css/" class="nav-link"><i class="iconfont undefined"></i>
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/前端/javascript/" class="nav-link"><i class="iconfont undefined"></i>
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4>其他</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/前端/分享/" class="nav-link"><i class="iconfont undefined"></i>
+  分享
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/开发/git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/开发/gitbook/" class="nav-link"><i class="iconfont undefined"></i>
+  GitBook
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      日常
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/日常/日记/" class="nav-link"><i class="iconfont undefined"></i>
+  日记
+</a></li></ul></div></div> <a href="https://github.com/dxsixpc/blog" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <ul class="sidebar-links"><li><a href="/%E5%89%8D%E7%AB%AF/javascript/" aria-current="page" class="sidebar-link">JS - 初探</a></li><li><a href="/前端/javascript/js01.html" class="sidebar-link">JS - Canvas 画板</a></li><li><a href="/前端/javascript/js02.html" class="sidebar-link">JS 基础 - 数据类型</a></li><li><a href="/前端/javascript/js03.html" class="sidebar-link">JS基础 - 内存图</a></li><li><a href="/前端/javascript/js04.html" class="sidebar-link">JS基础 - 原型</a></li><li><a href="/前端/javascript/js05.html" class="sidebar-link">JS基础 - 数组</a></li><li><a href="/前端/javascript/js06.html" class="sidebar-link">JS基础 - 函数</a></li><li><a href="/前端/javascript/js07.html" class="sidebar-link">JS基础 - DOM</a></li><li><a href="/前端/javascript/js08.html" class="sidebar-link">JS基础 - JQuery</a></li><li><a href="/前端/javascript/js09.html" class="sidebar-link">JS 基础 - DOM 事件</a></li><li><a href="/前端/javascript/js10.html" class="sidebar-link">JS 基础 - JSONP</a></li><li><a href="/前端/javascript/js11.html" class="sidebar-link">JS 基础 - AJAX</a></li><li><a href="/前端/javascript/js12.html" class="sidebar-link">JS 基础 - 实现 AJAX</a></li><li><a href="/前端/javascript/js13.html" class="active sidebar-link">JS 基础 - 面向对象编程</a></li><li><a href="/前端/javascript/js14.html" class="sidebar-link">JS 基础 - 虚拟 DOM</a></li><li><a href="/前端/javascript/js15.html" class="sidebar-link">JS进阶 - 函数</a></li><li><a href="/前端/javascript/js16.html" class="sidebar-link">JS进阶 - 异步</a></li><li><a href="/前端/javascript/js17.html" class="sidebar-link">JS进阶 - 面向对象</a></li><li><a href="/前端/javascript/js18.html" class="sidebar-link">JS进阶 - 重构</a></li><li><a href="/前端/javascript/js19.html" class="sidebar-link">JS进阶 - MVC</a></li><li><a href="/前端/javascript/js20.html" class="sidebar-link">JS进阶 - 双向绑定</a></li><li><a href="/前端/javascript/js21.html" class="sidebar-link">DOM 历史、流模型及事件委托</a></li><li><a href="/前端/javascript/js22.html" class="sidebar-link">JS 中授权的三种方式</a></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>JS 基础 - 面向对象编程</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>dxsix</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div data-v-dad8a512><main class="page"><div class="page-title" style="display:none;"><h1>JS 基础 - 面向对象编程</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>dxsix</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2019-12-20</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>js</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>参考阅读：</p> <ol><li><p><a href="https://www.zhihu.com/question/19854505" target="_blank" rel="noopener noreferrer">程序员也不知道什么是面向对象<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript" target="_blank" rel="noopener noreferrer">MDN 给了我们一堆术语<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li></ol> <p>请尝试理解面向对象，并背诵 MDN 里的以下内容</p> <p><strong>Class 类</strong></p> <p>​	定义对象的特征。它是对象的属性和方法的模板定义.</p> <p><strong>Object 对象</strong></p> <p>​	类的一个实例。</p> <p><strong>Property 属性</strong></p> <p>​	对象的特征，比如颜色。</p> <p><strong>Method 方法</strong></p> <p>​	对象的能力，比如行走。</p> <p><strong>Constructor 构造函数</strong></p> <p>​	对象初始化的瞬间, 被调用的方法. 通常它的名字与包含它的类一致.</p> <p><strong>Inheritance 继承</strong></p> <p>​	一个类可以继承另一个类的特征。</p> <p><strong>Encapsulation 封装</strong></p> <p>​	一种把数据和相关的方法绑定在一起使用的方法.</p> <p><strong>Abstraction 抽象</strong></p> <p>​	结合复杂的继承，方法，属性的对象能够模拟现实的模型。</p> <p><strong>Polymorphism 多态</strong></p> <p>​	多意为‘许多’，态意为‘形态’。不同类可以定义相同的方法或属性。</p> <h2 id="封装-model-view-controller">封装 Model View Controller</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">/* 
+Controller({
+  init:(){
+    this.view
+    this.model
+    this.xxx()
+    this.yyy()
+  },
+  xxx(){}
+  yyy(){}
+})
+  */</span>
+window<span class="token punctuation">.</span><span class="token function-variable function">Controller</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> init <span class="token operator">=</span> options<span class="token punctuation">.</span>init <span class="token comment">// B</span>
+
+  <span class="token keyword">let</span> object <span class="token operator">=</span> <span class="token punctuation">{</span>
+    view<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    model<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">init</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">view<span class="token punctuation">,</span> model</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">// A</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>view <span class="token operator">=</span> view
+      <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">=</span> model
+      <span class="token keyword">this</span><span class="token punctuation">.</span>model<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">init</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> view<span class="token punctuation">,</span> model<span class="token punctuation">)</span> <span class="token comment">// 这是哪个 init</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">bindEvents</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> options<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>key <span class="token operator">!==</span> <span class="token string">'init'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      object<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> options<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> object
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">/*
+var model = Model({
+  resourceName: '表名'
+})
+*/</span>
+window<span class="token punctuation">.</span><span class="token function-variable function">Model</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> resourceName <span class="token operator">=</span> options<span class="token punctuation">.</span>resourceName
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">init</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">var</span> <span class="token constant">APP_ID</span> <span class="token operator">=</span> <span class="token string">'TsDnap9SEXjSvGSowP7gXXJC-gzGzoHsz'</span>
+      <span class="token keyword">var</span> <span class="token constant">APP_KEY</span> <span class="token operator">=</span> <span class="token string">'rGye31p12mM3wFpNRn9RADu9'</span>
+      <span class="token constant">AV</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span> appId<span class="token operator">:</span> <span class="token constant">APP_ID</span><span class="token punctuation">,</span> appKey<span class="token operator">:</span> <span class="token constant">APP_KEY</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">fetch</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">var</span> query <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AV<span class="token punctuation">.</span>Query</span><span class="token punctuation">(</span>resourceName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> query<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// Promise 对象</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">save</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">object</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">var</span> <span class="token constant">X</span> <span class="token operator">=</span> <span class="token constant">AV</span><span class="token punctuation">.</span>Object<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span>resourceName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">X</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> x<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">/*
+var view = View('.xxx')
+*/</span>
+window<span class="token punctuation">.</span><span class="token function-variable function">View</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">selector</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ol><li><p>controller === object</p></li> <li><p>controller.init(view, model)
+controller.init.call(controller, view, model)
+那么 controller.init 里面的 this 当然 TM 是 controller
+也就是这个1里面的object
+controller.init 里面的 this 就是 object
+object.init 里面的 this 就是 object</p></li> <li><p>initB.call(this)</p> <p>initB 里面的 this === call 后面的this
+call 后面 this === 第二条里的 this
+第二条里面的 this === object
+=&gt; initB 里面的 this 就是 object</p></li></ol> <h2 id="this">this</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>button.onclick = function f1(){
+  console.log(this) // 触发事件的元素。  button
+}
+ 
+button.onclick.call({name: 'frank'})
+ 
+ 
+button.addEventListener('click', function(){
+  console.log(this) // 该元素的引用 button
+}
+
+
+2 结果
+
+$('ul').on('click', 'li' /*selector*/, function(){
+  console.log(this) //this 则代表了与 selector 相匹配的元素。
+  // li 元素
+})
+
+
+3 结果
+去看 on 的源码呀 -&gt; 做不到
+jQuery 的开发者知道 onclick 的源码，f1.call(???)
+jQuery 的开发者写了文档
+看文档呀
+
+function X(){
+  return object = {
+   name: 'object',
+   options: null,
+   f1(x){
+    this.options = x
+     this.f2()
+   },
+   f2(){
+      this.options.f2.call(this)
+   }
+  }
+}
+
+
+var options = {
+  name: 'options',
+  f1(){},
+  f2(){
+   console.log(this) // this 是啥 ?
+  }
+}
+
+var x = X()
+
+x.f1(options)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br></div></div><h2 id="new-的作用">new 的作用</h2> <ol><li>不用创建临时对象，因为 new 会帮你做（<strong>你使用「this」就可以访问到临时对象</strong>）；</li> <li>不用绑定原型，因为 new 会帮你做（new 为了知道原型在哪，所以指定原型的名字为 prototype）；</li> <li>不用 return 临时对象，因为 new 会帮你做；</li> <li>不要给原型想名字了，因为 new 指定名字为 prototype。</li></ol> <p>https://zhuanlan.zhihu.com/p/23987456</p> <p>var object = new Object()</p> <p>自有属性 空
+object.****proto**** === Object.prototype</p> <p>var array = new Array('a','b','c')</p> <p>自有属性 0:'a' 1:'b' 2:'c',length:3
+array.****proto**** === Array.prototype
+Array.prototype.****proto**** === Object.prototype</p> <p>var fn = new Function('x', 'y', 'return x+y')
+自有属性 length:2, 不可见的函数体: 'return x+y'
+fn.****proto**** === Function.prototype</p> <p>Array is a function
+Array = function(){...}
+Array.****proto**** === Function.prototype</p></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/dxsixpc/blog/edit/master/myNote/前端/javascript/js13.md" target="_blank" rel="noopener noreferrer">编辑此页面</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.7ef5f052.js" defer></script><script src="/assets/js/3.b218254d.js" defer></script><script src="/assets/js/1.952a17b8.js" defer></script><script src="/assets/js/38.9cbc2587.js" defer></script>
+  </body>
+</html>
