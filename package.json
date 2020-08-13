@@ -1,0 +1,40 @@
+{
+  "name": "dxsix-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev myNote --no-cache",
+    "build": "vuepress build myNote --no-cache",
+    "deploy": "sh deploy.sh"
+  },
+  "directories": {
+    "doc": "myNote"
+  },
+  "dependencies": {
+    "@vuepress/plugin-medium-zoom": "^1.5.3",
+    "vue-server-renderer": "^2.6.10",
+    "vuepress-theme-reco": "^1.5.5"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.5.1",
+    "@vuepress/plugin-back-to-top": "^1.5.1",
+    "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-nprogress": "^1.5.1",
+    "vue-loader": "^15.9.2",
+    "vue-template-compiler": "^2.6.10",
+    "vuepress": "^1.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxsixpc/dxsixpc.github.io.git"
+  },
+  "keywords": [],
+  "author": "dxsix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dxsixpc/dxsixpc.github.io/issues"
+  },
+  "homepage": "https://github.com/dxsixpc/dxsixpc.github.io"
+}
