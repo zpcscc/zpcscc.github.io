@@ -6,7 +6,7 @@ module.exports = {
     ],      //设置网页标签头的图标
     theme: 'reco',
     themeConfig: {
-        author: 'dxsix',    // 作者
+        author: 'DXSIX',    // 作者
         sidebar: 'auto',    // 在所有页面中启用自动生成侧栏
         sidebarDepth: 6,    // 侧栏目录的深度
         authorAvatar: '/avatar.jpg',    // 作者头像
@@ -23,7 +23,7 @@ module.exports = {
         },
         noFoundPageByTencent: false,
         lastUpdated: '最后更新于',
-        repo: 'dxsixpc/blog',   // 个人guthub的链接地址
+        repo: 'dxsixpc/dxsixpc.github.io',   // 个人guthub的链接地址
         editLinks: true,
         editLinkText: '编辑此页面',
         docsDir: 'myNote',
