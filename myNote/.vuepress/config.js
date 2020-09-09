@@ -34,9 +34,9 @@ module.exports = {
                     {
                         text: '基础',
                         items: [
-                            { text: 'HTML', link: '/前端/html/' },
-                            { text: 'CSS', link: '/前端/css/' },
-                            { text: 'JavaScript', link: '/前端/javascript/' },
+                            { text: 'HTML', link: '/前端/HTML/' },
+                            { text: 'CSS', link: '/前端/CSS/' },
+                            { text: 'JavaScript', link: '/前端/JavaScript/' },
                         ]
                     },
                     {
@@ -50,8 +50,8 @@ module.exports = {
             {
                 text: '开发',
                 items: [
-                    { text: 'Git', link: '/开发/git/' },
-                    { text: 'GitBook', link: '/开发/gitbook/' },
+                    { text: 'Git', link: '/开发/Git/' },
+                    { text: 'GitBook', link: '/开发/GitBook/' },
                 ]
             },
             {
@@ -67,22 +67,41 @@ module.exports = {
             }
         ],  // 导航栏目录设置
         sidebar: {
-            '/前端/html/': [
-                '', 'html01'
+            '/前端/HTML/': [
+                '', 
+                'HTML-标签'
             ],
-            '/前端/css/': [
-                '', 'css01', 'css02', 'css03', 'css04',
+            '/前端/CSS/': [
+                '', 
+                'CSS-画三角形', 
+                'CSS-布局：元素垂直居中', 
+                'CSS-布局：元素水平居中', 
+                'CSS-布局：元素水平垂直居中',
             ],
-            '/前端/javascript/': [
-                '', 'js01', 'js02', 'js03', 'js04', 'js05', 'js06', 'js07', 'js08', 'js09', 'js10',
+            '/前端/JavaScript/': [
+                '', 
+                'JavaScript-数据类型', 
+                'JavaScript-变量', 
+                'JavaScript-函数', 
+                'JavaScript-三大结构', 
+                'JavaScript-数组', 
+                'JavaScript-数组方法详解', 
+                'JavaScript-运算符', 
+                'JavaScript-运行机制', 
+                'JavaScript-arguments', 
+                'JavaScript-浏览器兼容',
             ],
             '/前端/分享/': [
-                '', 'share01', 'share02'
+                '', 
+                '优雅降级与渐进增强', 
+                '页面性能优化的简单介绍'
             ],
-            '/开发/git/': [
-                '',
+            '/开发/Git/': [
+                '', 
+                'Git-新建关联克隆仓库', 
+                'Git-强制拉取最新代码'
             ],
-            '/开发/gitbook/': [
+            '/开发/GitBook/': [
                 '',
             ],
             '/日常/日记/': [
