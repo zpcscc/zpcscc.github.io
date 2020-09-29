@@ -6,14 +6,20 @@
 $ npm install
 ```
 
-## 开发
+## 本地开发调试
 
 ```sh
 $ npm run dev
 ```
 
-## 打包
+## 本地打包
 
 ```sh
 $ npm run build
+```
+
+## 一键打包发布部署
+
+```sh
+$ npm run deploy
 ```
