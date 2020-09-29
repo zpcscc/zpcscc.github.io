@@ -48,18 +48,18 @@ module.exports = {
                 ]
             },
             {
-                text: '开发',
+                text: '工具与库',
                 items: [
-                    { text: 'AntDesign', link: '/开发/AntDesign/' },
-                    { text: 'Git', link: '/开发/Git/' },
-                    { text: 'GitBook', link: '/开发/GitBook/' },
-                    { text: 'Nginx', link: '/开发/Nginx/' },
+                    { text: 'AntDesign', link: '/工具与库/AntDesign/' },
+                    { text: 'Git', link: '/工具与库/Git/' },
+                    { text: 'GitBook', link: '/工具与库/GitBook/' },
+                    { text: 'Nginx', link: '/工具与库/Nginx/' },
                 ]
             },
             {
-                text: '日常',
+                text: '其他',
                 items: [
-                    { text: '日记', link: '/日常/日记/' },
+                    { text: 'macOS', link: '/其他/macOS/' },
                 ]
             },
             {
@@ -98,26 +98,27 @@ module.exports = {
                 '优雅降级与渐进增强',
                 '页面性能优化的简单介绍'
             ],
-            '/开发/AntDesign/': [
+            '/工具与库/AntDesign/': [
                 '',
                 'Antd-修改组件内部样式'
             ],
-            '/开发/Git/': [
+            '/工具与库/Git/': [
                 '',
                 'Git-新建关联克隆仓库',
                 'Git-强制切换分支',
                 'Git-强制拉取最新代码',
                 'Git-终端查看提交记录',
             ],
-            '/开发/GitBook/': [
+            '/工具与库/GitBook/': [
                 '',
             ],
-            '/开发/Nginx/': [
+            '/工具与库/Nginx/': [
                 '',
                 'Nginx-常用命令'
             ],
-            '/日常/日记/': [
+            '/其他/macOS/': [
                 '',
+                'macOS-忽略系统更新'
             ],
         }   // 侧边栏目录设置
     },
