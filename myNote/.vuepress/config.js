@@ -109,6 +109,7 @@ module.exports = {
                 'Git-切换到某次commit',
                 'Git-重命名最新的一次commit',
                 'Git-强制拉取最新代码',
+                'Git-单分支rebase提交',
                 'Git-终端查看提交记录',
             ],
             '/工具与库/GitBook/': [
