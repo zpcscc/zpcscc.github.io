@@ -60,6 +60,7 @@ module.exports = {
                 text: '其他',
                 items: [
                     { text: 'macOS', link: '/其他/macOS/' },
+                    { text: 'Webpack', link: '/其他/Webpack/' },
                 ]
             },
             {
@@ -122,6 +123,9 @@ module.exports = {
             '/其他/macOS/': [
                 '',
                 'macOS-忽略系统更新'
+            ],
+            '/其他/Webpack/': [
+                '',
             ],
         }   // 侧边栏目录设置
     },

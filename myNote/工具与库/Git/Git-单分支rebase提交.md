@@ -20,12 +20,20 @@ git add .
 git commit -m "提交信息"
 ```
 
+### 方法一、
+
 ```javascript
 git fetch --all    // 拉取线上所有最新代码
 ```
 
 ```javascript
-git rebase origin/dev  // 通过rebase将本地更改与线上更改合并
+git rebase origin/dev  // 通过rebase将本地更改与线上dev分支更改合并
+```
+
+### 方法二、
+
+```javascript
+git pull --rebase
 ```
 
 ```javascript
