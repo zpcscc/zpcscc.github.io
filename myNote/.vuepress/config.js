@@ -23,10 +23,17 @@ module.exports = {
         },
         noFoundPageByTencent: false,
         lastUpdated: '最后更新于',
-        repo: 'dxsixpc/dxsixpc.github.io',   // 个人guthub的链接地址
+        repo: 'dxsixpc/dxsixpc.github.io',   // 个人github的链接地址
         editLinks: true,
         editLinkText: '编辑此页面',
         docsDir: 'myNote',
+        // 备案
+        record: '皖ICP备19022295号',
+        recordLink: 'https://beian.miit.gov.cn/#/Integrated/index',
+        // cyberSecurityRecord: '公安部备案文案',
+        // cyberSecurityLink: '公安部备案指向链接',
+        // 项目开始时间，只填写年份
+        startYear: '2019',
         nav: [
             {
                 text: '前端学习',

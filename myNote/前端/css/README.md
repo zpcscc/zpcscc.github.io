@@ -150,13 +150,6 @@ css三种使用方式：
 ​			文档统筹
 ​				将一个网站几十个网页相同的css提取到一个css样式表里
 ​					例如一个网站的头和尾
-​			网站头部优化
-​				让百度等搜索引擎可以搜索到
-​				keywords 关键字
-​					<meat name="keywords" content="个人博客，技术分享，资源，视频资料">
-​				description 关于网站的描述
-​					搜索引擎搜索到后标题下的内容描述
-​					<meat name="description" content="网站的描述（告诉网站你要做什么）">
 ​		
 ​			
 
