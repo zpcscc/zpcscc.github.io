@@ -23,8 +23,6 @@ tags:
 | null      | 空         | null        | 表示空               | 表示为空                                     |
 | NaN       | 意外的数字 | NaN         |                      | 表示意外转换生成的数值型数据                 |
 
-
-
 ## 二、JavaScript 的三大特殊值 NaN、undefined、null
 
 ```javascript
@@ -42,21 +40,19 @@ undefined：未定义
 
 ## 3.如何检测数据类型：
 
- 使用关键字：**typeof**
+使用关键字：**typeof**
 
 ```javascript
 //在打印内容前加上关键字typeof，打印出来的就是当前内容的数据类型
-condole.log(typeof "123"); //string
-condole.log(typeof 123); //number
+condole.log(typeof '123') //string
+condole.log(typeof 123) //number
 ```
 
 ## 4.数据保存在哪？
 
-```txt
+```
 保存在变量中：变量比作仓库。变量需要声明之后才能使用
 ```
-
-
 
 ## 五、数据类型转换
 
@@ -85,7 +81,7 @@ condole.log(typeof 123); //number
 
 #### **字符转数值**
 
- Tip:我们想做数学运算的时候，应该先对所有的数据类型进行统一（统一成数字格式），这个时候我们就该用到数据类型的转换。
+Tip:我们想做数学运算的时候，应该先对所有的数据类型进行统一（统一成数字格式），这个时候我们就该用到数据类型的转换。
 
 ##### (1) 普通字符转换
 
