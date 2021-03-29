@@ -9,7 +9,7 @@ $ npm install
 ## 本地开发调试
 
 ```sh
-$ npm run dev
+$ npm run start
 ```
 
 ## 本地打包
