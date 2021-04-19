@@ -5,6 +5,11 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+# 将代码发到master分支
+git add .
+git commit -m "update"
+git push
+
 # 生成静态文件
 npm run build
 

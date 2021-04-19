@@ -35,6 +35,8 @@ const tools = {
     'Git-新建关联克隆仓库',
     'Git-强制切换分支',
     'Git-切换到某次commit',
+    'Git-撤销上次push',
+    'Git-撤销上次commit',
     'Git-重命名最新的一次commit',
     'Git-将某个commit合并到此分支',
     'Git-强制拉取最新代码',
