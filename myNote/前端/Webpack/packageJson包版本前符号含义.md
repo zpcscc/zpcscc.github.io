@@ -1,5 +1,6 @@
 ---
 title: packageJson包版本前符号含义
+sidebar: auto
 date: 2021-03-19
 categories:
   - 前端

@@ -1,5 +1,6 @@
 ---
 title: HTML-基础介绍
+sidebar: auto
 date: 2019-06-07
 categories:
   - 前端

@@ -1,5 +1,6 @@
 ---
 title: 正则表达式基础规则
+sidebar: auto
 date: 2021-3-24
 categories:
   - 其他

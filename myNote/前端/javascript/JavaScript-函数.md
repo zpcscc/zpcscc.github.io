@@ -1,5 +1,6 @@
 ---
 title: JavaScript-函数
+sidebar: auto
 date: 2019-11-01
 categories:
   - 前端

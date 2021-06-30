@@ -1,5 +1,6 @@
 ---
 title: macOS-忽略系统更新
+sidebar: auto
 date: 2020-9-29
 categories:
   - 其他

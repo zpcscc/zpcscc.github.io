@@ -1,5 +1,6 @@
 ---
 title: JavaScript-变量
+sidebar: auto
 date: 2020-01-20
 categories:
   - 前端

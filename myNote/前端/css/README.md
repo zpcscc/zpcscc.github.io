@@ -1,5 +1,6 @@
 ---
 title: CSS-基础介绍
+sidebar: auto
 date: 2019-06-21
 categories:
   - 前端

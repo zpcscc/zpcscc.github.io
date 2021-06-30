@@ -1,5 +1,6 @@
 ---
 title: JavaScript-arguments
+sidebar: auto
 date: 2019-11-08
 categories:
   - 前端

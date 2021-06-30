@@ -23,6 +23,7 @@ const frontEnd = {
     'JavaScript-arguments',
     'JavaScript-浏览器兼容',
   ],
+  '/前端/Jest/': ['', 'Jest-常用匹配器'],
   '/前端/Webpack/': ['', 'packageJson包版本前符号含义'],
   '/前端/分享/': [
     '',
@@ -38,6 +39,7 @@ const tools = {
   '/工具与库/Git/': [
     '',
     'Git-新建关联克隆仓库',
+    'Git-移除远程仓库关联',
     'Git-强制切换分支',
     'Git-切换到某次commit',
     'Git-撤销上次push',

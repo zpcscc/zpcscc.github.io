@@ -1,5 +1,6 @@
 ---
 title: CSS-隐藏滚动条
+sidebar: auto
 date: 2021-04-01
 categories:
   - 前端

@@ -1,5 +1,6 @@
 ---
 title: CSS-画三角形
+sidebar: auto
 date: 2019-09-28
 categories:
   - 前端

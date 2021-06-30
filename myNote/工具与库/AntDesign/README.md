@@ -1,5 +1,6 @@
 ---
 title: Antd-基础介绍
+sidebar: auto
 date: 2019-10-22
 categories:
   - 前端

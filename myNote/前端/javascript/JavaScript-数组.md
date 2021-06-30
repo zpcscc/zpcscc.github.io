@@ -1,5 +1,6 @@
 ---
 title: JavaScript-数组
+sidebar: auto
 date: 2019-12-15
 categories:
   - 前端

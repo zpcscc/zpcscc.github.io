@@ -1,5 +1,6 @@
 ---
 title: JavaScript-运算符
+sidebar: auto
 date: 2019-12-18
 categories:
   - 前端

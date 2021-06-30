@@ -1,5 +1,6 @@
 ---
 title: CSS-布局：元素垂直居中
+sidebar: auto
 date: 2019-10-05
 categories:
   - 前端

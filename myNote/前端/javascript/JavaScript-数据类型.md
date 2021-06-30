@@ -1,5 +1,6 @@
 ---
 title: JavaScript-数据类型
+sidebar: auto
 date: 2019-10-11
 categories:
   - 前端

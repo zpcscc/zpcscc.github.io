@@ -1,5 +1,6 @@
 ---
 title: JavaScript-三大结构
+sidebar: auto
 date: 2019-12-04
 categories:
   - 前端

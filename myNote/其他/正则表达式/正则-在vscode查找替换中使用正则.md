@@ -1,5 +1,6 @@
 ---
 title: 正则-在vscode查找替换中使用正则
+sidebar: auto
 date: 2020-3-24
 categories:
   - 其他

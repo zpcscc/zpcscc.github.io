@@ -1,5 +1,6 @@
 ---
 title: AntDesign-修改组件内部样式
+sidebar: auto
 date: 2019-10-22
 categories:
   - 开发

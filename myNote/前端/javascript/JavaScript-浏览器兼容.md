@@ -1,5 +1,6 @@
 ---
 title: JavaScript-浏览器兼容
+sidebar: auto
 date: 2019-11-29
 categories:
   - 前端

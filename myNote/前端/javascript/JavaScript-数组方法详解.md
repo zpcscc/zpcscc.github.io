@@ -1,5 +1,6 @@
 ---
 title: JavaScript-数组方法详解
+sidebar: auto
 date: 2019-11-22
 categories:
   - 前端

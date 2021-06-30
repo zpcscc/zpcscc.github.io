@@ -1,5 +1,6 @@
 ---
 title: CSS-屏蔽点击事件
+sidebar: auto
 date: 2021-04-01
 categories:
   - 前端

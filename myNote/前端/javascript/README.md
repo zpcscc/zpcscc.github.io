@@ -1,5 +1,6 @@
 ---
 title: JavaScript-基础介绍
+sidebar: auto
 date: 2019-12-20
 categories:
   - 前端

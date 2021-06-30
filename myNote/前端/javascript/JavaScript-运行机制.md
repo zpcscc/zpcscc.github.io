@@ -1,5 +1,6 @@
 ---
 title: JavaScript-运行机制
+sidebar: auto
 date: 2019-12-27
 categories:
   - 前端
