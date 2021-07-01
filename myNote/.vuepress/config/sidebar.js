@@ -23,7 +23,12 @@ const frontEnd = {
     'JavaScript-arguments',
     'JavaScript-浏览器兼容',
   ],
-  '/前端/Jest/': ['', 'Jest-常用匹配器'],
+  '/前端/Jest/': [
+    '',
+    'Jest-常用匹配器',
+    'Jest-常用expect',
+    'Jest-expect_extend',
+  ],
   '/前端/Webpack/': ['', 'packageJson包版本前符号含义'],
   '/前端/分享/': [
     '',
