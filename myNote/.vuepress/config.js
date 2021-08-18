@@ -1,6 +1,6 @@
-const { nav } = require('./config/nav')
-const { blogConfig } = require('./config/blogConfig')
-const { sidebar } = require('./config/sidebar')
+const { nav } = require('./config/nav');
+const { blogConfig } = require('./config/blogConfig');
+const { sidebar } = require('./config/sidebar');
 
 module.exports = {
   // 博客的标题
@@ -65,10 +65,10 @@ module.exports = {
     lineNumbers: true,
     // markdown-it-toc 的选项
     toc: { includeLevel: [1, 2] },
-    extractHeaders: ['h1','h2', 'h3', 'h4'],
+    extractHeaders: ['h1', 'h2', 'h3', 'h4'],
     // slugify
     // extendMarkdown: md => {
     //     md.use(require('markdown-it-xxx'))
     // }    //markdown-it插件支持
   }, //markdown设置
-}
+};

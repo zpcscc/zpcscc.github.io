@@ -8,6 +8,7 @@ const frontEnd = {
         { text: 'HTML', link: '/前端/HTML/' },
         { text: 'CSS', link: '/前端/CSS/' },
         { text: 'JavaScript', link: '/前端/JavaScript/' },
+        { text: 'TypeScript', link: '/前端/TypeScript/' },
         { text: 'Jest', link: '/前端/Jest/' },
         { text: 'Webpack', link: '/前端/Webpack/' },
       ],

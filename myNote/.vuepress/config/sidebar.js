@@ -23,6 +23,7 @@ const frontEnd = {
     'JavaScript-arguments',
     'JavaScript-浏览器兼容',
   ],
+  '/前端/TypeScript/': ['', 'TypeScript-判断对象是否有某属性'],
   '/前端/Jest/': [
     '',
     'Jest-常用匹配器',
@@ -36,7 +37,7 @@ const frontEnd = {
     '页面性能优化的简单介绍',
     '前端下载图片',
   ],
-}
+};
 
 // 工具与库分类
 const tools = {
@@ -57,7 +58,7 @@ const tools = {
   ],
   '/工具与库/GitBook/': [''],
   '/工具与库/Nginx/': ['', 'Nginx-常用命令'],
-}
+};
 
 const rest = {
   // 其他分类
@@ -68,7 +69,7 @@ const rest = {
     '正则-匹配两个符号之间的所有字符',
     '正则-在vscode查找替换中使用正则',
   ],
-}
+};
 
 // 每类文章侧边栏目录设置
 exports.sidebar = {
@@ -76,4 +77,4 @@ exports.sidebar = {
   ...frontEnd,
   ...tools,
   ...rest,
-}
+};
