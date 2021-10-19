@@ -30,6 +30,7 @@ const frontEnd = {
     'Jest-常用expect',
     'Jest-expect_extend',
   ],
+  '/前端/Ajax/': ['', 'Ajax-Error处理'],
   '/前端/Webpack/': ['', 'packageJson包版本前符号含义'],
   '/前端/分享/': [
     '',
