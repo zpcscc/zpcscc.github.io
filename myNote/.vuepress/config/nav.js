@@ -27,6 +27,7 @@ const tools = {
   items: [
     { text: 'AntDesign', link: '/工具与库/AntDesign/' },
     { text: 'Git', link: '/工具与库/Git/' },
+    { text: 'Eslint', link: '/工具与库/Eslint/' },
     { text: 'GitBook', link: '/工具与库/GitBook/' },
     { text: 'Nginx', link: '/工具与库/Nginx/' },
   ],

@@ -60,6 +60,7 @@ const tools = {
     'Git-终端查看提交记录',
     'Git-merge报错修复',
   ],
+  '/工具与库/Eslint/': ['', 'Eslint-关闭校验'],
   '/工具与库/GitBook/': [''],
   '/工具与库/Nginx/': ['', 'Nginx-常用命令'],
 };
