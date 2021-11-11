@@ -58,6 +58,7 @@ const tools = {
     'Git-强制拉取最新代码',
     'Git-单分支rebase提交',
     'Git-终端查看提交记录',
+    'Git-merge报错修复',
   ],
   '/工具与库/GitBook/': [''],
   '/工具与库/Nginx/': ['', 'Nginx-常用命令'],
