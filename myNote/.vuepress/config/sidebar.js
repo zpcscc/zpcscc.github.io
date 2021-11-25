@@ -53,6 +53,7 @@ const tools = {
     'Git-切换到某次commit',
     'Git-撤销上次push',
     'Git-撤销上次commit',
+    'Git-找到reset后丢失的代码',
     'Git-重命名最新的一次commit',
     'Git-将某个commit合并到此分支',
     'Git-强制拉取最新代码',
