@@ -23,14 +23,14 @@ tags:
 
 #### 1、确定查找范围
 
-```shell
+```javascript
 // 查看所有commit提交记录，确定查找范围。
 git log
 ```
 
 #### 2、启动 `git bisect` 命令
 
-```shell
+```javascript
 git bisect start ${最近的commit} ${最远的commit}
 ```
 
@@ -42,7 +42,7 @@ git bisect start ${最近的commit} ${最远的commit}
 
 若当前commit没有问题则标记good
 
-```shell
+```javascript
 git bisect good
 ```
 
@@ -52,7 +52,7 @@ git bisect good
 
 直到某次commit中，出现了问题。此时标记bad
 
-```
+```javascript
 git bisect bad
 ```
 
@@ -64,7 +64,7 @@ git bisect bad
 
 直到某次标记后，git给出如下提示
 
-```shell
+```javascript
 ${某次commit} is the first bad commit
 ```
 
@@ -74,7 +74,7 @@ ${某次commit} is the first bad commit
 
 #### 4、退出 `git bisect`命令
 
-```shell
+```javascript
 git bisect reset
 ```
 

@@ -34,7 +34,7 @@ git add .	//添加所有文件
 ### 查看 git 当前状态
 
 ```javascript
-git stutas
+git status
 ```
 
 ```javascript
