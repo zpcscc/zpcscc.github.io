@@ -51,6 +51,7 @@ const tools = {
     'Git-移除远程仓库关联',
     'Git-强制切换分支',
     'Git-切换到某次commit',
+    'Git-单个文件还原到某次commit',
     'Git-撤销上次push',
     'Git-撤销上次commit',
     'Git-找到reset后丢失的代码',
