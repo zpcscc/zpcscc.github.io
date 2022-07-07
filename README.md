@@ -1,25 +1,12 @@
-# 前言
-
-# 安装
-
-```sh
-$ npm install
-```
-
-## 本地开发调试
-
-```sh
-$ npm run start
-```
-
-## 本地打包
-
-```sh
-$ npm run build
-```
-
-## 一键打包发布部署
-
-```sh
-$ npm run deploy
-```
+---
+home: true
+modules: # 指定首页展示模块
+  - MdContent
+  - Footer
+footer: # 底部模块的配置
+  record: Copyright © 2020-present dxsix 皖ICP备19022295号
+  recordLink: https://beian.miit.gov.cn/#/Integrated/index
+  cyberSecurityRecord: 公安备案文案
+  cyberSecurityLink: 公安备案地址
+  startYear: 2019
+---

@@ -1,5 +1,5 @@
 // 最上方导航栏分类及标签设置
-exports.blogConfig = {
+export const blogConfig = {
   // 导航栏分类配置
   category: {
     // 在导航栏菜单中所占的位置，默认2

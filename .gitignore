@@ -1,17 +1,5 @@
-.cache/
-coverage/
-dist/*
-!dist/index.html
+.cache
+.temp
+dist
 node_modules/
-*.log
-_book/
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-myNote/.vuepress/dist/
+.vuepress/dist/
