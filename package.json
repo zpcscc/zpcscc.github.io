@@ -1,47 +1,34 @@
 {
-  "name": "dxsix-blog",
+  "name": "dxsixpc",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "website"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "vuepress dev myNote --no-cache",
-    "build": "vuepress build myNote --no-cache",
-    "deploy": "sh deploy.sh"
-  },
-  "directories": {
-    "doc": "myNote"
-  },
-  "dependencies": {
-    "@vuepress/plugin-medium-zoom": "1.8.2",
-    "chalk": "^2.0.0",
-    "commander": "^2.0.0",
-    "css-loader": "^5.1.3",
-    "esm": "^3.0.0",
-    "vue": "^2.0.0",
-    "vue-class-component": "^7.2.6",
-    "vue-server-renderer": "2.6.12",
-    "vuepress-theme-reco": "1.6.1",
-    "webpack": "^4.27.0"
+    "start": "yarn build:packages && yarn start:website",
+    "start:website": "yarn workspace website start",
+    "build": "yarn build:packages && yarn build:website",
+    "build:packages": "lerna run build --no-private",
+    "build:website": "yarn workspace website build",
+    "build:website:fast": "yarn workspace website build:fast",
+    "lerna": "lerna",
+    "test": "jest"
   },
   "devDependencies": {
-    "@vuepress/plugin-active-header-links": "1.8.2",
-    "@vuepress/plugin-back-to-top": "1.8.2",
-    "@vuepress/plugin-blog": "1.9.4",
-    "@vuepress/plugin-nprogress": "1.8.2",
-    "vue-loader": "15.9.6",
-    "vue-template-compiler": "2.6.12",
-    "vuepress": "1.8.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dxsixpc/dxsixpc.github.io.git"
-  },
-  "keywords": [],
-  "author": "dxsix",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dxsixpc/dxsixpc.github.io/issues"
-  },
-  "homepage": "https://github.com/dxsixpc/dxsixpc.github.io"
+    "@babel/core": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-eslint": "^8.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "eslint": "^8.19.0",
+    "lerna": "^5.1.8",
+    "rollup": "^2.76.0",
+    "rollup-plugin-clear": "^2.0.7",
+    "tslib": "^2.4.0"
+  }
 }

@@ -1,0 +1,42 @@
+{
+  "name": "@dxsixpc/form-components",
+  "version": "0.1.16",
+  "private": false,
+  "author": "dxsixpc",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "source": "src/index.tsx",
+  "module": "dist/index.modern.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "keywords": [
+    "react",
+    "storybook",
+    "typescript"
+  ],
+  "scripts": {
+    "build": "rollup -c -w"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.0.5",
+    "@dnd-kit/sortable": "^7.0.1",
+    "@monaco-editor/react": "^4.3.1",
+    "ahooks": "^3.5.2",
+    "antd": "^4.21.5",
+    "axios": "^0.27.2",
+    "lodash": "^4.17.21",
+    "react-color": "^2.19.3"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.173",
+    "@types/react-color": "^3.0.5"
+  },
+  "files": [
+    "dist"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "@dxsixpc/utils",
+  "version": "0.0.1",
+  "description": "@dxsixpc/utils",
+  "author": "dxsixpc",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "source": "src/index.tsx",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "keywords": [
+    "rollup",
+    "react"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@emotion/utils": "^1.1.0",
+    "axios": "^0.27.2",
+    "crypto-js": "^4.1.1",
+    "immer": "^9.0.15",
+    "joi": "^17.6.0",
+    "lodash": "^4.17.21",
+    "ramda": "^0.28.0",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/lodash": "^4.14.182",
+    "@types/ramda": "^0.28.14"
+  },
+  "files": [
+    "dist"
+  ]
+}

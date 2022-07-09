@@ -1,25 +1,78 @@
-# 前言
+# dxsixpc-monorepo
 
-# 安装
+## 一、Yarn workspace
 
-```sh
-$ npm install
-```
-
-## 本地开发调试
+### 创建一个新的package
 
 ```sh
-$ npm run start
+yarn run create <package>
+# example
+yarn run create package1
 ```
 
-## 本地打包
+### 链接多个packages
 
 ```sh
-$ npm run build
+yarn packages/<package> run lint
 ```
 
-## 一键打包发布部署
+### 打包某个packages
 
 ```sh
-$ npm run deploy
+
 ```
+
+### 为某个package安装依赖
+
+```sh
+yarn workspace awesome-package add react react-dom --dev
+```
+
+### 为某个package删除依赖
+
+```sh
+yarn workspace web-project remove react
+```
+
+
+
+## 二、Lerna
+
+### 添加lerna
+
+```sh
+npx lerna@latest init
+```
+
+### 清除所有的node_modules
+
+```sh
+lerna clean
+```
+
+### 显示修改内容 类似git diff
+
+```sh
+lerna diff
+```
+
+### 列出所有的子package
+
+```sh
+lerna ls -l
+```
+
+### 列出修改过的子package
+
+```sh
+lerna changed
+```
+
+### build 所有子package
+
+​	子package分别执行 `build`
+
+```
+lerna run build
+```
+
