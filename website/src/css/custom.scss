@@ -3,6 +3,8 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
+//  全局导入antd样式
+@import 'antd/dist/antd.css';
 
 /* You can override the default Infima variables here. */
 :root {

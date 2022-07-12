@@ -61,11 +61,13 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/'
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
+          customCss: require.resolve('./src/css/custom.scss')
         }
       })
     ]
   ],
+  // 插件，支持加载scss
+  plugins: ['docusaurus-plugin-sass'],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
