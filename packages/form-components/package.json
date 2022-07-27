@@ -42,7 +42,11 @@
     "@types/lodash": "^4.14.173",
     "@types/react-color": "^3.0.5"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist"
-  ]
+  ],
+  "gitHead": "194083a128d7a67d11cf1e0c80bc24a36b50c266"
 }
