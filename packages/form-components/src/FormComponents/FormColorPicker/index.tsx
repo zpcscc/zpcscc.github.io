@@ -1,13 +1,13 @@
 import React from 'react';
 import { ColorPicker } from '@21epub-ui/color-picker';
-import type { ColorPickerProps } from '@21epub-ui/color-picker';
+import type { ColorPickerProps,Color } from '@21epub-ui/color-picker';
 import { Wrapper } from './Styled';
 
 export interface FormColorPickerProps
   extends Omit<ColorPickerProps, 'onChange'> {
-  value?: string;
+  value?: Color;
   styled?: string;
-  onChange?: (color: string) => void;
+  onChange?: (color: Color) => void;
 }
 
 /**
@@ -29,8 +29,8 @@ const FormColorPicker: React.FC<FormColorPickerProps> = (props) => {
   return (
     <Wrapper styled={styled}>
       <ColorPicker
-        color={value}
-        styles={{ picker: { zIndex: 1050 } } as any}
+        defaultColor={value}
+        style={{ picker: { zIndex: 1050 } } as any}
         {...rest}
       />
     </Wrapper>
