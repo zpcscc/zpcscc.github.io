@@ -1,21 +1,19 @@
 {
   "presets": [
     [
-      "latest",
+      "@babel/env",
       {
-        "env": {
-          // 防止babel在rollup处理前，将模块转为commonJS，导致rollup处理失败
-          "modules": false
-        }
+        "loose": true,
+        // 防止babel在rollup处理前，将模块转为commonJS，导致rollup处理失败
+        "modules": false
       }
     ],
+    "@babel/react",
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
   "plugins": [
     // external-helpers它允许 Rollup 在包的顶部只引用一次 helpers ，而不是每个使用它们的模块中都引用一遍
-    "external-helpers",
-    // 解决多个地方使用相同代码导致打包重复的问题
-    "@babel/plugin-transform-runtime"
+    "external-helpers"
   ]
 }

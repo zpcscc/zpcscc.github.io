@@ -7,6 +7,7 @@
   "main": "dist/index.js",
   "source": "src/index.tsx",
   "module": "dist/index.modern.js",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=10"
   },
@@ -16,19 +17,24 @@
     "typescript"
   ],
   "scripts": {
-    "build": "rollup -c -w"
+    "clean": "../../scripts/clean_package.sh",
+    "dev": "tsc -w & rollup -c rollup.config.js -w",
+    "build": "yarn run clean && tsc && rollup -c rollup.config.js"
   },
   "peerDependencies": {
     "react": ">=16",
     "react-dom": ">=16"
   },
   "dependencies": {
+    "@21epub-ui/color-picker": "^0.4.3",
     "@dnd-kit/core": "^6.0.5",
+    "@dnd-kit/modifiers": "^6.0.0",
     "@dnd-kit/sortable": "^7.0.1",
     "@monaco-editor/react": "^4.3.1",
     "ahooks": "^3.5.2",
     "antd": "^4.21.5",
     "axios": "^0.27.2",
+    "braft-editor": "^2.3.9",
     "lodash": "^4.17.21",
     "react-color": "^2.19.3"
   },

@@ -9,7 +9,7 @@ import type {
 import type { UploadRequestOption } from 'rc-upload/lib/interface';
 import { useToggle } from 'ahooks';
 import { Wrapper } from './Styled';
-import { checkUploadFileFormat } from '../../FormComponents/utils';
+import { checkUploadFileFormat } from '../utils';
 import fileApis from './fileApis';
 
 // 可上传图片类型

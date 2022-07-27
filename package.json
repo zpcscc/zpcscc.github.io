@@ -7,29 +7,30 @@
     "website"
   ],
   "scripts": {
-    "start": "yarn build:packages && yarn start:website",
+    "clean": "lerna run clean",
+    "clean:modules": "lerna clean -y && clean",
+    "build": "lerna run build --no-private",
     "start:website": "yarn workspace website start",
-    "build": "yarn build:packages && yarn build:website",
-    "build:packages": "lerna run build --no-private",
     "build:website": "yarn workspace website build",
     "serve:website": "yarn workspace website serve",
     "deploy:website": "yarn workspace website deploy",
-    "lerna": "lerna",
-    "test": "jest"
+    "publish": "yarn run build && lerna publish"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.6",
-    "@babel/plugin-transform-runtime": "^7.18.6",
+    "@babel/core": "7.18.9",
+    "@babel/plugin-transform-runtime": "7.18.9",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-eslint": "^8.0.2",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.3",
-    "eslint": "^8.19.0",
-    "lerna": "^5.1.8",
-    "rollup": "^2.76.0",
+    "eslint": "8.20.0",
+    "lerna": "5.2.0",
+    "rollup": "2.77.2",
     "rollup-plugin-clear": "^2.0.7",
-    "tslib": "^2.4.0"
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
   }
 }

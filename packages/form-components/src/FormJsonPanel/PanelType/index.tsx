@@ -15,6 +15,7 @@ import { Wrapper } from './Styled';
 import { validatePanelValue, stringToJson, jsonToString } from '../utils';
 import { Global, css } from '@emotion/react';
 import { GlobalStyle } from './Styled';
+import { styledToString } from '../FormRender/utils';
 
 export { EditorPanel, SettingPanel };
 
@@ -50,8 +51,9 @@ export const JsonPanel: React.FC<JsonPanelProps> = (props) => {
     panelData,
     panelConfig,
     tabsProps,
-    settingPanelStyled,
-    editorPanelStyled,
+    settingPanelStyled = {},
+    editorPanelStyled = {},
+    panelStyled = {},
     componentMap,
     panelTitle = '',
     showCancel = true,
@@ -105,7 +107,7 @@ export const JsonPanel: React.FC<JsonPanelProps> = (props) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper styled={styledToString(panelStyled)}>
       <Global
         styles={css`
           ${GlobalStyle}

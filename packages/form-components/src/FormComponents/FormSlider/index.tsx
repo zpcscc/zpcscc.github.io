@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Slider, InputNumber } from 'antd';
 import type { SliderBaseProps } from 'antd/lib/slider';
 import type { InputNumberProps } from 'antd/lib/input-number';
@@ -10,6 +10,7 @@ export interface FormSliderProps extends Omit<SliderBaseProps, 'onChange'> {
   onChange?: (value: number | [number, number] | string) => void;
   showInputNumber?: boolean;
   inputNumberProps?: InputNumberProps;
+  layout?: 'horizontal' | 'vertical';
 }
 
 /**
@@ -28,20 +29,24 @@ const FormSlider: React.FC<FormSliderProps> = (props) => {
     onChange,
     showInputNumber = false,
     inputNumberProps,
+    layout = 'horizontal',
     ...rest
   } = props;
   const [inputValue, setInputValue] = useState<number>(value || 0);
 
   const onSliderChange = (newValue: number | [number, number] | string) => {
-    if (typeof newValue === 'number') {
-      setInputValue(newValue);
-    }
+    if (typeof newValue === 'number') setInputValue(newValue);
     onChange && onChange(newValue);
   };
 
+  useEffect(() => {
+    // 传入的value变化时，也要及时更新inputValue
+    setInputValue(value);
+  }, [value]);
+
   return (
-    <Wrapper styled={styled} showInputNumber={showInputNumber}>
-      <Slider defaultValue={value} onChange={onSliderChange} {...rest} />
+    <Wrapper styled={styled} showInputNumber={showInputNumber} layout={layout}>
+      <Slider value={inputValue} onChange={onSliderChange} {...rest} />
       {showInputNumber && (
         <InputNumber
           value={inputValue}

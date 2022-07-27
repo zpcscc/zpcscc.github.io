@@ -1,7 +1,6 @@
 import React from 'react';
 import { Checkbox, List } from 'antd';
 import type { CheckboxGroupProps } from 'antd/lib/checkbox';
-import type { CheckboxValueType } from 'antd/lib/checkbox/Group';
 import { uniqueId } from 'lodash';
 import { Wrapper } from './Styled';
 import type { OptionsConfigType, OptionType } from '../../type';
@@ -22,17 +21,13 @@ export interface FormCheckboxProps extends CheckboxGroupProps {
  * @link 其他参数详见 https://ant.design/components/checkbox-cn/
  */
 export const FormCheckbox: React.FC<FormCheckboxProps> = (props) => {
-  const { value, optionsConfig, size, styled, onChange, ...rest } = props;
+  const { optionsConfig, size, styled, ...rest } = props;
   const listSize = size === 'middle' ? 'default' : size;
-
-  const onRadioChange = (radioChangeValue: CheckboxValueType[]) => {
-    onChange && onChange(radioChangeValue);
-  };
 
   return (
     <Wrapper styled={styled}>
       <List bordered itemLayout="vertical" size={listSize}>
-        <Checkbox.Group defaultValue={value} onChange={onRadioChange} {...rest}>
+        <Checkbox.Group {...rest}>
           {optionsConfig?.options?.map((option: OptionType) => (
             <List.Item key={uniqueId()}>
               <Checkbox value={option.value}>{option.label}</Checkbox>

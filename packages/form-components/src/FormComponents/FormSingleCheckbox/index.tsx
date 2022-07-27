@@ -25,7 +25,7 @@ export interface FormSingleCheckboxProps
  * @link https://ant.design/components/checkbox-cn/
  */
 const FormSingleCheckbox: React.FC<FormSingleCheckboxProps> = (props) => {
-  const { value, prefixText, suffixText, styled, onChange } = props;
+  const { value, prefixText, suffixText, styled, onChange, ...rest } = props;
 
   const onCheckedChange = (e: CheckboxChangeEvent) => {
     onChange && onChange(e.target.checked);
@@ -34,7 +34,7 @@ const FormSingleCheckbox: React.FC<FormSingleCheckboxProps> = (props) => {
   return (
     <SpaceWrapper styled={styled}>
       {prefixText}
-      <Checkbox defaultChecked={!!value} onChange={onCheckedChange} />
+      <Checkbox checked={!!value} onChange={onCheckedChange} {...rest} />
       {suffixText}
     </SpaceWrapper>
   );

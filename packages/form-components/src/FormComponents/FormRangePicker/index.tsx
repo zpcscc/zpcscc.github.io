@@ -33,7 +33,7 @@ const FormRangePicker: React.FC<FormRangePickerProps> = (props) => {
       <RangePicker
         locale={locale}
         picker={picker}
-        defaultValue={
+        value={
           value?.[0] && [
             moment(value?.[0], 'YYYY-MM-DD HH:mm'),
             moment(value?.[1], 'YYYY-MM-DD HH:mm'),

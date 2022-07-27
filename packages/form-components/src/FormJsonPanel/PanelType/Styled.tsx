@@ -1,9 +1,13 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
+export interface WrapperProps {
+  styled?: string;
+}
+
+export const Wrapper = styled.div<WrapperProps>`
   height: 100%;
   width: 100%;
-  min-height: 400px;
+  min-height: 500px;
   background-color: rgb(255, 255, 255);
   position: relative;
   display: flex;
@@ -19,12 +23,13 @@ export const Wrapper = styled.div`
       width: 100%;
       height: 100%;
       background: #fff;
-      min-height: 300px;
+      min-height: 400px;
       /* .ant-tabs-content-holder {
         padding-bottom: 20px;
       } */
     }
   }
+  ${(props) => props.styled}
 `;
 
 export const GlobalStyle = `

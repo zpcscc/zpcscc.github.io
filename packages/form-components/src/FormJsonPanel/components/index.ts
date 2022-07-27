@@ -1,13 +1,31 @@
-import { getFormComponent } from '../../FormComponents';
-import { getWidget } from '../../FormWidgets';
+import * as FormComponents from '../../FormComponents';
+import * as FormWidgets from '../../FormWidgets';
+import * as LayoutWidgets from '../../LayoutWidgets';
+import type { ComponentMapType } from '../type';
 import ErrorAlertWidget from './ErrorAlertWidget';
 
-// 传入组件类型，返回对应组件
-export const getComponent = (ComponentType: string) => {
-  // 通用表单库里有的组价，用库里的。定制组件用本地的,都没有则返回默认input组件
+export { default as ErrorAlertWidget } from './ErrorAlertWidget';
+export type { ErrorAlertWidgetProps } from './ErrorAlertWidget';
+
+// 组件库中的所有组件
+export const componentsMap = {
+  ...FormComponents,
+  ...FormWidgets,
+  ...LayoutWidgets,
+};
+
+/**
+ * @name 通过组件type获取对应的组件实例
+ * @param componentType 组件类型
+ * @param componentMap 外部传入的组件map
+ * @returns
+ */
+export const getComponent = (
+  componentType: string,
+  componentMap?: ComponentMapType
+) => {
   return (
-    getFormComponent(ComponentType) ||
-    getWidget(ComponentType) ||
+    Reflect.get({ ...componentsMap, ...componentMap }, componentType) ||
     ErrorAlertWidget
   );
 };

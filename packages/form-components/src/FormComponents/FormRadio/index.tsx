@@ -22,7 +22,7 @@ export interface FormRadioProps extends Omit<RadioProps, 'onChange'> {
  * @link 其他参数详见 https://ant.design/components/radio-cn/
  */
 const FormRadio: React.FC<FormRadioProps> = (props) => {
-  const { value, optionsConfig, size, styled, onChange, ...rest } = props;
+  const { optionsConfig, size, styled, onChange, ...rest } = props;
   const listSize = size === 'middle' ? 'default' : size;
 
   const onRadioChange = (e: RadioChangeEvent) => {
@@ -32,7 +32,7 @@ const FormRadio: React.FC<FormRadioProps> = (props) => {
   return (
     <Wrapper styled={styled}>
       <List bordered itemLayout="vertical" size={listSize}>
-        <Radio.Group defaultValue={value} onChange={onRadioChange} {...rest}>
+        <Radio.Group onChange={onRadioChange} {...rest}>
           {optionsConfig?.options?.map((option: OptionType) => (
             <List.Item key={uniqueId()}>
               <Radio value={option.value}>{option.label}</Radio>

@@ -4,6 +4,7 @@ import type { ComponentMapType, ComponentType, RulesMap } from '../type';
 import { getComponent } from '../components';
 import { formatProps, styledToString } from './utils';
 import { FormItemWrapper } from './Styled';
+import * as LayoutWidgets from '../../LayoutWidgets';
 
 // 渲染组件列表参数
 export interface RenderPropsType {
@@ -20,13 +21,13 @@ export interface RenderItemPropsType extends RenderPropsType {
   component: ComponentType;
 }
 
-// 渲染行
-export const rowRender = (props: RenderItemPropsType) => {
+// 渲染包含children的布局组件
+export const layoutRender = (props: RenderItemPropsType) => {
   const { component, count, componentMap, initialValues, formValues } = props;
   if (!component?.children) return;
-  const RowWidget = getComponent('RowWidget');
+  const LayoutWidget = getComponent(component.type);
   return (
-    <RowWidget
+    <LayoutWidget
       key={component.name}
       {...component.props}
       styled={styledToString(component?.props?.styled)}
@@ -38,29 +39,7 @@ export const rowRender = (props: RenderItemPropsType) => {
         initialValues,
         formValues,
       })}
-    </RowWidget>
-  );
-};
-
-// 渲染列
-export const colRender = (props: RenderItemPropsType) => {
-  const { component, count, componentMap, initialValues, formValues } = props;
-  if (!component?.children) return;
-  const ColWidget = getComponent('ColWidget');
-  return (
-    <ColWidget
-      key={component.name}
-      {...component.props}
-      styled={styledToString(component?.props?.styled)}
-    >
-      {loopRender({
-        componentList: component.children,
-        count,
-        componentMap,
-        initialValues,
-        formValues,
-      })}
-    </ColWidget>
+    </LayoutWidget>
   );
 };
 
@@ -75,9 +54,7 @@ export const componentRender = (props: RenderItemPropsType) => {
     rulesMap,
   } = props;
 
-  const JsonPanelComponent =
-    Reflect.get(componentMap || {}, component.type) ||
-    getComponent(component.type);
+  const JsonPanelComponent = getComponent(component.type, componentMap);
 
   return (
     <Fragment key={component.id + component.name}>
@@ -117,10 +94,8 @@ export const loopRender = (props: RenderPropsType): React.ReactNode => {
   const { componentList } = props;
   return componentList?.map((component: ComponentType) => {
     if (component?.hidden) return;
-    if (component?.type === 'RowWidget')
-      return rowRender({ component, ...props });
-    if (component?.type === 'ColWidget')
-      return colRender({ component, ...props });
-    return componentRender({ component, ...props });
+    if (Object.keys(LayoutWidgets).includes(component?.type)) {
+      return layoutRender({ component, ...props });
+    } else return componentRender({ component, ...props });
   });
 };

@@ -39,6 +39,8 @@ export interface FormTableProps {
   onChange?: (dataSource: RecordType[]) => void;
 }
 
+// ** 表单组件较特殊，放入jsonPanel的组件中，避免循环依赖
+
 /**
  * @name 数据表格
  * @param value 表格每行的数据列表

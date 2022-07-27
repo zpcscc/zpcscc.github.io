@@ -1,31 +1,25 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
     "strict": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "module": "esnext",
     "moduleResolution": "node",
-    // 希望将输出的代码转为 最新es模块
-    "target": "esnext",
+    "target": "es5",
     "allowJs": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["dom", "es5", "es6", "esnext"],
     "skipLibCheck": true,
     "esModuleInterop": true,
-    // 强制文件名中的大小写一致
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
     // 解析json模块
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "suppressImplicitAnyIndexErrors": true,
-    // 避免代码冗余，减少重复代码
     "importHelpers": true,
-    "useDefineForClassFields": true,
-  },
-  "include": ["./**/*"],
-  "exclude": ["node_modules", "coverage/**", "**/lib/**/*", "website/**"]
+    "outDir": "dist",
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true,
+  }
 }

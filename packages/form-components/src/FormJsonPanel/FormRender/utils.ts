@@ -22,12 +22,12 @@ const loopStyled = (styledObj: StyledType): string => {
 };
 
 /**
- * @name 将对象styled转为styled-components可以运行的字符串
+ * @name 将对象styled转为css-in-js可以运行的字符串
  * @param styled  样式对象 key为css选择器，value为css
  * @returns
  */
-export const styledToString = (styled: StyledType): string => {
-  if (!styled) return '';
+export const styledToString = (styled: StyledType | string): string => {
+  if (!styled || typeof styled === 'string') return styled;
   return `&${loopStyled(styled)}`;
 };
 

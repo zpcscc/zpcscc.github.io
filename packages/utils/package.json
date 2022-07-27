@@ -14,7 +14,9 @@
     "react"
   ],
   "scripts": {
-    "build": "rollup -c"
+    "clean": "../../scripts/clean_package.sh",
+    "dev": "tsc -w & rollup -c rollup.config.js -w",
+    "build": "yarn run clean && tsc && rollup -c rollup.config.js"
   },
   "peerDependencies": {
     "react": ">=16",
@@ -36,7 +38,8 @@
   "devDependencies": {
     "@types/crypto-js": "^4.1.1",
     "@types/lodash": "^4.14.182",
-    "@types/ramda": "^0.28.14"
+    "@types/ramda": "^0.28.14",
+    "@types/react-dom": "^18.0.6"
   },
   "files": [
     "dist"
