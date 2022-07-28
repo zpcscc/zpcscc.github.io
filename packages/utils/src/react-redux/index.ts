@@ -1,4 +1,5 @@
 import { createStore, Store, Reducer, compose } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 import * as subReducers from './state-bundle';
 import { AppStateType, emptyAppState } from './type';
 import { mapObjIndexed } from 'ramda';

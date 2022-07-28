@@ -26,9 +26,6 @@ export type { FormRadioProps } from './FormRadio';
 export { default as FormRangePicker } from './FormRangePicker';
 export type { FormRangePickerProps } from './FormRangePicker';
 
-export { default as FormRichText } from './FormRichText';
-export type { FormRichTextProps } from './FormRichText';
-
 export { default as FormSelect } from './FormSelect';
 export type { FormSelectProps } from './FormSelect';
 
