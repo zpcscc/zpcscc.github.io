@@ -5,7 +5,7 @@ import FormMonacoEditor from '../../../FormComponents/FormMonacoEditor';
 import type { PanelBaseProps, PanelConfigType } from '../../type';
 import SettingPanel from '../SettingPanel';
 import { Wrapper } from './Styled';
-import { stringToJson, jsonToString } from '../../utils';
+import { stringToData, dataToString } from '../../../utils';
 import { styledToString } from '../../FormRender/utils';
 
 export interface EditorPanelProps extends PanelBaseProps {
@@ -35,7 +35,7 @@ const EditorPanel: React.FC<EditorPanelProps> = (props) => {
     panelConfig,
     monacoLanguage = 'json',
     componentMap,
-    onEditorChange,
+    onEditorChange
   } = props;
   const [editorValue, setEditorValue] = useState<PanelConfigType | string>(
     panelConfig || ''
@@ -55,15 +55,15 @@ const EditorPanel: React.FC<EditorPanelProps> = (props) => {
   return (
     <Wrapper styled={styledToString(editorPanelStyled)}>
       <FormMonacoEditor
-        height="100%"
+        height='100%'
         defaultLanguage={monacoLanguage}
-        value={jsonToString(editorValue)}
+        value={dataToString(editorValue)}
         onChange={onMonacoChange}
       />
       <SettingPanel
         tabsProps={tabsProps}
         panelData={returnValues}
-        panelConfig={stringToJson(editorValue)}
+        panelConfig={stringToData(editorValue)}
         componentMap={componentMap}
         onSettingChange={onValuesChange}
       />

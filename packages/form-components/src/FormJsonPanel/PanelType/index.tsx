@@ -7,12 +7,13 @@ import type {
   PanelType,
   PanelBaseProps,
   FieldErrorType,
-  PanelConfigType,
+  PanelConfigType
 } from '../type';
 import PanelHeader from './components/PanelHeader';
 import PanelFooter from './components/PanelFooter';
 import { Wrapper } from './Styled';
-import { validatePanelValue, stringToJson, jsonToString } from '../utils';
+import { validatePanelValue } from '../utils';
+import { stringToData, dataToString } from '../../utils';
 import { Global, css } from '@emotion/react';
 import { GlobalStyle } from './Styled';
 import { styledToString } from '../FormRender/utils';
@@ -57,7 +58,7 @@ export const JsonPanel: React.FC<JsonPanelProps> = (props) => {
     componentMap,
     panelTitle = '',
     showCancel = true,
-    showSubmit = true,
+    showSubmit = true
   } = panelProps;
   let panelJson = '';
   let returnValue: AnyObject = panelData || {};
@@ -127,7 +128,7 @@ export const JsonPanel: React.FC<JsonPanelProps> = (props) => {
               editorPanelStyled={editorPanelStyled}
               tabsProps={tabsProps}
               panelData={panelData}
-              panelConfig={jsonToString(panelConfig)}
+              panelConfig={dataToString(panelConfig)}
               monacoLanguage={monacoLanguage}
               componentMap={componentMap}
               onEditorChange={onEditorChange}
@@ -137,7 +138,7 @@ export const JsonPanel: React.FC<JsonPanelProps> = (props) => {
               settingPanelStyled={settingPanelStyled}
               tabsProps={tabsProps}
               panelData={returnValue}
-              panelConfig={stringToJson(panelConfig)}
+              panelConfig={stringToData(panelConfig)}
               componentMap={componentMap}
               onSettingChange={onSettingChange}
             />

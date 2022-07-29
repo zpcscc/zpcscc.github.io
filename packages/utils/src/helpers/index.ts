@@ -1,1 +1,1 @@
-export * from './dataToString';
+export * from './dataOrString';
