@@ -2,9 +2,6 @@
 export { default as FormCheckbox } from './FormCheckbox';
 export type { FormCheckboxProps } from './FormCheckbox';
 
-export { default as FormColorPicker } from './FormColorPicker';
-export type { FormColorPickerProps } from './FormColorPicker';
-
 export { default as FormDatePicker } from './FormDatePicker';
 export type { FormDatePickerProps } from './FormDatePicker';
 
