@@ -1,7 +1,9 @@
-import { createStore, Store, Reducer, compose } from 'redux';
-import { configureStore } from '@reduxjs/toolkit';
+import { createStore, compose } from 'redux';
+import type { Store, Reducer } from 'redux';
+// import { configureStore } from '@reduxjs/toolkit';
 import * as subReducers from './state-bundle';
-import { AppStateType, emptyAppState } from './type';
+import { emptyAppState } from './type';
+import type { AppStateType } from './type';
 import { mapObjIndexed } from 'ramda';
 // import { pipe } from 'rxjs';
 

@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+// eslint-disable-next-line
 import React from 'react';
 import { Tabs } from 'antd';
 import type { FormInstance, TabsProps } from 'antd';
@@ -33,7 +33,7 @@ export interface SettingPanelProps extends PanelBaseProps {
  * @param tabsProps 自定义样式 示例：styled：`{width:'100%'}`
  * @link tabsProps参数详见 https://ant.design/components/tabs-cn/#Tabs
  */
-const SettingPanel: FC<SettingPanelProps> = (props) => {
+const SettingPanel: React.FC<SettingPanelProps> = (props) => {
   const {
     settingPanelStyled = {},
     tabsProps,

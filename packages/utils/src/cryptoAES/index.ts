@@ -90,7 +90,9 @@ export const decrypt = (
   let parsedData = decryptedStr;
   try {
     parsedData = JSON.parse(decryptedStr);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 
   return parsedData;
 };

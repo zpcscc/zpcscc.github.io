@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import MonacoEditor, { loader } from '@monaco-editor/react';
 import type { EditorProps, OnChange } from '@monaco-editor/react';

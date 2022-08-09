@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { Button, Space, Popconfirm } from 'antd';
 import type { ColumnsType } from 'antd/lib/table';
@@ -21,29 +22,29 @@ const ActionRender = (
             align: 'center',
             width: '100px',
             render: (record: RecordType) => (
-              <Space size="small" direction="horizontal">
+              <Space size='small' direction='horizontal'>
                 <Button
-                  type="link"
-                  size="small"
+                  type='link'
+                  size='small'
                   onClick={() => onOpenModal('editor', record)}
                 >
                   编辑
                 </Button>
                 <Popconfirm
-                  title="确认删除?"
-                  okText="确认"
-                  cancelText="取消"
+                  title='确认删除?'
+                  okText='确认'
+                  cancelText='取消'
                   onConfirm={() => onDelete(record)}
                   destroyTooltipOnHide={true}
                   overlayStyle={{ display: 'flex' }}
                 >
-                  <Button type="link" size="small">
+                  <Button type='link' size='small'>
                     删除
                   </Button>
                 </Popconfirm>
               </Space>
-            ),
-          },
+            )
+          }
         ]
       : [];
   return actionRenderValue;

@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { Divider } from 'antd';
 import type { DividerProps } from 'antd/lib/Divider';

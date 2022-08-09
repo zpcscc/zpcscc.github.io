@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { useState, useEffect } from 'react';
 import { Slider, InputNumber } from 'antd';
 import type { SliderBaseProps } from 'antd/lib/slider';

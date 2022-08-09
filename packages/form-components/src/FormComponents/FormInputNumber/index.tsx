@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { InputNumber } from 'antd';
 import type { InputNumberProps } from 'antd/lib/input-number';

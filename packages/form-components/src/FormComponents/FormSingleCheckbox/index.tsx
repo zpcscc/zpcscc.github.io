@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { Checkbox } from 'antd';
 import type { CheckboxProps, CheckboxChangeEvent } from 'antd/es/checkbox';

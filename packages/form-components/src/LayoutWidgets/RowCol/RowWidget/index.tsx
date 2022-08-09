@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import type { RowProps } from 'antd';
 import { RowWrapper } from './Styled';

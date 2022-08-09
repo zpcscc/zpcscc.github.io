@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { Fragment } from 'react';
 import { isBoolean } from 'lodash';
 import type { ComponentMapType, ComponentType, RulesMap } from '../type';

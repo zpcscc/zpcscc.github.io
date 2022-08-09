@@ -1,5 +1,5 @@
-import { Rule } from 'antd/lib/form';
-import { RulesMap } from '../type';
+import type { Rule } from 'antd/lib/form';
+import type { RulesMap } from '../type';
 
 const emailRules = [{ type: 'email' }] as Rule[];
 const phoneRules = [

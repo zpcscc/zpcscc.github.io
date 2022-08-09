@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import type { DragEndEvent } from '@dnd-kit/core';
 import {

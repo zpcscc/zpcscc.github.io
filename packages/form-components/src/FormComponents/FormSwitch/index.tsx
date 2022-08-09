@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { Switch } from 'antd';
 import type { SwitchProps } from 'antd/lib/switch';

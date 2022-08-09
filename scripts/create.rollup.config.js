@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import babel from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
+import eslint from '@rollup/plugin-eslint'
 import path from 'path';
 
 const outputDir = 'dist';
@@ -44,6 +45,7 @@ export const createConfig = (pakg) => {
         inject: true, // dev 环境下的 样式是入住到 js 中的，其他环境不会注入
         extract: false // 无论是 dev 还是其他环境这个配置项都不做 样式的抽离
       }),
+      eslint(),
       commonjs(),
       typescript({
         declaration: true,

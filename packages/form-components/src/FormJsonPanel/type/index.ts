@@ -2,7 +2,7 @@ import type { Rule } from 'antd/lib/form';
 import type { TabsProps } from 'antd';
 import type { FieldError } from 'rc-field-form/es/interface';
 import type { OptionsConfigType } from '../../type';
-import { componentsMap } from '../components';
+import type { componentsMap } from '../components';
 
 // 可嵌套的条件表达式
 export interface Expression {

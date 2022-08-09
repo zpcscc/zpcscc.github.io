@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { Alert } from 'antd';
 import type { AlertProps } from 'antd/lib/alert';
