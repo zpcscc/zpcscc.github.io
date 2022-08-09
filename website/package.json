@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -23,8 +23,8 @@
     "@docusaurus/module-type-aliases": "^2.0.1",
     "@docusaurus/preset-classic": "^2.0.1",
     "@docusaurus/theme-classic": "^2.0.1",
-    "@dxsixpc/form-components": "^0.0.2",
-    "@dxsixpc/utils": "^0.0.2",
+    "@dxsixpc/form-components": "^0.0.3",
+    "@dxsixpc/utils": "^0.0.3",
     "clsx": "^1.2.1"
   },
   "devDependencies": {
