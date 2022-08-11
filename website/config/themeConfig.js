@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 // @ts-check
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
@@ -6,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 const themeConfig = {
   navbar: {
-    title: 'My Site',
+    title: 'DXSIX',
     logo: {
       alt: 'My Site Logo',
       src: 'img/logo.svg'
@@ -19,10 +20,28 @@ const themeConfig = {
         label: '博客'
       },
       {
-        href: 'https://github.com/facebook/docusaurus',
+        type: 'doc',
+        docId: 'doc-components/intro',
+        position: 'left',
+        label: '组件库'
+      },
+      {
+        type: 'doc',
+        docId: 'doc-utils/intro',
+        position: 'left',
+        label: '工具库'
+      },
+      {
+        href: 'https://github.com/dxsixpc/dxsixpc.github.io/',
         label: 'GitHub',
         position: 'right'
-      }
+      },
+      {
+        href: 'https://github.com/facebook/docusaurus',
+        position: 'right',
+        className: 'header-github-link',
+        'aria-label': 'GitHub repository',
+      },
     ]
   },
   footer: {

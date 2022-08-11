@@ -1,15 +1,14 @@
 import { createStore, compose } from 'redux';
 import type { Store, Reducer } from 'redux';
 // import { configureStore } from '@reduxjs/toolkit';
+import { mapValues } from 'lodash';
 import * as subReducers from './state-bundle';
 import { emptyAppState } from './type';
-import type { AppStateType } from './type';
-import { mapObjIndexed } from 'ramda';
-// import { pipe } from 'rxjs';
+import type { StateType } from './type';
 
 // * ---------------------------------------------------------------- type calculation
 
-export type SubReducer<T = any> = (s: AppStateType, a: T) => AppStateType;
+export type SubReducer<T = any> = (s: StateType, a: T) => StateType;
 
 type ReducerMap = typeof subReducers;
 
@@ -32,7 +31,7 @@ type DispatcherMap = {
 type ActionList = ActionMap[keyof ActionMap];
 
 // * ---------------------------------------------------------------- create store
-const centerReducer: Reducer<AppStateType | undefined, ActionList> = (
+const centerReducer: Reducer<StateType | undefined, ActionList> = (
   state,
   action
 ) => {
@@ -42,24 +41,22 @@ const centerReducer: Reducer<AppStateType | undefined, ActionList> = (
   return subReducer ? subReducer(state!, payload) : state;
 };
 
-export type { AppStateType };
-
-export type AppStoreType = Store<AppStateType>;
+export type StoreType = Store<StateType>;
 
 const enhancer =
   ((window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
     (window as any).__REDUX_DEVTOOLS_EXTENSION__()) ||
   compose;
 
-export const appStore = createStore(
+export const store = createStore(
   centerReducer,
   emptyAppState,
   enhancer
-) as AppStoreType;
+) as StoreType;
 
-export const appStoreActions: DispatcherMap = mapObjIndexed(
-  (val, key) => (payload: any) => appStore.dispatch({ type: key, payload }),
-  subReducers
+export const storeActions: DispatcherMap = mapValues(
+  subReducers,
+  (_value, key) => (payload: any) => store.dispatch({ type: key, payload })
 );
 
 // 监听store

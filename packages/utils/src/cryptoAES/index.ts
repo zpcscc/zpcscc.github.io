@@ -1,7 +1,5 @@
 // * 加载 CryptoJS
-import CryptoJS from 'crypto-js/core';
-import 'crypto-js/enc-base64';
-import 'crypto-js/aes';
+import CryptoJS from 'crypto-js';
 import { dataToString } from '../helpers';
 
 // * 后文变量命名中的 DS 表示 DataStructure，Crypto所用的数据结构

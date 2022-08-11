@@ -1,4 +1,4 @@
-import { codeMessage } from './util';
+import type { codeMessage } from './util';
 import type { AxiosResponse, AxiosError } from 'axios';
 
 export interface ErrorMessageType {

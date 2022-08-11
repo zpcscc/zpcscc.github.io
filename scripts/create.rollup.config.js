@@ -1,9 +1,8 @@
-import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import babel from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
-import eslint from '@rollup/plugin-eslint'
+import eslint from '@rollup/plugin-eslint';
 import path from 'path';
 
 const outputDir = 'dist';
@@ -16,12 +15,14 @@ export const createConfig = (pakg) => {
       // 打包为commonJS模块
       {
         dir: path.resolve(__dirname, 'dist'),
-        format: 'cjs'
+        format: 'cjs',
+        sourcemap: true
       },
       // 打包为ES6模块
       {
         file: path.resolve(__dirname, `${outputDir}/index.esm.js`),
-        format: 'esm'
+        format: 'esm',
+        sourcemap: true
       }
     ],
     watch: {
@@ -30,7 +31,6 @@ export const createConfig = (pakg) => {
     },
     external: pakg.dependencies && Object.keys(pakg.dependencies),
     plugins: [
-      resolve({ browser: true }),
       postcss({
         modules: true, // 增加 css-module 功能
         extensions: ['.less', '.css'],

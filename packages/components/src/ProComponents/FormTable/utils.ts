@@ -1,5 +1,5 @@
 import type { Rule, RuleObject } from 'antd/lib/form';
-import type { ComponentType } from '../../FormJsonPanel/type';
+import type { ComponentType } from '../../JsonPanel/type';
 
 /**
  * @name 为组件添加rules

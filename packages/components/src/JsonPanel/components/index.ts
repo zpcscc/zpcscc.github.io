@@ -1,5 +1,5 @@
 import * as FormComponents from '../../FormComponents';
-import * as FormWidgets from '../../FormWidgets';
+import * as FormWidgets from '../../Widgets';
 import * as LayoutWidgets from '../../LayoutWidgets';
 import type { ComponentMapType } from '../type';
 import ErrorAlertWidget from './ErrorAlertWidget';
