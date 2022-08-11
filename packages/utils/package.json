@@ -1,6 +1,6 @@
 {
   "name": "@dxsixpc/utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "dxsixpc",
   "license": "MIT",
   "main": "dist/index.js",
@@ -31,8 +31,8 @@
     "joi": "^17.6.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.182",
-    "@types/crypto-js": "^4.1.1"
+    "@types/crypto-js": "^4.1.1",
+    "@types/lodash": "^4.14.182"
   },
   "publishConfig": {
     "access": "public"
