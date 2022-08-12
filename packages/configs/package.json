@@ -1,0 +1,37 @@
+{
+  "name": "@dxsixpc/configs",
+  "version": "0.0.4",
+  "author": "dxsixpc",
+  "license": "MIT",
+  "main": "rollup.config.js",
+  "type": "module",
+  "homepage": "https://github.com/dxsixpc/dxsixpc.github.io/tree/master/packages/config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxsixpc/dxsixpc.github.io/tree/master/packages/config.git"
+  },
+  "keywords": [
+    "rollup",
+    "eslint",
+    "prettier"
+  ],
+  "scripts": {},
+  "peerDependencies": {
+    "axios": ">=0.27.2",
+    "lodash": ">=4.17.21"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    ".eslintrc.js",
+    ".stylelintrc.js",
+    "prettier.config.js",
+    "release.config.js",
+    "rollup.config.js",
+    "ts.config.js"
+  ],
+  "gitHead": "681226db29641f5b3475ac9a2fad2f9b8d1cc509"
+}

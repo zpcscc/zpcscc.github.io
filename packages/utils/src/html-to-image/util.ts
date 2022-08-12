@@ -1,3 +1,4 @@
+/* eslint-disable no-return-await */
 import type { OptionsType } from './type';
 
 const WOFF = 'application/font-woff';
@@ -69,7 +70,7 @@ export function parseDataUrlContent(dataURL: string) {
   return dataURL.split(/,/)[1];
 }
 
-export const uuid = (function uuid() {
+export const uuid = (()=> {
   // generate uuid for className of pseudo elements.
   // We should not use GUIDs, otherwise pseudo elements sometimes cannot be captured.
   let counter = 0;
@@ -85,10 +86,12 @@ export const uuid = (function uuid() {
   };
 })();
 
-export const delay =
-  <T>(ms: number) =>
-  (args: T) =>
-    new Promise<T>((resolve) => setTimeout(() => resolve(args), ms));
+export function delay<T>(ms: number) {
+  return (args: T) =>
+    new Promise<T>((resolve) => {
+      setTimeout(() => resolve(args), ms)
+    })
+}
 
 export function toArray<T>(arrayLike: any): T[] {
   const arr: T[] = [];
@@ -145,13 +148,13 @@ export function canvasToBlob(
   options: OptionsType = {}
 ): Promise<Blob | null> {
   if (canvas.toBlob) {
-    return new Promise((resolve) =>
+    return new Promise((resolve) => {
       canvas.toBlob(
         resolve,
         options.type ? options.type : 'image/png',
-        options.quality ? options.quality : 1
+        options.quality ? options.quality : 1,
       )
-    );
+    })
   }
 
   return new Promise((resolve) => {

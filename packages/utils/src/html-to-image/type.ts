@@ -39,6 +39,11 @@ export interface OptionsType {
    * requests to enable cache busting.
    */
   cacheBust?: boolean
+    /**
+   * Set false to use all URL as cache key.
+   * Default: false | undefined - which strips away the query parameters
+   */
+  includeQueryParams?: boolean
   /**
    * A data URL for a placeholder image that will be used when fetching
    * an image fails. Defaults to an empty string and will render empty

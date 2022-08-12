@@ -81,13 +81,17 @@ function cloneCSSStyle<T extends HTMLElement>(nativeNode: T, clonedNode: T) {
 
   if (source.cssText) {
     target.cssText = source.cssText;
+    target.transformOrigin = source.transformOrigin
   } else {
     toArray<string>(source).forEach((name) => {
-      target.setProperty(
-        name,
-        source.getPropertyValue(name),
-        source.getPropertyPriority(name)
-      );
+      let value = source.getPropertyValue(name)
+
+      if (name === 'font-size' && value.endsWith('px')) {
+        const reducedFont =
+          Math.floor(parseFloat(value.substring(0, value.length - 2))) - 0.1
+        value = `${reducedFont}px`
+      }
+      target.setProperty(name, value, source.getPropertyPriority(name))
     });
   }
 }
@@ -99,6 +103,19 @@ function cloneInputValue<T extends HTMLElement>(nativeNode: T, clonedNode: T) {
 
   if (nativeNode instanceof HTMLInputElement) {
     clonedNode.setAttribute('value', nativeNode.value);
+  }
+}
+
+function cloneSelectValue<T extends HTMLElement>(nativeNode: T, clonedNode: T) {
+  if (nativeNode instanceof HTMLSelectElement) {
+    const clonedSelect = clonedNode as any as HTMLSelectElement
+    const selectedOption = Array.from(clonedSelect.children).find(
+      (child) => nativeNode.value === child.getAttribute('value'),
+    )
+
+    if (selectedOption) {
+      selectedOption.setAttribute('selected', '')
+    }
   }
 }
 
@@ -114,6 +131,7 @@ async function decorate<T extends HTMLElement>(
     .then(() => cloneCSSStyle(nativeNode, clonedNode))
     .then(() => clonePseudoElements(nativeNode, clonedNode))
     .then(() => cloneInputValue(nativeNode, clonedNode))
+    .then(() => cloneSelectValue(nativeNode, clonedNode))
     .then(() => clonedNode);
 }
 

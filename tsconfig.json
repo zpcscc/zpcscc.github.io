@@ -1,4 +1,5 @@
 {
+  // "extends": "@dxsixpc/configs/tsconfig.js",
   "compilerOptions": {
     "strict": true,
     "noImplicitReturns": true,

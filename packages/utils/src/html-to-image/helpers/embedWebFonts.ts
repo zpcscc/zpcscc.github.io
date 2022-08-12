@@ -78,10 +78,12 @@ function parseCSS(source: string) {
   // strip out comments
   let cssText = source.replace(commentsRegex, '');
 
+  // eslint-disable-next-line prefer-regex-literals
   const keyframesRegex = new RegExp(
     '((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})',
     'gi'
   );
+
   // eslint-disable-next-line no-constant-condition
   while (true) {
     const matches = keyframesRegex.exec(cssText);
@@ -131,8 +133,7 @@ async function getCSSRules(
     if ('cssRules' in sheet) {
       try {
         // eslint-disable-next-line
-        toArray<CSSRule>(sheet.hasOwnProperty('cssRules')).forEach(
-          (item: CSSRule, index: number) => {
+        toArray<CSSRule>(sheet.cssRules || []).forEach((item, index) => {
             if (item.type === CSSRule.IMPORT_RULE) {
               let importIndex = index + 1;
               const url = (item as CSSImportRule).href;
@@ -147,9 +148,7 @@ async function getCSSRules(
                         rule,
                         rule.startsWith('@import')
                           ? (importIndex += 1)
-                          : // eslint-disable-next-line
-                            toArray<CSSRule>(sheet.hasOwnProperty('cssRules'))
-                              .length
+                          : sheet.cssRules.length,
                       );
                     } catch (error) {
                       console.error('Error inserting rule from remote css', {
@@ -178,11 +177,7 @@ async function getCSSRules(
               )
               .then((cssText) =>
                 parseCSS(cssText).forEach((rule) => {
-                  inline.insertRule(
-                    rule,
-                    // eslint-disable-next-line
-                    toArray<CSSRule>(sheet.hasOwnProperty('cssRules')).length
-                  );
+                  inline.insertRule(rule, sheet.cssRules.length)
                 })
               )
               .catch((err) => {

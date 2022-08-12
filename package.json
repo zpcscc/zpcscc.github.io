@@ -2,6 +2,10 @@
   "name": "dxsixpc",
   "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "dxsixpc",
+    "email": "dxsixpc@gmail.com"
+  },
   "workspaces": [
     "packages/*",
     "website"
@@ -23,6 +27,7 @@
     "@babel/core": "^7.18.10",
     "@babel/helper-compilation-targets": "^7.18.9",
     "@babel/plugin-transform-runtime": "^7.18.10",
+    "@dxsix/configs": "0.0.4",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-eslint": "^8.0.2",
