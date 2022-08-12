@@ -29,7 +29,7 @@
     "prettier.config.js",
     "release.config.js",
     "rollup.config.js",
-    "ts.config.js"
+    "tsconfig.json"
   ],
   "gitHead": "681226db29641f5b3475ac9a2fad2f9b8d1cc509"
 }
