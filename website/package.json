@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.0.5-alpha.0",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -23,8 +23,8 @@
     "@docusaurus/module-type-aliases": "^2.0.1",
     "@docusaurus/preset-classic": "^2.0.1",
     "@docusaurus/theme-classic": "^2.0.1",
-    "@dxsixpc/components": "^0.0.5-alpha.0",
-    "@dxsixpc/utils": "^0.0.5-alpha.0",
+    "@dxsixpc/components": "^0.0.5",
+    "@dxsixpc/utils": "^0.0.5",
     "ahooks": "^3.7.0",
     "antd": "^4.22.4",
     "axios": "^0.27.2",

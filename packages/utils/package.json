@@ -1,6 +1,6 @@
 {
   "name": "@dxsixpc/utils",
-  "version": "0.0.5-alpha.0",
+  "version": "0.0.5",
   "author": "dxsixpc",
   "license": "MIT",
   "main": "dist/index.js",
@@ -30,7 +30,7 @@
     "joi": "^17.6.0"
   },
   "devDependencies": {
-    "@dxsixpc/configs": "^0.0.5-alpha.0",
+    "@dxsixpc/configs": "^0.0.5",
     "@types/crypto-js": "^4.1.1",
     "@types/lodash": "^4.14.182"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@dxsixpc/configs",
-  "version": "0.0.5-alpha.1",
+  "version": "0.0.5",
   "author": "dxsixpc",
   "license": "MIT",
   "main": "src/index.ts",
@@ -70,7 +70,6 @@
     "rollup-plugin-typescript2": "^0.32.1",
     "rollup-plugin-visualizer": "^5.7.1"
   },
-  "devDependencies": {},
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
