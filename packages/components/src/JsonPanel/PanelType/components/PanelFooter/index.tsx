@@ -20,7 +20,7 @@ const PanelFooter: React.FC<PanelFooterProps> = (props) => {
       <Footer style={{ width: '100%' }}>
         {showCancel && <Button onClick={onClose}>取消</Button>}
         {showSubmit && (
-          <Button type="primary" onClick={onSubmit}>
+          <Button type='primary' onClick={onSubmit}>
             确定
           </Button>
         )}

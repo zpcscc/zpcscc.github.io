@@ -23,7 +23,7 @@ const TextWidget: React.FC<TextWidgetProps> = (props) => {
       {useAntd ? (
         <Typography.Text {...rest}>{text}</Typography.Text>
       ) : (
-        <span className="ant-typography">{text}</span>
+        <span className='ant-typography'>{text}</span>
       )}
     </Wrapper>
   );

@@ -27,7 +27,7 @@ export const FormCheckbox: React.FC<FormCheckboxProps> = (props) => {
 
   return (
     <Wrapper styled={styled}>
-      <List bordered itemLayout="vertical" size={listSize}>
+      <List bordered itemLayout='vertical' size={listSize}>
         <Checkbox.Group {...rest}>
           {optionsConfig?.options?.map((option: OptionType) => (
             <List.Item key={uniqueId()}>

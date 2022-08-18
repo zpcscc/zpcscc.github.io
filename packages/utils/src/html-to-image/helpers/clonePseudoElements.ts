@@ -1,64 +1,64 @@
-import { uuid, toArray } from '../util'
+import { uuid, toArray } from '../util';
 
-type Pseudo = ':before' | ':after'
+type Pseudo = ':before' | ':after';
 
 function formatCSSText(style: CSSStyleDeclaration) {
-  const content = style.getPropertyValue('content')
-  return `${style.cssText} content: '${content.replace(/'|"/g, '')}';`
+  const content = style.getPropertyValue('content');
+  return `${style.cssText} content: '${content.replace(/'|"/g, '')}';`;
 }
 
 function formatCSSProperties(style: CSSStyleDeclaration) {
   return toArray<string>(style)
     .map((name) => {
-      const value = style.getPropertyValue(name)
-      const priority = style.getPropertyPriority(name)
+      const value = style.getPropertyValue(name);
+      const priority = style.getPropertyPriority(name);
 
-      return `${name}: ${value}${priority ? ' !important' : ''};`
+      return `${name}: ${value}${priority ? ' !important' : ''};`;
     })
-    .join(' ')
+    .join(' ');
 }
 
 function getPseudoElementStyle(
   className: string,
   pseudo: Pseudo,
-  style: CSSStyleDeclaration,
+  style: CSSStyleDeclaration
 ): Text {
-  const selector = `.${className}:${pseudo}`
+  const selector = `.${className}:${pseudo}`;
   const cssText = style.cssText
     ? formatCSSText(style)
-    : formatCSSProperties(style)
+    : formatCSSProperties(style);
 
-  return document.createTextNode(`${selector}{${cssText}}`)
+  return document.createTextNode(`${selector}{${cssText}}`);
 }
 
 function clonePseudoElement<T extends HTMLElement>(
   nativeNode: T,
   clonedNode: T,
-  pseudo: Pseudo,
+  pseudo: Pseudo
 ) {
-  const style = window.getComputedStyle(nativeNode, pseudo)
-  const content = style.getPropertyValue('content')
+  const style = window.getComputedStyle(nativeNode, pseudo);
+  const content = style.getPropertyValue('content');
   if (content === '' || content === 'none') {
-    return
+    return;
   }
 
-  const className = uuid()
+  const className = uuid();
 
   try {
-    clonedNode.className = `${clonedNode.className} ${className}`
+    clonedNode.className = `${clonedNode.className} ${className}`;
   } catch (err) {
-    return
+    return;
   }
 
-  const styleElement = document.createElement('style')
-  styleElement.appendChild(getPseudoElementStyle(className, pseudo, style))
-  clonedNode.appendChild(styleElement)
+  const styleElement = document.createElement('style');
+  styleElement.appendChild(getPseudoElementStyle(className, pseudo, style));
+  clonedNode.appendChild(styleElement);
 }
 
 export function clonePseudoElements<T extends HTMLElement>(
   nativeNode: T,
-  clonedNode: T,
+  clonedNode: T
 ) {
-  clonePseudoElement(nativeNode, clonedNode, ':before')
-  clonePseudoElement(nativeNode, clonedNode, ':after')
+  clonePseudoElement(nativeNode, clonedNode, ':before');
+  clonePseudoElement(nativeNode, clonedNode, ':after');
 }

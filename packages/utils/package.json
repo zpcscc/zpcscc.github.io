@@ -18,9 +18,8 @@
     "react"
   ],
   "scripts": {
-    "clean": "../../scripts/clean_package.sh",
-    "dev": "tsc -w & rollup -c rollup.config.js -w",
-    "build": "yarn run clean && tsc && rollup -c rollup.config.js"
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js"
   },
   "peerDependencies": {
     "axios": ">=0.27.2",
@@ -31,11 +30,13 @@
     "joi": "^17.6.0"
   },
   "devDependencies": {
+    "@dxsixpc/configs": "^0.0.5-alpha.0",
     "@types/crypto-js": "^4.1.1",
     "@types/lodash": "^4.14.182"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "files": [
     "dist"

@@ -1,4 +1,4 @@
+import createRollupConfig from '../configs/src/rollup-config/index.js';
 import pakg from './package.json';
-import { createConfig } from '../../scripts/create.rollup.config';
 
-export default createConfig(pakg);
+export default createRollupConfig({ pakg });

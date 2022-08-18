@@ -7,11 +7,11 @@ import {
   PointerSensor,
   TouchSensor,
   useSensor,
-  useSensors,
+  useSensors
 } from '@dnd-kit/core';
 import {
   SortableContext,
-  verticalListSortingStrategy,
+  verticalListSortingStrategy
 } from '@dnd-kit/sortable';
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import type { OptionsConfigType, OptionType } from '../../type';
@@ -35,7 +35,7 @@ const OptionsContainer: React.FC<OptionsContainerProps> = (props) => {
     if (active.id !== over?.id && over?.id !== undefined) {
       onOptionsConfigChange({
         ...optionsConfig,
-        options: sortOptions(options, active.id, over?.id),
+        options: sortOptions(options, active.id, over?.id)
       });
     }
   };
@@ -45,7 +45,7 @@ const OptionsContainer: React.FC<OptionsContainerProps> = (props) => {
     const newOptions = options.filter((item) => item.id !== id);
     onOptionsConfigChange({
       ...optionsConfig,
-      options: newOptions,
+      options: newOptions
     });
   };
 
@@ -56,7 +56,7 @@ const OptionsContainer: React.FC<OptionsContainerProps> = (props) => {
     if (newOptionIndex !== -1) newOptions[newOptionIndex] = option;
     onOptionsConfigChange({
       ...optionsConfig,
-      options: newOptions,
+      options: newOptions
     });
   };
 
@@ -71,11 +71,11 @@ const OptionsContainer: React.FC<OptionsContainerProps> = (props) => {
             : false
           : option.id === id
           ? !option.checked
-          : option.checked,
+          : option.checked
     }));
     onOptionsConfigChange({
       ...optionsConfig,
-      options: newOptions,
+      options: newOptions
     });
   };
 

@@ -1,5 +1,9 @@
-build
 dist
 node_modules
-.snapshots
 *.min.js
+*.js
+*.min.js
+*.build.js
+*.built.js
+*.config.js
+*.config.ts

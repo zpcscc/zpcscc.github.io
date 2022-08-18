@@ -5,7 +5,7 @@ import {
   SettingFilled,
   CloseOutlined,
   FullscreenOutlined,
-  MinusOutlined,
+  MinusOutlined
 } from '@ant-design/icons';
 import type { PanelType } from '../../../type';
 import { Wrapper } from './Styled';
@@ -42,13 +42,10 @@ const PanelHeader: React.FC<PanelHeaderProps> = (props) => {
       <Header>
         <div>
           <SettingFilled style={{ margin: '0px 10px' }} />
-          {panelTitle
-            ? panelTitle
-            : panelType === 'EditorPanel'
-            ? '编辑面板'
-            : '配置面板'}
+          {panelTitle ??
+            (panelType === 'EditorPanel' ? '编辑面板' : '配置面板')}
         </div>
-        <div className="iconWidget">
+        <div className='iconWidget'>
           {scale ? (
             <MinusOutlined onClick={onShowSmall} />
           ) : (

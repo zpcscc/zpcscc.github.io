@@ -23,7 +23,7 @@ const TitleWidget: React.FC<TitleWidgetProps> = (props) => {
       {useAntd ? (
         <Typography.Title {...rest}>{title}</Typography.Title>
       ) : (
-        <h5 className="ant-typography">{title}</h5>
+        <h5 className='ant-typography'>{title}</h5>
       )}
     </Wrapper>
   );

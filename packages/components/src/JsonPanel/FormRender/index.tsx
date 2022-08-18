@@ -6,7 +6,7 @@ import type {
   ComponentMapType,
   ComponentType,
   ComponentStructureType,
-  RulesMap,
+  RulesMap
 } from '../type';
 import { separateToIntegrate } from './utils';
 import { Wrapper } from './Styled';
@@ -48,7 +48,7 @@ export const FormRender: React.FC<FormRenderProps> = (props) => {
     componentMap = {},
     formProps,
     rulesMap = defaultRulesMap,
-    onValuesChange,
+    onValuesChange
   } = props;
   const [form] = Form.useForm();
   const [formValues, setFormValues] = useState<AnyObject>(initialValues);
@@ -75,7 +75,7 @@ export const FormRender: React.FC<FormRenderProps> = (props) => {
     <Wrapper>
       <Form
         form={form}
-        layout="vertical"
+        layout='vertical'
         onValuesChange={onFormValuesChange}
         {...formProps}
       >
@@ -85,7 +85,7 @@ export const FormRender: React.FC<FormRenderProps> = (props) => {
           componentMap,
           initialValues,
           formValues: formValueMemo,
-          rulesMap,
+          rulesMap
         })}
       </Form>
     </Wrapper>

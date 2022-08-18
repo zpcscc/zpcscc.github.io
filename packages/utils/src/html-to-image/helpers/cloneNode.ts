@@ -81,17 +81,17 @@ function cloneCSSStyle<T extends HTMLElement>(nativeNode: T, clonedNode: T) {
 
   if (source.cssText) {
     target.cssText = source.cssText;
-    target.transformOrigin = source.transformOrigin
+    target.transformOrigin = source.transformOrigin;
   } else {
     toArray<string>(source).forEach((name) => {
-      let value = source.getPropertyValue(name)
+      let value = source.getPropertyValue(name);
 
       if (name === 'font-size' && value.endsWith('px')) {
         const reducedFont =
-          Math.floor(parseFloat(value.substring(0, value.length - 2))) - 0.1
-        value = `${reducedFont}px`
+          Math.floor(parseFloat(value.substring(0, value.length - 2))) - 0.1;
+        value = `${reducedFont}px`;
       }
-      target.setProperty(name, value, source.getPropertyPriority(name))
+      target.setProperty(name, value, source.getPropertyPriority(name));
     });
   }
 }
@@ -108,13 +108,13 @@ function cloneInputValue<T extends HTMLElement>(nativeNode: T, clonedNode: T) {
 
 function cloneSelectValue<T extends HTMLElement>(nativeNode: T, clonedNode: T) {
   if (nativeNode instanceof HTMLSelectElement) {
-    const clonedSelect = clonedNode as any as HTMLSelectElement
+    const clonedSelect = clonedNode as any as HTMLSelectElement;
     const selectedOption = Array.from(clonedSelect.children).find(
-      (child) => nativeNode.value === child.getAttribute('value'),
-    )
+      (child) => nativeNode.value === child.getAttribute('value')
+    );
 
     if (selectedOption) {
-      selectedOption.setAttribute('selected', '')
+      selectedOption.setAttribute('selected', '');
     }
   }
 }

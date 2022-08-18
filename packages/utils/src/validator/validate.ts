@@ -1,8 +1,8 @@
+import type { Types } from 'joi';
+import { isBoolean } from 'lodash';
 import { getErrorMessage } from './helpers';
 import { validateRule } from './rules';
 import type { OptionsType, ResultType } from './type';
-import type { Types } from 'joi';
-import { isBoolean } from 'lodash';
 
 /**
  * @name 单个数据的格式校验
@@ -19,7 +19,7 @@ export const validate = (data: any, dataType: Types, options: OptionsType) => {
     cid,
     label,
     value: data,
-    error: [],
+    error: []
   };
 
   // 每个规则单独校验
@@ -34,7 +34,7 @@ export const validate = (data: any, dataType: Types, options: OptionsType) => {
       result.error?.push({
         ruleName,
         joiErrorType: type,
-        msg: getErrorMessage(type, message, ruleConfig),
+        msg: getErrorMessage(type, message, ruleConfig)
       });
     }
   });

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Layout } from 'antd';
 import type { FormInstance } from 'antd';
+import { Global, css } from '@emotion/react';
 import EditorPanel from './EditorPanel';
 import SettingPanel from './SettingPanel';
 import type {
@@ -12,11 +13,9 @@ import type {
 } from '../type';
 import PanelHeader from './components/PanelHeader';
 import PanelFooter from './components/PanelFooter';
-import { Wrapper } from './Styled';
+import { Wrapper, GlobalStyle } from './Styled';
 import { validatePanelValue } from '../utils';
 import { stringToData, dataToString } from '../../utils';
-import { Global, css } from '@emotion/react';
-import { GlobalStyle } from './Styled';
 import { styledToString } from '../FormRender/utils';
 
 export { EditorPanel, SettingPanel };

@@ -13,7 +13,7 @@ const mimes: { [key: string]: string } = {
   jpeg: JPEG,
   gif: 'image/gif',
   tiff: 'image/tiff',
-  svg: 'image/svg+xml',
+  svg: 'image/svg+xml'
 };
 
 export function getExtension(url: string): string {
@@ -70,7 +70,7 @@ export function parseDataUrlContent(dataURL: string) {
   return dataURL.split(/,/)[1];
 }
 
-export const uuid = (()=> {
+export const uuid = (() => {
   // generate uuid for className of pseudo elements.
   // We should not use GUIDs, otherwise pseudo elements sometimes cannot be captured.
   let counter = 0;
@@ -89,8 +89,8 @@ export const uuid = (()=> {
 export function delay<T>(ms: number) {
   return (args: T) =>
     new Promise<T>((resolve) => {
-      setTimeout(() => resolve(args), ms)
-    })
+      setTimeout(() => resolve(args), ms);
+    });
 }
 
 export function toArray<T>(arrayLike: any): T[] {
@@ -152,9 +152,9 @@ export function canvasToBlob(
       canvas.toBlob(
         resolve,
         options.type ? options.type : 'image/png',
-        options.quality ? options.quality : 1,
-      )
-    })
+        options.quality ? options.quality : 1
+      );
+    });
   }
 
   return new Promise((resolve) => {
@@ -175,7 +175,7 @@ export function canvasToBlob(
 
     resolve(
       new Blob([binaryArray], {
-        type: options.type ? options.type : 'image/png',
+        type: options.type ? options.type : 'image/png'
       })
     );
   });

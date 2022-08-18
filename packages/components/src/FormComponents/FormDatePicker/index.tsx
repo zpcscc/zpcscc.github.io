@@ -7,6 +7,7 @@ import moment from 'moment';
 import type { Moment } from 'moment';
 import 'moment/locale/zh-cn';
 import { Wrapper } from './Styled';
+
 moment.locale('zh-cn');
 
 export type FormDatePickerProps = Omit<DatePickerProps, 'picker'> & {
@@ -36,7 +37,7 @@ const FormDatePicker: React.FC<FormDatePickerProps> = (props) => {
         picker={picker}
         value={value ? moment(value, 'YYYY-MM-DD HH:mm') : undefined}
         showTime={{ format: 'HH:mm' }}
-        format="YYYY-MM-DD HH:mm"
+        format='YYYY-MM-DD HH:mm'
         onChange={onValueChange}
         {...rest}
       />

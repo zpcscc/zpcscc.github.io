@@ -5,15 +5,14 @@ import type { ButtonProps, FormInstance } from 'antd';
 import type { TableProps, ColumnsType } from 'antd/lib/table';
 import type { ModalProps } from 'antd/lib/modal';
 import { isEmpty, uniqueId } from 'lodash';
-import { Wrapper } from './Styled';
+import { Global, css } from '@emotion/react';
+import { Wrapper, GlobalStyle } from './Styled';
 import { FormRender } from '../../JsonPanel/FormRender';
 import type { ComponentType, FieldErrorType } from '../../JsonPanel/type';
 import { validatePanelValue } from '../../JsonPanel/utils';
 import type { RecordType } from './type';
 import { addRules } from './utils';
 import ActionRender from './ActionRender';
-import { Global, css } from '@emotion/react';
-import { GlobalStyle } from './Styled';
 
 export interface FormTableProps {
   // 表格每行的数据列表
@@ -71,7 +70,7 @@ const FormTable: React.FC<FormTableProps> = (props) => {
     TableFCProps = {},
     ModalFCProps = {},
     styled,
-    onChange,
+    onChange
   } = props;
   // 控制是否显示表格编辑面板
   const [visibleModal, setVisibleModal] = useState(false);
@@ -151,9 +150,9 @@ const FormTable: React.FC<FormTableProps> = (props) => {
       !validatePanelValue(formFieldsError, {
         tabs: [
           {
-            componentList: componentList || [],
-          },
-        ],
+            componentList: componentList || []
+          }
+        ]
       })
     ) {
       return;
@@ -201,8 +200,8 @@ const FormTable: React.FC<FormTableProps> = (props) => {
       />
       <Wrapper styled={styled}>
         <Button
-          className="AddButton"
-          type="primary"
+          className='AddButton'
+          type='primary'
           onClick={() => onOpenModal('add')}
           {...ButtonFCProps}
         >
@@ -215,10 +214,10 @@ const FormTable: React.FC<FormTableProps> = (props) => {
           {...TableFCProps}
         />
         <Modal
-          className="TableModal"
-          title="表格配置"
-          okText="确定"
-          cancelText="取消"
+          className='TableModal'
+          title='表格配置'
+          okText='确定'
+          cancelText='取消'
           zIndex={1040}
           visible={visibleModal}
           onOk={onModalSubmit}

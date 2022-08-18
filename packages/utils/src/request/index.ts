@@ -6,7 +6,7 @@ import { getErrorMsg } from './util';
 export const request = axios.create();
 
 axios.defaults.headers.post = {
-  'Content-type': 'application/x-www-form-urlencoded',
+  'Content-type': 'application/x-www-form-urlencoded'
 };
 
 // application/x-www-form-urlencoded

@@ -1,26 +1,3 @@
 {
-  // "extends": "@dxsixpc/configs/tsconfig.js",
-  "compilerOptions": {
-    "strict": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "target": "es5",
-    "allowJs": true,
-    "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "es5", "es6", "esnext"],
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    // 解析json模块
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "importHelpers": true,
-    "outDir": "dist",
-    "declaration": true,
-    "forceConsistentCasingInFileNames": true,
-    "suppressImplicitAnyIndexErrors": true,
-  }
+  "extends": "@dxsixpc/configs/tsconfig"
 }

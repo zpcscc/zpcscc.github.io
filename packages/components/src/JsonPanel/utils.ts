@@ -37,19 +37,15 @@ export const validatePanelValue = (
     if (value?.errors?.[0]) errorField[key] = value;
   });
 
-  // 判断是否有校验未通过字段
-  if (isEmpty(errorField)) {
-    // 没有，则校验通过
-    return true;
-  } else {
-    loopTabs(stringToData(panelConfig)?.tabs);
-    // 有，则遍历报错数据，并提示报错信息
-    Object.entries(errorField).forEach(([key, value]) => {
-      const currComponent: ComponentType =
-        components.find((component) => component.name === key) ||
-        ({} as ComponentType);
-      message.error(`${currComponent.label || key}:${value?.errors?.[0]}`);
-    });
-    return false;
-  }
+  // 判断是否有校验未通过字段,没有，则校验通过
+  if (isEmpty(errorField)) return true;
+  loopTabs(stringToData(panelConfig)?.tabs);
+  // 有，则遍历报错数据，并提示报错信息
+  Object.entries(errorField).forEach(([key, value]) => {
+    const currComponent: ComponentType =
+      components.find((component) => component.name === key) ||
+      ({} as ComponentType);
+    message.error(`${currComponent.label || key}:${value?.errors?.[0]}`);
+  });
+  return false;
 };

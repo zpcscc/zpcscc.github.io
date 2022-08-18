@@ -6,7 +6,7 @@ import { FormRender } from '../../FormRender';
 import type {
   PanelBaseProps,
   PanelTabsType,
-  PanelConfigType,
+  PanelConfigType
 } from '../../type';
 import { Wrapper } from './Styled';
 import { styledToString } from '../../FormRender/utils';
@@ -40,7 +40,7 @@ const SettingPanel: React.FC<SettingPanelProps> = (props) => {
     panelData,
     panelConfig,
     componentMap,
-    onSettingChange,
+    onSettingChange
   } = props;
   const { TabPane } = Tabs;
 
@@ -62,10 +62,10 @@ const SettingPanel: React.FC<SettingPanelProps> = (props) => {
 
   return (
     <Wrapper
-      className="SettingPanel"
+      className='SettingPanel'
       styled={styledToString(settingPanelStyled)}
     >
-      <Tabs tabPosition="left" {...tabsProps}>
+      <Tabs tabPosition='left' {...tabsProps}>
         {TabPaneRender((panelConfig as PanelConfigType)?.tabs)}
       </Tabs>
     </Wrapper>

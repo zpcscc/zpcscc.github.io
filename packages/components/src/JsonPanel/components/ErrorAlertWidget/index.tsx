@@ -17,7 +17,7 @@ const ErrorAlertWidget: React.FC<ErrorAlertWidgetProps> = (props) => {
   return (
     <Wrapper>
       <Alert
-        type="error"
+        type='error'
         showIcon
         message={`${label}组件渲染错误,请检查json里的组件type${type}是否正确`}
       />

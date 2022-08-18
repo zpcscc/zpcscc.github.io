@@ -6,14 +6,14 @@ import { toString, isString, isEmpty } from 'lodash';
  * @param stringifyArgs 其他参数，用于传入stringify
  * @returns
  */
-export const dataToString = (data: any, ...stringifyArgs: any): string => {
+export const dataToString = (data: any, ...stringifyArgs: any[]): string => {
   if (isString(data)) return data;
   // 默认转换设置缩进为2个空格
-  if (isEmpty(stringifyArgs)) stringifyArgs = [null, 2];
+  const args = isEmpty(stringifyArgs) ? [null, 2] : stringifyArgs;
   let str = '';
   try {
     str = toString(data);
-    if (str === '[object Object]') str = JSON.stringify(data, ...stringifyArgs);
+    if (str === '[object Object]') str = JSON.stringify(data, ...args);
   } catch {
     return data;
   }

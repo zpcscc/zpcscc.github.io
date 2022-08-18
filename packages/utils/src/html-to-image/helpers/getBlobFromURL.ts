@@ -14,7 +14,7 @@ function getCacheKey(url: string, includeQueryParams: boolean | undefined) {
   let key = url.replace(/\?.*/, '');
 
   if (includeQueryParams) {
-    key = url
+    key = url;
   }
 
   // font resource
@@ -64,7 +64,7 @@ export function getBlobFromURL(
 
     return {
       blob: placeholder,
-      contentType: '',
+      contentType: ''
     };
   };
 
@@ -74,7 +74,7 @@ export function getBlobFromURL(
       // eslint-disable-next-line
       res.blob().then((blob) => ({
         blob,
-        contentType: res.headers.get('Content-Type') || '',
+        contentType: res.headers.get('Content-Type') || ''
       }))
     )
     .then(
@@ -84,7 +84,7 @@ export function getBlobFromURL(
           reader.onloadend = () =>
             resolve({
               contentType,
-              blob: reader.result as string,
+              blob: reader.result as string
             });
           reader.onerror = reject;
           reader.readAsDataURL(blob);
@@ -92,7 +92,7 @@ export function getBlobFromURL(
     )
     .then(({ blob, contentType }) => ({
       contentType,
-      blob: parseDataUrlContent(blob),
+      blob: parseDataUrlContent(blob)
     }))
     // on failed
     .catch(failed);

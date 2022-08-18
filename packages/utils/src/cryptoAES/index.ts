@@ -32,7 +32,7 @@ export const encrypt = (data: any, key: string, AESconfig: AESConfigType) => {
 
   // 处理key数据
   // * 截取16位key
-  const Key16 = ('' + key).slice(0, 16).padEnd(16);
+  const Key16 = String(key).slice(0, 16).padEnd(16);
   const cryptoKey = CryptoJS.enc.Utf8.parse(Key16);
 
   // 处理AES相关配置
@@ -69,7 +69,7 @@ export const decrypt = (
   const cryptoText = useBase64 ? text : CryptoJS.enc.Base64.stringify(CryptoDS);
 
   // * 截取16位key
-  const Key16 = ('' + key).slice(0, 16).padEnd(16);
+  const Key16 = String(key).slice(0, 16).padEnd(16);
   const cryptoKey = CryptoJS.enc.Utf8.parse(Key16);
 
   // 处理AES相关配置

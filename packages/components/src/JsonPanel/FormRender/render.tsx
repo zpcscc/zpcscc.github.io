@@ -38,7 +38,7 @@ export const layoutRender = (props: RenderItemPropsType) => {
         count,
         componentMap,
         initialValues,
-        formValues,
+        formValues
       })}
     </LayoutWidget>
   );
@@ -52,7 +52,7 @@ export const componentRender = (props: RenderItemPropsType) => {
     componentMap,
     initialValues,
     formValues,
-    rulesMap,
+    rulesMap
   } = props;
 
   const JsonPanelComponent = getComponent(component.type, componentMap);
@@ -84,7 +84,7 @@ export const componentRender = (props: RenderItemPropsType) => {
           componentMap,
           initialValues,
           formValues,
-          rulesMap,
+          rulesMap
         })}
     </Fragment>
   );
@@ -97,6 +97,7 @@ export const loopRender = (props: RenderPropsType): React.ReactNode => {
     if (component?.hidden) return;
     if (Object.keys(LayoutWidgets).includes(component?.type)) {
       return layoutRender({ component, ...props });
-    } else return componentRender({ component, ...props });
+    }
+    return componentRender({ component, ...props });
   });
 };

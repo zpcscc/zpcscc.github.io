@@ -2,7 +2,7 @@ import { isObject } from 'lodash';
 import type {
   StyledType,
   ComponentType,
-  ComponentStructureType,
+  ComponentStructureType
 } from '../type';
 
 // 循环遍历styled对象，转为string
@@ -36,7 +36,7 @@ export const formatProps = (props: AnyObject) => {
   const newProps: AnyObject = {};
   // 需要传入组件的字段。这里的所有字段，都会被视为组件的props
   const includeField = ['picture'];
-  Object.entries(props).map(([key, value]) => {
+  Object.entries(props).forEach(([key, value]) => {
     if (includeField.includes(key)) {
       newProps[key] = value;
     }
@@ -58,18 +58,17 @@ export const integrateToSeparate = (componentConfig: ComponentType[]) => {
         componentList.push({ ...component, children: undefined });
         return {
           name: component.name,
-          children: loopComponents(component.children),
+          children: loopComponents(component.children)
         };
-      } else {
-        componentList.push({ ...component });
-        return { name: component.name };
       }
+      componentList.push({ ...component });
+      return { name: component.name };
     });
   };
 
   return {
     componentStructure: loopComponents(componentConfig),
-    componentList,
+    componentList
   };
 };
 
@@ -89,7 +88,7 @@ export const separateToIntegrate = (
       component.children
         ? {
             ...componentList.find((item) => item.name === component.name),
-            children: loopComponents(component.children),
+            children: loopComponents(component.children)
           }
         : componentList.find((item) => item.name === component.name)
     ) as ComponentType[];

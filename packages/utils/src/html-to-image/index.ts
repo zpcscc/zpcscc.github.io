@@ -1,13 +1,12 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-return-await */
-/* sonarjs-disable*/
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import type { OptionsType } from './type';
 import {
   cloneNode,
   embedImages,
   applyStyleWithOptions,
   embedWebFonts,
-  getWebFontCSS,
+  getWebFontCSS
 } from './helpers';
 import {
   getNodeWidth,
@@ -15,7 +14,7 @@ import {
   getPixelRatio,
   createImage,
   canvasToBlob,
-  nodeToDataURL,
+  nodeToDataURL
 } from './util';
 
 function getImageSize(node: HTMLElement, options: OptionsType = {}) {

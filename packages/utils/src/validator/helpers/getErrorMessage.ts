@@ -22,9 +22,9 @@ export const getErrorMessage = (
   ruleConfig?: RuleConfigType
 ): string => {
   const { ruleName, ruleValue } = ruleConfig || {};
+  const errorType = type.includes('required') ? 'any.required' : type;
   // 所有'必填校验'的type，都转换为any.required
-  if (type.includes('required')) type = 'any.required';
-  switch (type) {
+  switch (errorType) {
     case 'any.required':
       return '不能为空';
     case 'array.min':

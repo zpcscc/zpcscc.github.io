@@ -11,10 +11,9 @@ export const addRules = (componentList?: ComponentType[]) => {
     validator: (_rule: RuleObject, value: string) => {
       if (value.length > 0 && !value.trim()) {
         return Promise.reject(new Error('不能为空格'));
-      } else {
-        return Promise.resolve(new Error());
       }
-    },
+      return Promise.resolve(new Error());
+    }
   };
 
   return (

@@ -18,13 +18,11 @@
   },
   "keywords": [
     "react",
-    "storybook",
     "typescript"
   ],
   "scripts": {
-    "clean": "../../scripts/clean_package.sh",
-    "dev": "tsc -w & rollup -c rollup.config.js -w",
-    "build": "yarn run clean && tsc && rollup -c rollup.config.js"
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js"
   },
   "peerDependencies": {
     "antd": ">=4.22.4",
@@ -41,11 +39,17 @@
     "@emotion/styled": "11.10.0",
     "@emotion/utils": "1.2.0",
     "@monaco-editor/react": "^4.3.1",
-    "@types/lodash": "^4.14.182",
-    "monaco-editor": "^0.34.0"
+    "monaco-editor": "^0.34.0",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "@dxsixpc/configs": "^0.0.5-alpha.0",
+    "@types/crypto-js": "^4.1.1",
+    "@types/lodash": "^4.14.182"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "files": [
     "dist"

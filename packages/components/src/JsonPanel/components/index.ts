@@ -11,7 +11,7 @@ export type { ErrorAlertWidgetProps } from './ErrorAlertWidget';
 export const componentsMap = {
   ...FormComponents,
   ...FormWidgets,
-  ...LayoutWidgets,
+  ...LayoutWidgets
 };
 
 /**

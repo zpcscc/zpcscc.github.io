@@ -16,8 +16,8 @@ const defaultOptionsConfig: OptionsConfigType<'Radio'> = {
     { label: '2', value: '2', checked: false, id: '1' },
     { label: '3', value: '3', checked: false, id: '2' },
     { label: '4', value: '4', checked: false, id: '3' },
-    { label: '5', value: '5', checked: false, id: '4' },
-  ],
+    { label: '5', value: '5', checked: false, id: '4' }
+  ]
 };
 
 export interface FormOptionsProps {
@@ -63,11 +63,11 @@ const FormOptions: React.FC<FormOptionsProps> = (props) => {
       id: uniqueId('op'),
       label: `选项${optionsConfig.options.length + 1}`,
       value: `选项${optionsConfig.options.length + 1}`,
-      checked: false,
+      checked: false
     });
     onOptionsConfigChange({
       ...optionsConfig,
-      options: newOptions,
+      options: newOptions
     });
   };
 
@@ -77,7 +77,7 @@ const FormOptions: React.FC<FormOptionsProps> = (props) => {
         optionsConfig={optionsConfig}
         onOptionsConfigChange={onOptionsConfigChange}
       />
-      <Button type="text" style={{ color: '#00bcd4' }} onClick={addOption}>
+      <Button type='text' style={{ color: '#00bcd4' }} onClick={addOption}>
         <PlusOutlined /> 添加选项
       </Button>
     </Wrapper>
