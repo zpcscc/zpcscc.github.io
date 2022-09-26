@@ -41,7 +41,7 @@ const themeConfig = {
         position: 'right',
         className: 'header-github-link',
         'aria-label': 'GitHub repository',
-      },
+      }
     ]
   },
   footer: {
@@ -76,10 +76,10 @@ const themeConfig = {
       {
         title: 'More',
         items: [
-          {
-            label: 'Blog',
-            to: '/blog'
-          },
+          // {
+          //   label: 'Blog',
+          //   to: '/blog'
+          // },
           {
             label: 'GitHub',
             href: 'https://github.com/facebook/docusaurus'
@@ -87,7 +87,7 @@ const themeConfig = {
         ]
       }
     ],
-    copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`
+    copyright: `Copyright © ${new Date().getFullYear()} 皖ICP备19022295号-1`
   },
   prism: {
     theme: lightCodeTheme,

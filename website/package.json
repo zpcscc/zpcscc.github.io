@@ -19,10 +19,10 @@
     "react-dom": ">=16"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.1",
-    "@docusaurus/module-type-aliases": "^2.0.1",
-    "@docusaurus/preset-classic": "^2.0.1",
-    "@docusaurus/theme-classic": "^2.0.1",
+    "@docusaurus/core": "^2.1.0",
+    "@docusaurus/module-type-aliases": "^2.1.0",
+    "@docusaurus/preset-classic": "^2.1.0",
+    "@docusaurus/theme-classic": "^2.1.0",
     "@dxsixpc/components": "^0.0.5",
     "@dxsixpc/utils": "^0.0.5",
     "ahooks": "^3.7.0",
