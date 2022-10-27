@@ -1,81 +1,41 @@
-# dxsixpc-monorepo
+# Website
 
-## 一、Yarn workspace
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-### 创建一个新的package
-
-```sh
-yarn run create <package>
-# example
-yarn run create package1
-```
-
-### 链接多个packages
-
-```sh
-yarn packages/<package> run lint
-```
-
-### 打包某个packages
-
-```sh
+### Installation
 
 ```
-
-### 为某个package安装依赖
-
-```sh
-yarn workspace awesome-package add react react-dom --dev
+$ yarn
 ```
 
-### 为某个package删除依赖
-
-```sh
-yarn workspace web-project remove react
-```
-
-
-
-## 二、Lerna
-
-### 添加lerna
-
-```sh
-npx lerna@latest init
-```
-
-### 清除所有的node_modules
-
-```sh
-lerna clean
-```
-
-### 显示修改内容 类似git diff
-
-```sh
-lerna diff
-```
-
-### 列出所有的子package
-
-```sh
-lerna ls -l
-```
-
-### 列出修改过的子package
-
-```sh
-lerna changed
-```
-
-### build 所有子package
-
-​	子package分别执行 `build`
+### Local Development
 
 ```
-lerna run build
+$ yarn start
 ```
 
-# License
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-The scripts and documentation in this project are released under the [MIT License](LICENSE)
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

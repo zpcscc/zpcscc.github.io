@@ -1,77 +1,50 @@
 {
-  "name": "dxsixpc",
-  "version": "1.0.0",
+  "name": "website",
+  "version": "0.0.5",
   "private": true,
-  "author": {
-    "name": "dxsixpc",
-    "email": "dxsixpc@gmail.com"
-  },
-  "workspaces": [
-    "packages/*",
-    "website"
-  ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "clean": "lerna run clean",
-    "clean:modules": "lerna clean -y && clean",
-    "dev": "lerna run --parallel --stream dev",
-    "build": "lerna run build --no-private",
-    "dev:website": "yarn workspace website dev",
-    "build:website": "yarn workspace website build",
-    "serve:website": "yarn workspace website serve",
-    "deploy:website": "yarn workspace website deploy",
-    "publish": "yarn run build && lerna publish",
-    "eslint": "eslint --cache --ext .ts,.tsx"
+    "docusaurus": "docusaurus",
+    "dev": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.1.0",
+    "@docusaurus/preset-classic": "^2.1.0",
+    "@docusaurus/theme-classic": "^2.1.0",
+    "@dxsixpc/components": "^0.0.5",
+    "@dxsixpc/utils": "^0.0.5",
+    "@mdx-js/react": "^1.6.22",
+    "clsx": "^1.2.1",
+    "prism-react-renderer": "^1.3.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
-    "@babel/helper-compilation-targets": "^7.18.9",
-    "@babel/plugin-syntax-flow": "^7.18.6",
-    "@babel/plugin-transform-react-jsx": "^7.18.6",
-    "@babel/plugin-transform-runtime": "^7.18.10",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-eslint": "^8.0.2",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-replace": "^4.0.0",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0",
-    "antd": "^4.22.4",
-    "axios": "^0.27.2",
-    "babel-plugin-polyfill-corejs2": "^0.3.2",
-    "eslint": "^8.21.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-flowtype": "^8.0.3",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^26.6.0",
-    "eslint-plugin-jsx-a11y": "^6.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-sonarjs": "^0.15.0",
-    "eslint-plugin-unicorn": "^43.0.1",
-    "lerna": "^5.4.0",
-    "lodash": "^4.17.21",
-    "postcss": "^8.4.16",
-    "prettier": "^2.7.1",
-    "react": "17",
-    "react-dom": "17",
-    "rollup": "2.77.2",
-    "rollup-plugin-auto-external": "^2.0.0",
-    "rollup-plugin-clear": "^2.0.7",
-    "rollup-plugin-filesize": "^9.1.2",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-progress": "^1.1.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.32.1",
-    "rollup-plugin-visualizer": "^5.7.1",
-    "tslib": "^2.4.0",
-    "typescript": "^4.7.4"
+    "@docusaurus/module-type-aliases": "^2.1.0",
+    "@tsconfig/docusaurus": "^1.0.5",
+    "docusaurus-plugin-sass": "^0.2.2",
+    "react-loadable": "^5.5.0",
+    "sass": "^1.54.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.14"
   }
 }

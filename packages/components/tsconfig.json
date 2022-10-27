@@ -1,7 +1,0 @@
-{
-  "extends": "@dxsixpc/configs/tsconfig",
-  "include": ["./src", "typings.d.ts"],
-  "compilerOptions": {
-    "baseUrl": "."
-  }
-}
