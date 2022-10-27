@@ -1,6 +1,8 @@
+.docusaurus
+.git
 build
-dist
-dist/index.esm.js
+node_modules
+
 
 LICENSE
 CNAME
@@ -18,7 +20,7 @@ CNAME
 *.png
 *.lock
 *.esm.js
-lerna.json
+package-lock.json
 package.json
 yarn-error.log
 
