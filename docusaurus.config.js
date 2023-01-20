@@ -1,16 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
 const { presets, themeConfig } = require('./config');
 
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
-  title: 'DXSIX的技术博客',
-  tagline: 'Dinosaurs are cool',
+  title: 'DXSIX',
+  tagline: '个人笔记',
   url: 'https://zpcscc.top/',
   baseUrl: '/',
+  // 若有错误的链接，打包时进行报错
   onBrokenLinks: 'throw',
+  // 若有错误的md文件链接时，打包时提示
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
@@ -21,13 +22,17 @@ module.exports = {
   projectName: 'dxsixpc.github.io',
   // 部署的分支
   deploymentBranch: 'gh-pages',
+
+  // url路径尾随斜杠
   trailingSlash: false,
   i18n: {
     defaultLocale: 'zh-CN',
     locales: ['zh-CN']
   },
-  presets,
   // 插件，支持加载scss
   plugins: ['docusaurus-plugin-sass'],
+  // 预设的部分功能
+  presets,
+  // 主题配置
   themeConfig
 };

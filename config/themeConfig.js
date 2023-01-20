@@ -6,87 +6,84 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 const themeConfig = {
+  // 导航栏配置
   navbar: {
     title: 'DXSIX',
     logo: {
-      alt: 'My Site Logo',
+      alt: '网页Logo',
       src: 'img/logo.svg'
     },
     items: [
       {
         type: 'doc',
-        docId: 'intro',
+        docId: 'note/intro',
         position: 'left',
-        label: '博客'
+        label: '笔记'
       },
       {
         type: 'doc',
-        docId: 'doc-components/intro',
+        docId: 'components-doc/intro',
         position: 'left',
         label: '组件库'
       },
       {
         type: 'doc',
-        docId: 'doc-utils/intro',
+        docId: 'utils-doc/intro',
         position: 'left',
         label: '工具库'
+      },
+      {
+        type: 'doc',
+        docId: 'configs-doc/intro',
+        position: 'left',
+        label: '配置库'
       },
       {
         href: 'https://github.com/dxsixpc/dxsixpc.github.io/',
         label: 'GitHub',
         position: 'right'
       },
-      {
-        href: 'https://github.com/facebook/docusaurus',
-        position: 'right',
-        className: 'header-github-link',
-        'aria-label': 'GitHub repository'
-      }
     ]
   },
   footer: {
     style: 'dark',
-    links: [
-      {
-        title: 'Docs',
-        items: [
-          {
-            label: 'Tutorial',
-            to: '/docs/intro'
-          }
-        ]
-      },
-      {
-        title: 'Community',
-        items: [
-          {
-            label: 'Stack Overflow',
-            href: 'https://stackoverflow.com/questions/tagged/docusaurus'
-          },
-          {
-            label: 'Discord',
-            href: 'https://discordapp.com/invite/docusaurus'
-          },
-          {
-            label: 'Twitter',
-            href: 'https://twitter.com/docusaurus'
-          }
-        ]
-      },
-      {
-        title: 'More',
-        items: [
-          // {
-          //   label: 'Blog',
-          //   to: '/blog'
-          // },
-          {
-            label: 'GitHub',
-            href: 'https://github.com/facebook/docusaurus'
-          }
-        ]
-      }
-    ],
+    // links: [
+    //   {
+    //     title: '文档',
+    //     items: [
+    //       {
+    //         label: '简介',
+    //         to: '/docs/note/intro'
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     title: '相关资源',
+    //     items: [
+    //       {
+    //         label: '组件库',
+    //         href: 'https://github.com/dxsixpc/components'
+    //       },
+    //       {
+    //         label: '工具函数库',
+    //         href: 'https://github.com/dxsixpc/utils'
+    //       },
+    //       {
+    //         label: '项目配置库',
+    //         href: 'https://github.com/dxsixpc/configs'
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     title: '更多',
+    //     items: [
+    //       {
+    //         label: 'GitHub',
+    //         href: 'https://github.com/dxsixpc/dxsixpc.github.io/'
+    //       }
+    //     ]
+    //   }
+    // ],
     copyright: ` ${new Date().getFullYear()} 皖ICP备19022295号-1`
   },
   prism: {

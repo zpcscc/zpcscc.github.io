@@ -14,9 +14,9 @@ const HomepageHeader: React.FC = () => {
         <div className={styles.buttons}>
           <Link
             className='button button--secondary button--lg'
-            to='/docs/intro'
+            to='/docs/note/intro'
           >
-            Docusaurus Tutorial - 6min ⏱️
+            快速开始 ⏱️
           </Link>
         </div>
       </div>
