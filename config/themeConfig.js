@@ -16,7 +16,7 @@ const themeConfig = {
     items: [
       {
         type: 'doc',
-        docId: 'note/intro',
+        docId: 'note/javascript/数组',
         position: 'left',
         label: '笔记'
       },

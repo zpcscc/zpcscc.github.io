@@ -14,7 +14,7 @@ const HomepageHeader: React.FC = () => {
         <div className={styles.buttons}>
           <Link
             className='button button--secondary button--lg'
-            to='/docs/note/intro'
+            to='/docs/note/javascript/数组'
           >
             快速开始 ⏱️
           </Link>

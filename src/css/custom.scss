@@ -3,8 +3,6 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
-//  全局导入antd样式
-@import 'antd/dist/antd.css';
 
 /* You can override the default Infima variables here. */
 :root {
@@ -29,4 +27,12 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+
+
+// ** 临时修复sidebar侧边栏高度异常的问题。等待官方修复后，可删除此代码
+.main-wrapper .theme-doc-sidebar-container nav {
+  // 侧边栏高度 = 100的视图高度(100vh) - header的高度(60px) - 收起侧边栏按钮的高度(40px) - footer的高度(86px)
+  height: calc(100vh - 60px - 40px - 86px);
 }
