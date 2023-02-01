@@ -34,5 +34,17 @@ module.exports = {
   // 预设的部分功能
   presets,
   // 主题配置
-  themeConfig
+  themeConfig,
+  themes: [
+    [
+      // 本地搜索插件
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        hashed: true,
+        language: ['en', 'zh'],
+        blogDir: 'docs'
+      })
+    ]
+  ]
 };
