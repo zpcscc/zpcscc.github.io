@@ -1,71 +1,89 @@
-import React from 'react';
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
-import styles from './styles.module.css';
+import type { FC } from 'react';
+import React from 'react';
+import { Features, Row } from './Style';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'configs',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        <b>项目通用配置库</b>
+        <p>一些通用的项目配置,多项目协同开发，使代码风格一致</p>
       </>
-    )
+    ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'utils',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        <b>工具库</b>
+        <p>一些常用函数工具，方便开发时复用</p>
       </>
-    )
+    ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'components',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        <b>组件库</b>
+        <p>一些可复用组件，表单组件</p>
       </>
-    )
-  }
+    ),
+  },
+  {
+    title: 'generator',
+    description: (
+      <>
+        <b>低代码生成器</b>
+        <p>通过拖拽等方式，快速生成页面或表单</p>
+      </>
+    ),
+  },
+  {
+    title: 'create',
+    description: (
+      <>
+        <b>脚手架</b>
+        <p>快速创建项目</p>
+      </>
+    ),
+  },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Feature({ title, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className='text--center'>
-        <Svg className={styles.featureSvg} role='img' />
-      </div>
-      <div className='text--center padding-horiz--md'>
-        <h3>{title}</h3>
+        <Link
+          className='button button--secondary button--sm'
+          to={`https://dxsixpc.github.io/${title}/`}
+        >
+          {title}
+        </Link>
         <p>{description}</p>
       </div>
     </div>
   );
 }
 
-const HomepageFeatures: React.FC = () => {
+const HomepageFeatures: FC = () => {
   return (
-    <section className={styles.features}>
+    <Features>
       <div className='container'>
-        <div className='row'>
+        <Row className='row'>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
-        </div>
+        </Row>
       </div>
-    </section>
+    </Features>
   );
 };
 

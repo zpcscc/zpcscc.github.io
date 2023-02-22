@@ -1,16 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { HomepageFeatures, HomepageHeader } from '@site/src/components';
 import Layout from '@theme/Layout';
-import { HomepageHeader, HomepageFeatures } from '@site/src/components';
+import type { FC } from 'react';
+import React from 'react';
 
-const Home: React.FC = () => {
+const Home: FC = () => {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description='Description will go into a meta tag in <head />'
-    >
+    <Layout title={siteConfig.title}>
       <HomepageHeader />
       <main>
         <HomepageFeatures />

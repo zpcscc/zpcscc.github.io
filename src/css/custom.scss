@@ -29,8 +29,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-
-
 // ** 临时修复sidebar侧边栏高度异常的问题。等待官方修复后，可删除此代码
 .main-wrapper .theme-doc-sidebar-container nav {
   // 侧边栏高度 = 100的视图高度(100vh) - header的高度(60px) - 收起侧边栏按钮的高度(40px) - footer的高度(86px)
