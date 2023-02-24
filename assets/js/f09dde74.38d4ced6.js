@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2400],{2701:p=>{p.exports=JSON.parse('{"label":"pnpm","permalink":"/docs/tags/pnpm","allTagsPath":"/docs/tags","count":1,"items":[{"id":"note/pnpm/pnpm-config","title":"pnpm-config","description":"pnpm \u90e8\u5206\u914d\u7f6e","permalink":"/docs/note/pnpm/pnpm-config"}]}')}}]);

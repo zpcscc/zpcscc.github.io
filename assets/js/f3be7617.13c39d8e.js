@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[7518],{2915:e=>{e.exports=JSON.parse('{"title":"git","slug":"/category/git","permalink":"/docs/category/git","navigation":{"previous":{"title":"Error\u5904\u7406","permalink":"/docs/note/ajax/Error\u5904\u7406"},"next":{"title":"githook","permalink":"/docs/note/git/githook"}}}')}}]);

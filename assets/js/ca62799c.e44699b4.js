@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[7117],{4476:e=>{e.exports=JSON.parse('{"label":"Ajax","permalink":"/docs/tags/ajax","allTagsPath":"/docs/tags","count":1,"items":[{"id":"note/Ajax/Error\u5904\u7406","title":"Error\u5904\u7406","description":"Error\u4fe1\u606f\u5904\u7406","permalink":"/docs/note/Ajax/Error\u5904\u7406"}]}')}}]);
