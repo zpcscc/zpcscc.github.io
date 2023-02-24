@@ -1,11 +1,5 @@
 ---
 title: githook
-sidebar: auto
-date: 2023-02-03
-categories:
-  - 开发
-tags:
-  - git
 ---
 ## Git Hook
 

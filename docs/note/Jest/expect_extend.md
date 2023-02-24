@@ -1,11 +1,5 @@
 ---
 title: Jest-expect.extend
-sidebar: auto
-date: 2021-07-01
-categories:
-  - 前端
-tags:
-  - Jest
 ---
 
 # expect.extend(matchers)

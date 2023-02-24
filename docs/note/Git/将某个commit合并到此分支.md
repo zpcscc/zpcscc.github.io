@@ -1,11 +1,5 @@
 ---
 title: 将某个commit合并到此分支
-sidebar: auto
-date: 2021-3-29
-categories:
-  - 开发
-tags:
-  - git
 ---
 
 ## Git 将其他分支的某个 commit 提交合并到当前分支

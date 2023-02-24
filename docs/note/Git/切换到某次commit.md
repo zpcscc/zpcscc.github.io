@@ -1,11 +1,5 @@
 ---
 title: 切换到某次commit
-sidebar: auto
-date: 2020-11-04
-categories:
-  - 开发
-tags:
-  - git
 ---
 
 ## Git 切换到某次 commit

@@ -16,27 +16,27 @@ const themeConfig = {
     items: [
       {
         type: 'doc',
-        docId: 'note/javascript/数组',
+        docId: 'base/javascript/基础介绍',
+        position: 'left',
+        label: '基础'
+      },
+      {
+        type: 'doc',
+        docId: 'note/git/基础介绍',
         position: 'left',
         label: '笔记'
       },
       {
         type: 'doc',
-        docId: 'components-doc/intro',
+        docId: 'package/package包版本前符号含义',
         position: 'left',
-        label: '组件库'
+        label: '项目构建'
       },
       {
         type: 'doc',
-        docId: 'utils-doc/intro',
+        docId: 'other/macOS/忽略系统更新',
         position: 'left',
-        label: '工具库'
-      },
-      {
-        type: 'doc',
-        docId: 'configs-doc/intro',
-        position: 'left',
-        label: '配置库'
+        label: '其他'
       },
       {
         href: 'https://github.com/dxsixpc/dxsixpc.github.io/',
@@ -95,7 +95,7 @@ const themeConfig = {
       // 侧边栏开启隐藏收起功能
       hideable: true,
       // 展开当前类别时，自动折叠其他类别
-      autoCollapseCategories: true
+      autoCollapseCategories: false
     }
   }
 };

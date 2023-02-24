@@ -1,11 +1,5 @@
 ---
 title: 找到reset后丢失的代码
-sidebar: auto
-date: 2021-11-25
-categories:
-  - 开发
-tags:
-  - git
 ---
 
 ## Git 找到reset后丢失的代码

@@ -2,7 +2,7 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import type { FC } from 'react';
 import React from 'react';
-import { Features, Row } from './Style';
+import { Features, Row, Text } from './Style';
 
 type FeatureItem = {
   title: string;
@@ -57,21 +57,21 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({ title, description }: FeatureItem) {
+const Feature: FC<FeatureItem> = ({ title, description }) => {
   return (
-    <div className={clsx('col col--3')}>
-      <div className='text--center'>
+    <div className={clsx('col col--2')}>
+      <Text className='text--center'>
         <Link
           className='button button--secondary button--sm'
           to={`https://dxsixpc.github.io/${title}/`}
         >
           {title}
         </Link>
-        <p>{description}</p>
-      </div>
+        <div>{description}</div>
+      </Text>
     </div>
   );
-}
+};
 
 const HomepageFeatures: FC = () => {
   return (

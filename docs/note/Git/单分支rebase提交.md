@@ -1,11 +1,5 @@
 ---
 title: 单分支rebase提交
-sidebar: auto
-date: 2020-12-24
-categories:
-  - 开发
-tags:
-  - git
 ---
 
 ## Git 单分支rebase提交

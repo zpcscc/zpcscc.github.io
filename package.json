@@ -47,10 +47,11 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@dxsixpc/configs": "^0.4.5",
+    "@dxsixpc/configs": "^0.4.6",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@tsconfig/docusaurus": "^1.0.6",
+    "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "docusaurus-plugin-sass": "^0.2.3",
@@ -62,7 +63,7 @@
     "react-loadable": "^5.5.0",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
-    "typescript": ">=2.7.0",
+    "typescript": "^4.9.5",
     "webpack": "^4.36.0 || ^5.0.0"
   },
   "engines": {

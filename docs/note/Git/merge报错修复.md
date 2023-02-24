@@ -1,11 +1,5 @@
 ---
 title: merge报错修复
-sidebar: auto
-date: 2021-11-11
-categories:
-  - 开发
-tags:
-  - git
 ---
 
 ## merge报错修复记录

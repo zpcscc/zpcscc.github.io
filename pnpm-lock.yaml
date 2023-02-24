@@ -2,17 +2,19 @@ lockfileVersion: 5.4
 
 specifiers:
   '@algolia/client-search': '>= 4.9.1 < 6'
+  '@ant-design/icons': ^5.0.1
   '@docusaurus/core': ^2.3.0
   '@docusaurus/module-type-aliases': ^2.3.0
   '@docusaurus/preset-classic': ^2.3.0
   '@docusaurus/theme-classic': ^2.3.0
   '@docusaurus/theme-common': ^2.0.0-rc.1
-  '@dxsixpc/configs': ^0.4.5
+  '@dxsixpc/configs': ^0.4.6
   '@easyops-cn/docusaurus-search-local': ^0.34.0
   '@emotion/react': ^11.10.6
   '@emotion/styled': ^11.10.6
   '@mdx-js/react': ^1.6.22
   '@tsconfig/docusaurus': ^1.0.6
+  '@types/node': ^18.14.0
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   clsx: ^1.2.1
@@ -28,7 +30,7 @@ specifiers:
   react-loadable: ^5.5.0
   sass: ^1.57.1
   sass-loader: ^13.2.0
-  typescript: '>=2.7.0'
+  typescript: ^4.9.5
   webpack: ^4.36.0 || ^5.0.0
 
 dependencies:
@@ -46,10 +48,12 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
 
 devDependencies:
-  '@dxsixpc/configs': 0.4.5
+  '@ant-design/icons': 5.0.1_sfoxds7t5ydpegc3knd667wn6m
+  '@dxsixpc/configs': 0.4.6
   '@emotion/react': 11.10.6_jguntkfjozdfrzd4l22x7bdnx4
   '@emotion/styled': 11.10.6_lh7ovkr2sdwislaigdqdvxpn5i
   '@tsconfig/docusaurus': 1.0.6
+  '@types/node': 18.14.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   docusaurus-plugin-sass: 0.2.3_uewa6pul4gemlcduqpd3esswaa
@@ -187,6 +191,32 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.17
+
+  /@ant-design/colors/7.0.0:
+    resolution: {integrity: sha512-iVm/9PfGCbC0dSMBrz7oiEXZaaGH7ceU40OJEfKmyuzR9R5CRimJYPlRiFtMQGQcbNMea/ePcoIebi4ASGYXtg==}
+    dependencies:
+      '@ctrl/tinycolor': 3.6.0
+    dev: true
+
+  /@ant-design/icons-svg/4.2.1:
+    resolution: {integrity: sha512-EB0iwlKDGpG93hW8f85CTJTs4SvMX7tt5ceupvhALp1IF44SeUFOMhKUOYqpsoYWQKAOuTRDMqn75rEaKDp0Xw==}
+    dev: true
+
+  /@ant-design/icons/5.0.1_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-ZyF4ksXCcdtwA/1PLlnFLcF/q8/MhwxXhKHh4oCHDA4Ip+ZzAHoICtyp4wZWfiCVDP0yuz3HsjyvuldHFb3wjA==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      '@ant-design/colors': 7.0.0
+      '@ant-design/icons-svg': 4.2.1
+      '@babel/runtime': 7.21.0
+      classnames: 2.3.2
+      rc-util: 5.28.0_sfoxds7t5ydpegc3knd667wn6m
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: true
 
   /@babel/code-frame/7.18.6:
     resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==}
@@ -1664,6 +1694,11 @@ packages:
       postcss-selector-parser: 6.0.11
     dev: true
 
+  /@ctrl/tinycolor/3.6.0:
+    resolution: {integrity: sha512-/Z3l6pXthq0JvMYdUFyX9j0MaCltlIn6mfh9jLyQwg5aPKxkyNa0PTHtU1AlFXLNk55ZuAeJRcpvq+tmLfKmaQ==}
+    engines: {node: '>=10'}
+    dev: true
+
   /@discoveryjs/json-ext/0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
@@ -2824,14 +2859,17 @@ packages:
       - webpack-cli
     dev: false
 
-  /@dxsixpc/configs/0.4.5:
-    resolution: {integrity: sha512-AbI6PPSZ/ZgGwg73OXzcLeBCdl1Qz1bSNNI+Fh/aoKZF0EI2cyfSbEN4rnvcNznkfr2+XLY4lJdwEmBQkIpnJA==}
+  /@dxsixpc/configs/0.4.6:
+    resolution: {integrity: sha512-bxhKWv5Jz/HENQCNAmhACLLcDJ+n0cY3nH5dDi0/1coXrPiqRlJbWTPtKGVijeUeh5BryfzWXk5D7lrR+ENELA==}
     dependencies:
       '@babel/core': 7.21.0
       '@babel/plugin-syntax-flow': 7.18.6_@babel+core@7.21.0
       '@babel/plugin-transform-react-jsx': 7.21.0_@babel+core@7.21.0
       '@commitlint/cli': 17.4.4
       '@commitlint/cz-commitlint': 17.4.4_i4x6owxztfhigiiqlxwntt4k24
+      '@types/node': 18.14.0
+      '@types/react': 18.0.28
+      '@types/react-dom': 18.0.11
       '@typescript-eslint/eslint-plugin': 5.53.0_ny4s7qc6yg74faf3d6xty2ofzy
       '@typescript-eslint/parser': 5.53.0_7kw3g6rralp5ps6mg3uyzz6azm
       commitizen: 4.3.0
@@ -3731,7 +3769,7 @@ packages:
   /@types/sax/1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 18.14.0
     dev: false
 
   /@types/scheduler/0.16.2:
@@ -4666,6 +4704,10 @@ packages:
   /ci-info/3.8.0:
     resolution: {integrity: sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==}
     engines: {node: '>=8'}
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: true
 
   /clean-css/5.3.2:
     resolution: {integrity: sha512-JVJbM+f3d3Q704rF4bqQ5UUyTtuJ0JRKNbTKVEeujCCBoMdkEi+V+e8oktO9qGQNSvHrFTM6JZRXrUvGR1czww==}
@@ -9046,6 +9088,18 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+
+  /rc-util/5.28.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-KYDjhGodswVj29v0TRciKTqRPgumIFvFDndbCD227pitQ+0Cei196rxk+OXb/blu6V8zdTRK5RjCJn+WmHLvBA==}
+    peerDependencies:
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.21.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-is: 16.13.1
+    dev: true
 
   /rc/1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}

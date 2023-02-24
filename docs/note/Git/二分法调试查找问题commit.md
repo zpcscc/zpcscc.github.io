@@ -1,11 +1,5 @@
 ---
 title: 二分法调试查找问题commit
-sidebar: auto
-date: 2021-12-23
-categories:
-  - 开发
-tags:
-  - git
 ---
 ## 二分法调试查找问题commit
 

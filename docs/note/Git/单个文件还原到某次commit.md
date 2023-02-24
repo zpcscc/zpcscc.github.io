@@ -1,11 +1,5 @@
 ---
 title: 单个文件还原到某次commit
-sidebar: auto
-date: 2022-02-16
-categories:
-  - 开发
-tags:
-  - git
 ---
 
 ## Git 单个文件还原到某次commit

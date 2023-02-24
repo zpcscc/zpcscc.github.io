@@ -1,11 +1,5 @@
 ---
 title: 撤销上次commit
-sidebar: auto
-date: 2021-04-19
-categories:
-  - 开发
-tags:
-  - git
 ---
 ## Git 撤销上次commit
 

@@ -3,8 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "react",
-    "outDir": "build",
-    "types": ["@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
+    "types": ["@emotion/react", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
     "paths": {
       "@site/*": ["./*"]
     }

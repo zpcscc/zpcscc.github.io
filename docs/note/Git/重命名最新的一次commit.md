@@ -1,11 +1,5 @@
 ---
 title: 重命名最近的一次commit
-sidebar: auto
-date: 2020-12-18
-categories:
-  - 开发
-tags:
-  - git
 ---
 
 ## Git 重命名最近的一次commit

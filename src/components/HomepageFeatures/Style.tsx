@@ -12,3 +12,9 @@ export const Features = styled.section`
   padding: 2rem 0;
   color: rgb(25 23 20 / 70%);
 `;
+
+export const Text = styled.div`
+  .text--center b {
+    margin: 5px 0px;
+  }
+`;

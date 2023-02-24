@@ -1,11 +1,5 @@
 ---
 title: pnpm-config
-sidebar: auto
-date: 2023-02-06
-categories:
-  - 开发
-tags:
-  - pnpm
 ---
 
 ## pnpm 部分配置

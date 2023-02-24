@@ -5,7 +5,7 @@ const { presets, themeConfig } = require('./config');
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
   title: 'DXSIX',
-  tagline: '个人笔记',
+  tagline: '个人博客',
   url: 'https://zpcscc.top/',
   baseUrl: '/',
   // 若有错误的链接，打包时进行报错

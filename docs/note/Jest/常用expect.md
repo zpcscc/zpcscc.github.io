@@ -1,11 +1,5 @@
 ---
-title: Jest-常用except
-sidebar: auto
-date: 2021-07-01
-categories:
-  - 前端
-tags:
-  - Jest
+title: 常用except
 ---
 
 ## expect(value)
