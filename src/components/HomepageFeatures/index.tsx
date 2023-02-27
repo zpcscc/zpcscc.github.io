@@ -29,15 +29,6 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'components',
-    description: (
-      <>
-        <b>组件库</b>
-        <p>一些可复用组件，表单组件</p>
-      </>
-    ),
-  },
-  {
     title: 'generator',
     description: (
       <>
@@ -59,7 +50,7 @@ const FeatureList: FeatureItem[] = [
 
 const Feature: FC<FeatureItem> = ({ title, description }) => {
   return (
-    <div className={clsx('col col--2')}>
+    <div className={clsx('col col--3')}>
       <Text className='text--center'>
         <Link
           className='button button--secondary button--sm'
