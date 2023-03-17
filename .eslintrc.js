@@ -1,5 +1,12 @@
+// @ts-check
+/**
+ * @type {import("eslint").Linter.Config}
+ */
 module.exports = {
   extends: require.resolve('@dxsixpc/configs/eslint-config'),
+  parserOptions: {
+    project: ['./tsconfig.json'],
+  },
   overrides: [
     {
       files: ['**/*.js'],
@@ -12,5 +19,8 @@ module.exports = {
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+  },
+  rules: {
+    'react/jsx-uses-react': 'error',
   },
 };

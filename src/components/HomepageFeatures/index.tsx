@@ -2,12 +2,12 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import type { FC } from 'react';
 import React from 'react';
-import { Features, Row, Text } from './Style';
+import { Features, Row, Text } from './Styled';
 
-type FeatureItem = {
+interface FeatureItem {
   title: string;
   description: JSX.Element;
-};
+}
 
 const FeatureList: FeatureItem[] = [
   {
@@ -25,6 +25,15 @@ const FeatureList: FeatureItem[] = [
       <>
         <b>工具库</b>
         <p>一些常用函数工具，方便开发时复用</p>
+      </>
+    ),
+  },
+  {
+    title: 'components',
+    description: (
+      <>
+        <b>通用ui组件库</b>
+        <p>封装好的通用组件</p>
       </>
     ),
   },
@@ -50,7 +59,7 @@ const FeatureList: FeatureItem[] = [
 
 const Feature: FC<FeatureItem> = ({ title, description }) => {
   return (
-    <div className={clsx('col col--3')}>
+    <div className={clsx('col col--2')}>
       <Text className='text--center'>
         <Link
           className='button button--secondary button--sm'

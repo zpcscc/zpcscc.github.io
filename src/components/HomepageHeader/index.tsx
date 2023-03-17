@@ -3,7 +3,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import type { FC } from 'react';
 import React from 'react';
-import { Buttons, HeroBanner } from './Style';
+import { Buttons, HeroBanner } from './Styled';
 
 const HomepageHeader: FC = () => {
   const { siteConfig } = useDocusaurusContext();

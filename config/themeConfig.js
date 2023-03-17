@@ -10,8 +10,8 @@ const themeConfig = {
   navbar: {
     title: 'DXSIX',
     logo: {
-      alt: '网页Logo',
-      src: 'img/logo.svg'
+      alt: 'Logo',
+      src: 'img/logo.png'
     },
     items: [
       {
