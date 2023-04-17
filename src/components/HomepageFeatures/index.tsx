@@ -1,5 +1,4 @@
 import Link from '@docusaurus/Link';
-import clsx from 'clsx';
 import type { FC } from 'react';
 import React from 'react';
 import { Features, Row, Text } from './Styled';
@@ -59,7 +58,7 @@ const FeatureList: FeatureItem[] = [
 
 const Feature: FC<FeatureItem> = ({ title, description }) => {
   return (
-    <div className={clsx('col col--2')}>
+    <div className={'col col--2'}>
       <Text className='text--center'>
         <Link
           className='button button--secondary button--sm'
