@@ -49,20 +49,20 @@
     "@dxsixpc/configs": "^1.0.3",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.35",
+    "@types/node": "^18.15.13",
+    "@types/react": "^18.0.38",
     "@types/react-dom": "^18.0.11",
     "docusaurus-plugin-sass": "^0.2.3",
-    "eslint": "^8.38.0",
+    "eslint": "^8.39.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
-    "postcss": "^8.4.22",
+    "postcss": "^8.4.23",
     "postcss-scss": "^4.0.6",
     "react-loadable": "^5.5.0",
     "sass": "^1.62.0",
     "sass-loader": "^13.2.2",
     "typescript": "^5.0.4",
-    "webpack": "^5.79.0"
+    "webpack": "^5.80.0"
   },
   "engines": {
     "node": ">=16.14"
