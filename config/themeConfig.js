@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // @ts-check
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+// const lightCodeTheme = require('prism-react-renderer/themes/github');
+// const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { github, dracula } = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 const themeConfig = {
@@ -11,39 +12,39 @@ const themeConfig = {
     title: 'DXSIX',
     logo: {
       alt: 'Logo',
-      src: 'img/logo.png'
+      src: 'img/logo.png',
     },
     items: [
       {
         type: 'doc',
         docId: 'base/javascript/基础介绍',
         position: 'left',
-        label: '基础'
+        label: '基础',
       },
       {
         type: 'doc',
         docId: 'note/git/基础介绍',
         position: 'left',
-        label: '笔记'
+        label: '笔记',
       },
       {
         type: 'doc',
         docId: 'package/package包版本前符号含义',
         position: 'left',
-        label: '项目构建'
+        label: '项目构建',
       },
       {
         type: 'doc',
         docId: 'other/macOS/忽略系统更新',
         position: 'left',
-        label: '其他'
+        label: '其他',
       },
       {
         href: 'https://github.com/dxsixpc/dxsixpc.github.io/',
         label: 'GitHub',
-        position: 'right'
+        position: 'right',
       },
-    ]
+    ],
   },
   footer: {
     style: 'dark',
@@ -84,20 +85,20 @@ const themeConfig = {
     //     ]
     //   }
     // ],
-    copyright: ` ${new Date().getFullYear()} 皖ICP备19022295号-1`
+    copyright: ` ${new Date().getFullYear()} 皖ICP备19022295号-1`,
   },
   prism: {
-    theme: lightCodeTheme,
-    darkTheme: darkCodeTheme
+    theme: github,
+    darkTheme: dracula,
   },
   docs: {
     sidebar: {
       // 侧边栏开启隐藏收起功能
       hideable: true,
       // 展开当前类别时，自动折叠其他类别
-      autoCollapseCategories: false
-    }
-  }
+      autoCollapseCategories: false,
+    },
+  },
 };
 
 module.exports = themeConfig;
