@@ -1,6 +1,5 @@
 import Link from '@docusaurus/Link';
-import type { FC } from 'react';
-import React from 'react';
+import React, { type FC, type JSX } from 'react';
 import { Features, Row, Text } from './Styled';
 
 interface FeatureItem {

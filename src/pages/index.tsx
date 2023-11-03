@@ -1,8 +1,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { HomepageFeatures, HomepageHeader } from '@site/src/components';
 import Layout from '@theme/Layout';
-import type { FC } from 'react';
-import React from 'react';
+import React, { type FC } from 'react';
 
 const Home: FC = () => {
   const { siteConfig } = useDocusaurusContext();

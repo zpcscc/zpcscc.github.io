@@ -1,7 +1,6 @@
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import type { FC } from 'react';
-import React from 'react';
+import React, { type FC } from 'react';
 import { Buttons, HeroBanner } from './Styled';
 
 const HomepageHeader: FC = () => {
