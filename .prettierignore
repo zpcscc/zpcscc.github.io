@@ -21,6 +21,5 @@ CNAME
 *.lock
 *.esm.js
 package-lock.json
-package.json
 yarn-error.log
 

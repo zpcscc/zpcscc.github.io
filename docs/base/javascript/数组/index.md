@@ -135,7 +135,7 @@ console.log(arr); //完成循环之后，初始数组的顺序已经发生改变
 
 ​ **从原始数据中找到最小元素，并放在数组的最前面。然后再从下面的元素中找到最小元素，放在之前最小元素的后面，直到排序完成。**
 
-![](https://cdn.jsdelivr.net/gh/dxsixpc/myImg@master/img/20200813184243.jpg)
+![](https://cdn.jsdelivr.net/gh/zpcscc/myImg@master/img/20200813184243.jpg)
 
 ```javascript var arr = [5,99,2,9,1,5,67,7,10,23]
 var arr = [5, 99, 2, 9, 1, 5, 67, 7, 10, 23];

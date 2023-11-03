@@ -3,7 +3,7 @@
  * @type {import("eslint").Linter.Config}
  */
 module.exports = {
-  extends: require.resolve('@dxsixpc/configs/eslint-config/react'),
+  extends: require.resolve('@zpcscc/configs/eslint-config/react'),
   parserOptions: {
     project: ['./tsconfig.json'],
   },

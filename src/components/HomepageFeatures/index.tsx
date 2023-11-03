@@ -16,7 +16,7 @@ const FeatureList: FeatureItem[] = [
         <b>项目通用配置库</b>
         <p>一些通用的项目配置，多项目协同开发，使代码风格一致</p>
       </>
-    ),
+    )
   },
   {
     title: 'utils',
@@ -25,7 +25,7 @@ const FeatureList: FeatureItem[] = [
         <b>工具库</b>
         <p>一些常用函数工具，方便开发时复用</p>
       </>
-    ),
+    )
   },
   {
     title: 'components',
@@ -34,7 +34,7 @@ const FeatureList: FeatureItem[] = [
         <b>通用ui组件库</b>
         <p>封装好的通用组件</p>
       </>
-    ),
+    )
   },
   {
     title: 'generator',
@@ -43,7 +43,7 @@ const FeatureList: FeatureItem[] = [
         <b>低代码生成器</b>
         <p>通过拖拽等方式，快速生成页面或表单</p>
       </>
-    ),
+    )
   },
   {
     title: 'create',
@@ -52,8 +52,8 @@ const FeatureList: FeatureItem[] = [
         <b>脚手架</b>
         <p>快速创建项目</p>
       </>
-    ),
-  },
+    )
+  }
 ];
 
 const Feature: FC<FeatureItem> = ({ title, description }) => {
@@ -62,7 +62,7 @@ const Feature: FC<FeatureItem> = ({ title, description }) => {
       <Text className='text--center'>
         <Link
           className='button button--secondary button--sm'
-          to={`https://dxsixpc.github.io/${title}/`}
+          to={`https://zpcscc.github.io/${title}/`}
         >
           {title}
         </Link>
