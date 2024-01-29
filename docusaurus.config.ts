@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 const { github, dracula } = require('prism-react-renderer');
 
 const config: Config = {
-  title: 'DXSIX',
+  title: 'zhupc',
   tagline: '个人博客',
   url: 'https://zpcscc.top/',
   baseUrl: '/',
@@ -50,7 +50,7 @@ const config: Config = {
   themeConfig: {
     // 导航栏配置
     navbar: {
-      title: 'DXSIX',
+      title: 'zhupc',
       logo: {
         alt: 'Logo',
         src: 'img/logo.png'
@@ -126,7 +126,7 @@ const config: Config = {
           ]
         }
       ],
-      copyright: ` ${new Date().getFullYear()} 皖ICP备19022295号-1`
+      copyright: `<a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备19022295号-1</a>`
     },
     prism: {
       theme: github,

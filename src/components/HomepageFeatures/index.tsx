@@ -59,10 +59,7 @@ const Feature: FC<FeatureItem> = ({ title, description }) => {
   return (
     <div className={'col col--2'}>
       <Text className='text--center'>
-        <Link
-          className='button button--secondary button--sm'
-          to={`https://zpcscc.github.io/${title}/`}
-        >
+        <Link className='button button--secondary button--sm' to={`https://zpcscc.top/${title}/`}>
           {title}
         </Link>
         <div>{description}</div>
