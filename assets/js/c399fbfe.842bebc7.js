@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[5648],{2997:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"CSS","slug":"/category/css","permalink":"/docs/category/css","sidebar":"base","navigation":{"next":{"title":"\u57fa\u7840\u4ecb\u7ecd","permalink":"/docs/base/css/\u57fa\u7840\u4ecb\u7ecd"}}}}')}}]);
