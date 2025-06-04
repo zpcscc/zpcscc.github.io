@@ -126,7 +126,7 @@ const config: Config = {
           ]
         }
       ],
-      copyright: `<a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备19022295号-1</a>`
+      copyright: `<img src="/img/gonganbeian-logo.png" style="width: 16px;transform: translateY(2px);"> <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank">皖公网安备34112502000218号</a> <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备19022295号-1</a>`
     },
     prism: {
       theme: github,
