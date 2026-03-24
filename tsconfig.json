@@ -1,9 +1,9 @@
 {
-  "extends": "@zpcscc/configs/tsconfig/tsconfig.react.json",
+  "extends": "@zpcscc/configs/tsconfig/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "react",
-    "types": ["@emotion/react", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
+    "types": ["@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
     "paths": {
       "@site/*": ["./*"]
     }

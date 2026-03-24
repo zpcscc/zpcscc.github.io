@@ -4,13 +4,11 @@ const { github, dracula } = require('prism-react-renderer');
 
 const config: Config = {
   title: 'zhupc',
-  tagline: '个人博客',
+  tagline: '个人笔记',
   url: 'https://zpcscc.top/',
   baseUrl: '/',
   // 若有错误的链接，打包时进行报错
   onBrokenLinks: 'throw',
-  // 若有错误的md文件链接时，打包时提示
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   // 使用github pages的相关配置
@@ -25,10 +23,12 @@ const config: Config = {
   trailingSlash: false,
   i18n: {
     defaultLocale: 'zh-CN',
-    locales: ['zh-CN']
+    locales: ['zh-CN'],
   },
-  // 插件，支持加载scss
-  plugins: ['docusaurus-plugin-sass'],
+  // 插件
+  plugins: [
+    require.resolve('./plugins/unocss-plugin'),
+  ],
   // 预设的部分功能
   presets: [
     [
@@ -38,13 +38,26 @@ const config: Config = {
         docs: {
           sidebarPath: require.resolve('./config/sidebars'),
           // 是否使用面包屑导航
-          breadcrumbs: true
+          breadcrumbs: true,
+        },
+        blog: {
+          showReadingTime: true,
+          blogSidebarTitle: '所有笔记',
+          blogSidebarCount: 'ALL',
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          filename: 'sitemap.xml',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.scss')
-        }
-      } satisfies Preset.Options
-    ]
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+            require.resolve('./src/css/uno.css'),
+          ],
+        },
+      } satisfies Preset.Options,
+    ],
   ],
   // 主题配置
   themeConfig: {
@@ -53,39 +66,34 @@ const config: Config = {
       title: 'zhupc',
       logo: {
         alt: 'Logo',
-        src: 'img/logo.png'
+        src: 'img/logo.png',
       },
       items: [
         {
           type: 'doc',
-          docId: 'base/javascript/基础介绍',
+          docId: 'web/javascript/intro',
           position: 'left',
-          label: '基础'
+          label: 'Web 基础',
         },
         {
           type: 'doc',
-          docId: 'note/Git/基础介绍',
+          docId: 'tools/git/基础介绍',
           position: 'left',
-          label: '笔记'
+          label: '开发工具',
         },
         {
           type: 'doc',
-          docId: 'package/package包版本前符号含义',
+          docId: 'engineering/intro',
           position: 'left',
-          label: '项目构建'
+          label: '工程化',
         },
-        {
-          type: 'doc',
-          docId: 'other/macOS/忽略系统更新',
-          position: 'left',
-          label: '其他'
-        },
+        { to: '/blog', label: '笔记', position: 'left' },
         {
           href: 'https://github.com/zpcscc/zpcscc.github.io/',
           label: 'GitHub',
-          position: 'right'
-        }
-      ]
+          position: 'right',
+        },
+      ],
     },
     footer: {
       style: 'dark',
@@ -94,52 +102,60 @@ const config: Config = {
           title: '文档',
           items: [
             {
-              label: '简介',
-              to: '/docs/note/intro'
-            }
-          ]
+              label: 'Web 基础',
+              to: '/docs/web/javascript/intro',
+            },
+            {
+              label: '开发工具',
+              to: '/docs/tools/git/基础介绍',
+            },
+            {
+              label: '工程化',
+              to: '/docs/engineering/intro',
+            },
+          ],
         },
         {
           title: '相关资源',
           items: [
             {
               label: '组件库',
-              href: 'https://github.com/zpcscc/components'
+              href: 'https://github.com/zpcscc/components',
             },
             {
               label: '工具函数库',
-              href: 'https://github.com/zpcscc/utils'
+              href: 'https://github.com/zpcscc/utils',
             },
             {
               label: '项目配置库',
-              href: 'https://github.com/zpcscc/configs'
-            }
-          ]
+              href: 'https://github.com/zpcscc/configs',
+            },
+          ],
         },
         {
           title: '更多',
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/zpcscc/zpcscc.github.io/'
-            }
-          ]
-        }
+              href: 'https://github.com/zpcscc/zpcscc.github.io/',
+            },
+          ],
+        },
       ],
-      copyright: `<img src="/img/gonganbeian-logo.png" style="width: 16px;transform: translateY(2px);"> <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank">皖公网安备34112502000218号</a> <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备19022295号-1</a>`
+      copyright: `<img src="/img/gonganbeian-logo.png" style="width: 16px;transform: translateY(2px);"> <a href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank">皖公网安备34112502000218号</a> <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备19022295号-1</a>`,
     },
     prism: {
       theme: github,
-      darkTheme: dracula
+      darkTheme: dracula,
     },
     docs: {
       sidebar: {
         // 侧边栏开启隐藏收起功能
         hideable: true,
         // 展开当前类别时，自动折叠其他类别
-        autoCollapseCategories: false
-      }
-    }
+        autoCollapseCategories: false,
+      },
+    },
   } satisfies Preset.ThemeConfig,
   themes: [
     [
@@ -149,10 +165,15 @@ const config: Config = {
       {
         hashed: true,
         language: ['en', 'zh'],
-        blogDir: 'docs'
-      }
-    ]
-  ]
+      },
+    ],
+  ],
+  markdown: {
+    hooks: {
+      // 若有错误的md文件链接时，打包时进行报错（方便发现死链）
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
 };
 
 export default config;

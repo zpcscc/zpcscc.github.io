@@ -1,6 +1,6 @@
 # 博客
 
-使用 [Docusaurus 2](https://docusaurus.io/)构建的个人博客.
+使用 [Docusaurus 2](https://docusaurus.io/)构建的个人笔记.
 
 ### 安装
 
