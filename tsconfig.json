@@ -1,12 +1,39 @@
 {
-  "extends": "@zpcscc/configs/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "jsx": "react",
-    "types": ["@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "esModuleInterop": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "emitDeclarationOnly": false,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "types": ["@docusaurus/module-type-aliases", "@docusaurus/theme-classic", "jest"],
     "paths": {
-      "@site/*": ["./*"]
+      "@site/*": ["./*"],
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "docs/**/*", "config/**/*"]
+  "include": [
+    "src/**/*",
+    "docs/**/*",
+    "docs-components/**/*",
+    "docs-demo/**/*",
+    "docs-generator/**/*",
+    "docs-thirdparty/**/*",
+    "docs-utils/**/*",
+    "config/**/*",
+    "plugins/**/*"
+  ]
 }

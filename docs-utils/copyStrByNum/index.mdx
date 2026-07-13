@@ -1,0 +1,36 @@
+---
+title: "copyStrByNum"
+---
+
+## 描述
+
+将指定字符串复制指定次数并使用传入的拼接符号拼接在一起
+
+## 参数
+
+| 参数名   | 类型                | 默认值         | 描述                        |
+| -------- | ------------------- | -------------- | --------------------------- |
+| str      | `string` |                | 待复制的字符串       |
+| num      | `number` | `1` | 复制的次数           |
+| interval | `number` |                | 用于拼接字符串的符号 |
+
+## 返回
+
+`string` - 复制拼接后的字符串
+
+## 示例 _(ts类型)_
+
+```typescript
+copyStrByNum(data:string, num?:number,interval?:string)
+```
+
+## 示例 _(demo)_
+
+```typescript
+import { copyStrByNum } from '@site/src/utils';
+
+console.log(copyStrByNum('*', 5)); // *****
+console.log(copyStrByNum('张三', 3)); // 张三张三张三
+console.log(copyStrByNum('李四', 4, '-')); // 李四-李四-李四-李四
+console.log(copyStrByNum('Name')); // Name
+```

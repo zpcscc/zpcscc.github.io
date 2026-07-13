@@ -1,0 +1,40 @@
+---
+title: 'getColor'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const GetColorDemo = createClientDemo(() => import('./getColor'));
+
+<GetColorDemo />
+
+## 描述
+
+获取随机颜色
+
+## 参数
+
+| 参数名 | 类型                                                        | 描述           |
+| ------ | ----------------------------------------------------------- | -------------- |
+| type   | `&#x27;rgb&#x27;` \| `&#x27;hex&#x27;` \| `&#x27;hsl&#x27;` | 返回颜色的格式 |
+
+## 返回
+
+`string` - 返回生成的随机颜色字符串
+
+## 示例 _(ts类型)_
+
+```typescript
+getColor(type:'rgb' | 'hex' | 'hsl');
+```
+
+## 示例 _(demo)_
+
+```typescript
+import { getColor } from '@site/src/utils';
+
+console.log(getColor()); //  #6ffccf;
+console.log(getColor('hex')); //  #8d3eca;
+console.log(getColor('rgb')); //  rgb(12,45,145,0.4);
+console.log(getColor('hsl')); //  hsl(200,100%,70%);
+```

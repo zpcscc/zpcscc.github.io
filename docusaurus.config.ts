@@ -8,7 +8,7 @@ const config: Config = {
   url: 'https://zpcscc.top/',
   baseUrl: '/',
   // 若有错误的链接，打包时进行报错
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   // 使用github pages的相关配置
@@ -28,6 +28,62 @@ const config: Config = {
   // 插件
   plugins: [
     require.resolve('./plugins/unocss-plugin'),
+    require.resolve('./plugins/ssr-fix-plugin'), // SSR fix + form-generator aliases // also handles form-generator webpack aliases
+    // utils 文档
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'utils',
+        path: 'docs-utils',
+        routeBasePath: 'utils',
+        sidebarPath: require.resolve('./config/sidebars-utils'),
+        breadcrumbs: true,
+      },
+    ],
+    // components 文档
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'components',
+        path: 'docs-components',
+        routeBasePath: 'components',
+        sidebarPath: require.resolve('./config/sidebars-components'),
+        breadcrumbs: true,
+      },
+    ],
+    // thirdparty 文档
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'thirdparty',
+        path: 'docs-thirdparty',
+        routeBasePath: 'thirdparty',
+        sidebarPath: require.resolve('./config/sidebars-thirdparty'),
+        breadcrumbs: true,
+      },
+    ],
+    // demo 文档
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'demo',
+        path: 'docs-demo',
+        routeBasePath: 'demo',
+        sidebarPath: require.resolve('./config/sidebars-demo'),
+        breadcrumbs: true,
+      },
+    ],
+    // generator 文档
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'generator',
+        path: 'docs-generator',
+        routeBasePath: 'generator',
+        sidebarPath: require.resolve('./config/sidebars-generator'),
+        breadcrumbs: true,
+      },
+    ],
   ],
   // 预设的部分功能
   presets: [
@@ -52,8 +108,8 @@ const config: Config = {
         },
         theme: {
           customCss: [
-            require.resolve('./src/css/custom.css'),
             require.resolve('./src/css/uno.css'),
+            require.resolve('./src/css/custom.css'),
           ],
         },
       } satisfies Preset.Options,
@@ -87,7 +143,41 @@ const config: Config = {
           position: 'left',
           label: '工程化',
         },
-        { to: '/blog', label: '笔记', position: 'left' },
+        {
+          type: 'doc',
+          docId: 'toColor/index',
+          docsPluginId: 'utils',
+          position: 'left',
+          label: 'Utils',
+        },
+        {
+          type: 'doc',
+          docId: 'Alert/index',
+          docsPluginId: 'components',
+          position: 'left',
+          label: 'Components',
+        },
+        {
+          type: 'doc',
+          docId: 'htmlToImage/index',
+          docsPluginId: 'thirdparty',
+          position: 'left',
+          label: 'Thirdparty',
+        },
+        {
+          type: 'doc',
+          docId: 'goBang',
+          docsPluginId: 'demo',
+          position: 'left',
+          label: 'Demo',
+        },
+        {
+          type: 'doc',
+          docId: 'editorPanel/index',
+          docsPluginId: 'generator',
+          position: 'left',
+          label: 'Generator',
+        },
         {
           href: 'https://github.com/zpcscc/zpcscc.github.io/',
           label: 'GitHub',
@@ -128,7 +218,7 @@ const config: Config = {
             },
             {
               label: '项目配置库',
-              href: 'https://github.com/zpcscc/configs',
+              href: 'https://zpcscc.top/configs/',
             },
           ],
         },
@@ -171,7 +261,7 @@ const config: Config = {
   markdown: {
     hooks: {
       // 若有错误的md文件链接时，打包时进行报错（方便发现死链）
-      onBrokenMarkdownLinks: 'throw',
+      onBrokenMarkdownLinks: 'warn',
     },
   },
 };

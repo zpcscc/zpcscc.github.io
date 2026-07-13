@@ -1,0 +1,22 @@
+---
+title: '画布笔刷工具'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const CanvasToolsDemo = createClientDemo(() => import('@/demo/CanvasTools'));
+
+# 画布笔刷工具
+
+基于 [Fabric.js](https://fabricjs.com/) 实现的画布笔刷工具，支持多种画笔类型和颜色选择。
+
+## 在线演示
+
+<CanvasToolsDemo />
+
+## 功能
+
+- 🖌️ 多种画笔类型（铅笔、喷雾、图案等）
+- 🎨 颜色和画笔大小调节
+- ↩️ 撤销/重做
+- 💾 导出为图片

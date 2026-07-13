@@ -1,0 +1,33 @@
+---
+title: "getQueryParams"
+---
+
+## 描述
+
+获取url携带的参数
+
+## 参数
+
+| 参数名 | 类型                | 描述                             |
+| ------ | ------------------- | -------------------------------- |
+| url    | `string` | 需要解析的url链接或字符串 |
+
+## 返回
+
+`object` - 返回解析后的query参数
+
+## 示例 _(ts类型)_
+
+```typescript
+getQueryParams(url:string)
+```
+
+## 示例 _(demo)_
+
+```typescript
+import { getQueryParams } from '@site/src/utils';
+
+console.log(getQueryParams('name=John&age=30'));                          //  {name: 'John', age: '30'}
+console.log(getQueryParams(encodeURIComponent('name=John&age=30')));      //  {name: 'John', age: '30'}
+console.log(getQueryParams('www.zpcscc.top?name=John&age=30')));         //  {name: 'John', age: '30'}
+```

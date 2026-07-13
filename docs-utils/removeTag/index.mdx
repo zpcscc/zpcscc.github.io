@@ -1,0 +1,34 @@
+---
+title: 'removeTag'
+---
+
+## 描述
+
+去除字符串中的元素标记
+
+## 参数
+
+| 参数名 | 类型     | 描述                |
+| ------ | -------- | ------------------- |
+| value  | `string` | 需要删除tag的字符串 |
+
+## 返回
+
+`string` - 返回没有tag的字符串
+
+## 示例 _(ts类型)_
+
+```typescript
+removeTag(html:string);
+```
+
+## 示例 _(demo)_
+
+```typescript
+import { removeTag } from '@site/src/utils';
+
+console.log(removeTag('Hello World!')); // Hello World!
+console.log(removeTag('Hello World!')); // Hello World!
+console.log(removeTag(null)); // ''
+console.log(removeTag('')); // ''
+```

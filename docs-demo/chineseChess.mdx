@@ -1,0 +1,24 @@
+---
+title: '中国象棋'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const ChineseChessDemo = createClientDemo(() => import('@/demo/ChineseChess'));
+
+# 中国象棋
+
+基于 Canvas 实现的中国象棋，支持人机对战，AI 使用极大极小值搜索算法。
+
+## 在线演示
+
+<ChineseChessDemo />
+
+## 功能
+
+- 🎮 人机对战
+- ↩️ 悔棋功能
+- 🤖 AI 使用极大极小值搜索算法
+- ⏱️ 计时和搜索深度显示
+
+## 源码

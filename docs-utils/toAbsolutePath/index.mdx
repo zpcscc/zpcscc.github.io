@@ -1,0 +1,37 @@
+---
+title: 'toAbsolutePath'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const ToAbsolutePathDemo = createClientDemo(() => import('@/utils/toAbsolutePath'));
+
+<ToAbsolutePathDemo />
+
+## 描述
+
+相对路径转绝对路径
+
+## 参数
+
+| 参数名 | 类型     | 描述        |
+| ------ | -------- | ----------- |
+| url    | `string` | 相对路径url |
+
+## 返回
+
+`string` - 返回绝对路径url
+
+## 示例 _(ts类型)_
+
+```typescript
+toAbsolutePath(data:string)
+```
+
+## 示例 _(demo)_
+
+```typescript
+import { toAbsolutePath } from '@site/src/utils';
+
+console.log(toAbsolutePath('/img/logo.png')); // https://zpcscc.top/img/logo.png
+```

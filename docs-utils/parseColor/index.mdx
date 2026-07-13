@@ -1,0 +1,33 @@
+---
+title: 'parseColor'
+---
+
+## 描述
+
+将‘rgb’、‘hex’、‘hsl’颜色字符串解析为颜色对象
+
+## 参数
+
+| 参数名 | 类型     | 描述       |
+| ------ | -------- | ---------- |
+| value  | `string` | 颜色字符串 |
+
+## 返回
+
+`ColorObjType` - rgba颜色对象; 例：\{ r: 102, g: 204, b: 255, a: 1 \}
+
+## 示例 _(ts类型)_
+
+```typescript
+parseColor(value: string);
+```
+
+## 示例 _(demo)_
+
+```typescript
+import { parseColor } from '@site/src/utils';
+
+console.log(parseColor('#6666cc')); // { r: 102, g: 102, b: 204, a: 1 };
+console.log(parseColor('rgb(102,204,255)')); // { r: 102, g: 204, b: 255, a: 1 }
+console.log(parseColor('hsl(320,100%,70%)')); // { r: 255, g: 102, b: 204, a: 1 }
+```

@@ -1,0 +1,41 @@
+---
+title: '截屏库'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const HtmlToImageDemo = createClientDemo(() => import('./htmlToImage'));
+
+# 截屏库
+
+基于 [html-to-image](https://github.com/bubkoo/html-to-image) 封装的截屏工具，提供更便捷的 API。
+
+## 在线演示
+
+<HtmlToImageDemo />
+
+## 安装
+
+```bash
+npm install @zpcscc/thirdparty
+```
+
+## 使用
+
+```typescript
+import { toPng, toJpeg, toBlob, toSvg, toPixelData, toCanvas } from '@site/src/thirdparty';
+
+// 截取指定DOM节点为PNG
+const dataUrl = await toPng(node, options);
+```
+
+## API
+
+| 方法          | 描述               |
+| ------------- | ------------------ |
+| `toPng`       | 截取为 PNG 格式    |
+| `toJpeg`      | 截取为 JPEG 格式   |
+| `toBlob`      | 截取为 Blob 对象   |
+| `toSvg`       | 截取为 SVG 格式    |
+| `toPixelData` | 截取为像素数据     |
+| `toCanvas`    | 截取为 Canvas 对象 |

@@ -1,0 +1,63 @@
+---
+title: 'sortVersions'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const SortVersionsDemo = createClientDemo(() => import('./sortVersions'));
+
+<SortVersionsDemo />
+
+## 描述
+
+版本号排序
+
+## 参数
+
+| 参数名 | 类型                   | 描述                 |
+| ------ | ---------------------- | -------------------- |
+| data   | `Array.&lt;string&gt;` | 需要排序的版本号数组 |
+
+## 返回
+
+`Array.&lt;string&gt;` - 从小到大排序过后的数组
+
+## 示例 _(ts类型)_
+
+```typescript
+sortVersions(data:string[])
+```
+
+## 示例 _(demo)_
+
+```typescript
+import { sortVersions } from '@site/src/utils';
+
+const beforeSort = [
+  '1.2.1',
+  '1.1.1',
+  '1.1.1-release.2',
+  '1.1.1-alpha.10',
+  '1.1.1-release.1',
+  '1.1.1-beta.1',
+  '1.1.1-experimental.1',
+  '1.1.1-rc.1',
+  '1.1.1-rc.1',
+  '1.1.2-alpha.1',
+];
+
+console.log(removeTag('Hello World!')); // afterSort
+
+const afterSort = [
+  '1.1.1-experimental.1',
+  '1.1.1-alpha.10',
+  '1.1.1-beta.1',
+  '1.1.1-rc.1',
+  '1.1.1-rc.1',
+  '1.1.1-release.1',
+  '1.1.1-release.2',
+  '1.1.1',
+  '1.1.2-alpha.1',
+  '1.2.1',
+];
+```

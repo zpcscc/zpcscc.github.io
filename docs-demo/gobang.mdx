@@ -1,0 +1,24 @@
+---
+title: '五子棋'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const GoBangDemo = createClientDemo(() => import('@/demo/GoBang'));
+
+# 五子棋
+
+基于 Canvas 实现的五子棋，支持人机对战，包含禁手判断。
+
+## 在线演示
+
+<GoBangDemo />
+
+## 功能
+
+- 🎮 人机对战
+- 🚫 禁手判断（三三、四四、长连）
+- ↩️ 悔棋功能
+- 🎨 动画效果
+
+## 源码

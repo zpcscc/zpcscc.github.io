@@ -1,0 +1,15 @@
+---
+title: 'video播放器'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const VideoViewerDemo = createClientDemo(() => import('./VideoViewer'));
+
+# VideoViewer video播放器
+
+基于 <a href="https://github.com/videojs/video.js" target="_blank">video.js</a> 封装的视频播放器。
+
+<VideoViewerDemo />
+
+视频播放器<a href="https://videojs.com/guides/options/" target="_blank">options</a> | object | \{\} | | onReady | 返回video实例，可通过此实例，使用video的api，操作video播放器 | object | \{\} |

@@ -1,0 +1,36 @@
+---
+title: "getUuId"
+---
+
+## 描述
+
+生成全局唯一ID
+
+## 参数
+
+| 参数名 | 类型                | 默认值                                | 描述                                  |
+| ------ | ------------------- | ------------------------------------- | ------------------------------------- |
+| length | `number` | `4`                        | 随机id的长度，不包含自定义前缀 |
+| prefix | `string` | `&quot;&#x27;&#x27;&quot;` | 指定id的前缀                   |
+
+## 返回
+
+`string` - 返回一个唯一ID
+
+## 示例 _(ts类型)_
+
+```typescript
+getUuId(prefix?:string);
+```
+
+## 示例 _(demo)_
+
+```typescript
+import { getUuId } from '@site/src/utils';
+
+console.log(getUuId()); //  '32f4';
+console.log(getUuId(2)); //  'b0';
+console.log(getUuId(6)); //  '3e964a';
+console.log(getUuId(2, 'test_')); //  'test_db';
+console.log(getUuId(5, 'test_')); //  'test_7ad22';
+```
