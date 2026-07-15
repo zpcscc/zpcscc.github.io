@@ -1,0 +1,285 @@
+"use strict";
+(globalThis["webpackChunkwebsite"] = globalThis["webpackChunkwebsite"] || []).push([[1892],{
+
+/***/ 41892
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ Options_Options)
+});
+
+// EXTERNAL MODULE: ./src/utils/getUuId/index.ts
+var getUuId = __webpack_require__(28831);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@6.3.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/PlusOutlined.js
+var PlusOutlined = __webpack_require__(63073);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@6.5.0_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js
+var es_button = __webpack_require__(94784);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(30758);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@dnd-kit/core/dist/core.esm.js + 1 modules
+var core_esm = __webpack_require__(91331);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1__react@18.3.1/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js
+var modifiers_esm = __webpack_require__(97313);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1__react@18.3.1/node_modules/@dnd-kit/sortable/dist/sortable.esm.js
+var sortable_esm = __webpack_require__(905);
+// EXTERNAL MODULE: ./src/components/Input/index.tsx
+var Input = __webpack_require__(50875);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@6.3.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/CloseCircleOutlined.js
+var CloseCircleOutlined = __webpack_require__(20377);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@6.3.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/MenuOutlined.js
+var MenuOutlined = __webpack_require__(70390);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@dnd-kit+utilities@3.2.2_react@18.3.1/node_modules/@dnd-kit/utilities/dist/utilities.esm.js
+var utilities_esm = __webpack_require__(37893);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@6.5.0_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 3 modules
+var space = __webpack_require__(29855);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@6.5.0_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tooltip/index.js + 7 modules
+var tooltip = __webpack_require__(90570);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@6.5.0_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/checkbox/index.js + 4 modules
+var es_checkbox = __webpack_require__(55659);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@6.5.0_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/radio/index.js + 7 modules
+var es_radio = __webpack_require__(86610);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(86070);
+;// ./src/components/Options/Option.tsx
+// 单个选项
+const Option=props=>{const{type='Radio',option,inputOptions,onOptionChange,onCheckedChange,onRemoveOption}=props;const{id,checked,label}=option;const{attributes,listeners,setNodeRef,transform,transition}=(0,sortable_esm/* useSortable */.gl)({id:option.id});const style={transform:utilities_esm/* CSS */.Ks.Transform.toString(transform),transition:transition??''};return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"flex flex-col b-b-1 b-b-solid b-b-#0000007f",ref:setNodeRef,style:style,...attributes,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* default */.A,{defaultValue:label,onChange:value=>{onOptionChange({...option,label:value,value});},prefix:/*#__PURE__*/(0,jsx_runtime.jsx)(MenuOutlined/* default */.A,{...listeners,style:{cursor:'pointer',marginRight:'10px'}}),suffix:/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.A,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(tooltip/* default */.A,{placement:"top",title:"\u9ED8\u8BA4\u9009\u4E2D\u9879",mouseEnterDelay:0.5,children:type==='Checkbox'?/*#__PURE__*/(0,jsx_runtime.jsx)(es_checkbox/* default */.A,{checked:checked,onClick:()=>onCheckedChange(id)}):/*#__PURE__*/(0,jsx_runtime.jsx)(es_radio/* default */.A,{checked:checked,onClick:()=>onCheckedChange(id)})}),/*#__PURE__*/(0,jsx_runtime.jsx)(tooltip/* default */.A,{placement:"top",title:"\u5220\u9664\u5F53\u524D\u9879",mouseEnterDelay:0.5,children:/*#__PURE__*/(0,jsx_runtime.jsx)(CloseCircleOutlined/* default */.A,{style:{cursor:'pointer',color:'rgba(128,128,128.0.5)'},onClick:()=>onRemoveOption(id)})})]}),variant:"borderless",...inputOptions})});};/* harmony default export */ const Options_Option = (Option);
+;// ./src/components/Options/utils/sortOptions.ts
+/**
+ * @name 选项排序
+ * @param options 选项列表
+ * @param activeId 选中的id
+ * @param overId 覆盖的id
+ * @returns
+ */const sortOptions=(options,activeId,overId)=>{const oldIndex=options.findIndex(item=>item.id===activeId);const newIndex=options.findIndex(item=>item.id===overId);return (0,sortable_esm/* arrayMove */.be)(options,oldIndex,newIndex);};/* harmony default export */ const utils_sortOptions = (sortOptions);
+;// ./src/components/Options/OptionsContainer.tsx
+// 选项容器
+const OptionsContainer=props=>{const{optionsConfig,inputOptions,onOptionsConfigChange}=props;const sensors=(0,core_esm/* useSensors */.FR)((0,core_esm/* useSensor */.MS)(core_esm/* PointerSensor */.AN),(0,core_esm/* useSensor */.MS)(core_esm/* TouchSensor */.IG));const{type,options}=optionsConfig||{};// 拖动结束
+const handleDragEnd=event=>{const{active,over}=event;if(active.id!==over?.id&&over?.id!==undefined){onOptionsConfigChange({...optionsConfig,options:utils_sortOptions(options,active.id,over?.id)});}};// 删除选项
+const onRemoveOption=id=>{const newOptions=options.filter(item=>item.id!==id);onOptionsConfigChange({...optionsConfig,options:newOptions});};// 更新选项
+const onOptionChange=option=>{const newOptions=[...options];const newOptionIndex=options?.findIndex(item=>item.id===option.id);if(newOptionIndex!==-1)newOptions[newOptionIndex]=option;onOptionsConfigChange({...optionsConfig,options:newOptions});};// 更新选项
+const onCheckedChange=id=>{const newOptions=optionsConfig?.options?.map(option=>({...option,checked:option.id===id?!option?.checked:optionsConfig?.type==='Checkbox'?option?.checked:false}));onOptionsConfigChange({...optionsConfig,options:newOptions});};return/*#__PURE__*/(0,jsx_runtime.jsx)(core_esm/* DndContext */.Mp,{sensors:sensors,collisionDetection:core_esm/* closestCenter */.fp,onDragEnd:handleDragEnd,modifiers:[modifiers_esm/* restrictToVerticalAxis */.FN],children:/*#__PURE__*/(0,jsx_runtime.jsx)(sortable_esm/* SortableContext */.gB,{items:options,strategy:sortable_esm/* verticalListSortingStrategy */._G,children:options?.map(option=>/*#__PURE__*/(0,jsx_runtime.jsx)(Options_Option,{type:type,option:option,inputOptions:inputOptions,onOptionChange:onOptionChange,onCheckedChange:onCheckedChange,onRemoveOption:onRemoveOption},option.id))})});};/* harmony default export */ const Options_OptionsContainer = (OptionsContainer);
+;// ./src/components/Options/utils/formatOptionsConfig.ts
+/**
+ * @name 格式化配置，补全缺漏的值
+ * @params optionsConfig 需要格式化的值
+ * @return optionsConfig 格式化完成后的值
+ */const formatOptionsConfig=optionsConfig=>{const{type='Radio',defaultValue='',options=[]}=optionsConfig||{};return{type,defaultValue,options:options.map(option=>({...option,id:option.id||(0,getUuId/* default */.A)(),checked:typeof option.checked==='boolean'?option.checked:false}))};};/* harmony default export */ const utils_formatOptionsConfig = (formatOptionsConfig);
+;// ./src/components/Options/index.tsx
+/**
+ * @name 选项配置
+ * @param value 组件的值
+ * @param onChange 组件值修改的回调
+ * @param optionsConfig 选项配置
+ */const Options=props=>{const{value,inputOptions,onChange}=props;const[optionsConfig,setOptionsConfig]=(0,react.useState)(utils_formatOptionsConfig(value||props.optionsConfig));const onOptionsConfigChange=newOptionsConfig=>{const{options}=newOptionsConfig;// 设置选中的默认值
+let defaultValue=optionsConfig?.type==='Checkbox'?[]:'';options?.forEach(option=>{if(option?.checked){if(optionsConfig?.type==='Checkbox'){defaultValue.push(option.value);}else{defaultValue=option.value;}}});setOptionsConfig({...newOptionsConfig,defaultValue});onChange?.({...newOptionsConfig,defaultValue});};// 添加选项
+const addOption=()=>{const optionsLength=optionsConfig?.options?.length;const newOptions=optionsConfig?.options?.concat({id:(0,getUuId/* default */.A)(),label:`选项${optionsLength+1}`,value:`选项${optionsLength+1}`,checked:false});onOptionsConfigChange({...optionsConfig,options:newOptions});};return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Options_OptionsContainer,{optionsConfig:optionsConfig,onOptionsConfigChange:onOptionsConfigChange,inputOptions:inputOptions}),/*#__PURE__*/(0,jsx_runtime.jsxs)(es_button/* default */.A,{type:"text",style:{color:'#00bcd4'},onClick:addOption,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(PlusOutlined/* default */.A,{})," \u6DFB\u52A0\u9009\u9879"]})]});};/* harmony default export */ const components_Options = (Options);
+// EXTERNAL MODULE: ./src/components/SimpleCodeEditor/index.tsx
+var SimpleCodeEditor = __webpack_require__(15751);
+// EXTERNAL MODULE: ./src/components/Space/index.tsx
+var Space = __webpack_require__(48593);
+// EXTERNAL MODULE: ./src/components/Text/index.tsx
+var Text = __webpack_require__(31968);
+// EXTERNAL MODULE: ./src/utils/toString/index.ts
+var utils_toString = __webpack_require__(7772);
+;// ./docs-components/Options/Options.tsx
+const App=()=>{const optionsConfig={type:'Checkbox',defaultValue:['选项1'],options:[{label:'选项1',value:'选项1'},{label:'选项2',value:'选项2'},{label:'选项3',value:'选项3'}]};const[value,setValue]=(0,react.useState)(optionsConfig);const onChange=value=>{setValue(value);};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Space/* default */.A,{size:100,align:"end",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(components_Options,{value:value,onChange:onChange,optionsConfig:optionsConfig,inputOptions:{size:'middle'}}),/*#__PURE__*/(0,jsx_runtime.jsxs)(Space/* default */.A,{orientation:"vertical",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.A,{children:"onChange\u8FD4\u56DE\u7684\u7ED3\u679C"}),/*#__PURE__*/(0,jsx_runtime.jsx)(SimpleCodeEditor/* default */.A,{value:(0,utils_toString/* default */.A)(value,null,2),language:'json'})]})]});};/* harmony default export */ const Options_Options = (App);
+
+/***/ },
+
+/***/ 50875
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31986);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(86070);
+/**
+ * @name 输入框
+ * @param value 组件的值
+ * @param onChange 组件值修改的回调
+ * @link 其他参数详见 https://ant.design/components/input-cn/
+ */const Input=props=>{const{onChange,...rest}=props;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A,{className:"w-full",onChange:e=>onChange?.(e?.target?.value,e),...rest});};/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Input);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ },
+
+/***/ 15751
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(65904);
+/* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prismjs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prismjs_components_prism_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67874);
+/* harmony import */ var prismjs_components_prism_json__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_json__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prismjs_components_prism_typescript__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(76931);
+/* harmony import */ var prismjs_components_prism_typescript__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_typescript__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_simple_code_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(25102);
+/* harmony import */ var react_simple_code_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_simple_code_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(86070);
+/**
+ * @name 简易代码编辑器
+ * @param value 组件的值
+ * @param onChange 组件值修改的回调
+ * @param language 需要语法高亮的语言
+ * @link 其他参数详见 https://www.npmjs.com/package/react-simple-code-editor
+ */const SimpleCodeEditor=props=>{const{value='',language='javascript',onChange=value=>console.log(value),...rest}=props;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{className:"overflow-auto [&>div]:min-h-full",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_simple_code_editor__WEBPACK_IMPORTED_MODULE_3___default()),{value:value,onValueChange:onChange,highlight:value=>(0,prismjs__WEBPACK_IMPORTED_MODULE_0__.highlight)(value,prismjs__WEBPACK_IMPORTED_MODULE_0__.languages[language],language),padding:10,...rest})});};/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SimpleCodeEditor);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ },
+
+/***/ 48593
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(29855);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(86070);
+/**
+ * @name Space 间距
+ * @link 其他参数详见 https://ant-design.antgroup.com/components/space-cn
+ */const Space=props=>{const{children,...rest}=props;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A,{className:"w-full",...rest,children:children});};/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Space);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ },
+
+/***/ 31968
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15569);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(86070);
+/**
+ * @name 文本展示
+ * @link 其他参数详见 https://ant.design/components/typography-cn/#Typography.Text
+ */const Text=props=>{const{children,...rest}=props;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.Text,{...rest,children:children});};/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Text);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ },
+
+/***/ 54856
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+// 支持的可返回的数据类型
+/**
+ * @name getType
+ * @description 获取数据类型
+ * @param {any} data 需要判断类型的数据
+ * @return {string} 返回对应的类型 `Array`、`Boolean`、`Date`、`Error`、`Function`、`Map`、`Null`、`Number`、`RegExp`、`Set`、`String`、`Symbol`、`Undefined`、`Arguments`
+ * @example <caption>ts类型</caption>
+getType(value:any)
+ * @example <caption>demo</caption>
+import { getType } from '@zpcscc/utils';
+
+console.log(getType([]));               // 'Array';
+console.log(getType(true));             // 'Boolean';
+console.log(getType(new Date()));       // 'Date';
+console.log(getType(new Error()));      // 'Error';
+console.log(getType(()=>{}));           // 'Function';
+console.log(getType(new Map()));        // 'Map';
+console.log(getType(null));             // 'Null';
+console.log(getType(123));              // 'Number';
+console.log(getType(/[hello]/g));       // 'RegExp';
+console.log(getType(new Set()));        // 'Set';
+console.log(getType(Symbol.iterator));  // 'Symbol';
+console.log(getType('字符串'));          // 'String';
+console.log(getType(undefined));        // 'Undefined';
+
+function () {
+  console.log(getType(arguments));      // 'Arguments';
+}
+ */const getType=data=>{return Object.prototype.toString.call(data).slice(8,-1);};/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getType);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ },
+
+/***/ 28831
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54856);
+// 生成4个随机字符串
+const s4=()=>{return Math.floor((1+Math.random())*0x10000).toString(16).slice(1);};/**
+ * @name getUuId
+ * @description 生成全局唯一ID
+ * @param {number} length=4 随机id的长度，不包含自定义前缀
+ * @param {string} prefix='' 指定id的前缀
+ * @returns {string} 返回一个唯一ID
+ * @example <caption>ts类型</caption>
+getUuId(prefix?:string);
+ * @example <caption>demo</caption>
+import { getUuId } from '@zpcscc/utils';
+
+console.log(getUuId()); //  '32f4';
+console.log(getUuId(2)); //  'b0';
+console.log(getUuId(6)); //  '3e964a';
+console.log(getUuId(2,'test_')); //  'test_db';
+console.log(getUuId(5,'test_')); //  'test_7ad22';
+ */const getUuId=(length,prefix='')=>{let len=length||4;if(!((0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(length)==='Number'))len=4;let count=Math.ceil(len/4);if(!length)return s4();let id='';while(count--){id=id+s4();}return`${prefix}${id.slice(0,len)}`;};/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getUuId);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ },
+
+/***/ 7772
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _getType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54856);
+/**
+ * @name toString
+ * @description 将各种格式的数据转为string
+ * @param {any} data 需要转换的数据
+ * @param {object} stringifyArgs 其他参数，用于传入JSON.stringify
+ * @returns {string} 转换后的字符串数据
+ * @example <caption>ts类型</caption>
+toString(data:any, stringifyArgs?:any);
+ * @example <caption>demo</caption>
+import { toString } from '@zpcscc/utils';
+
+console.log(toString(true)); // 'true'
+console.log(toString(null)); // ''
+console.log(toString()); // ''
+console.log(toString(undefined)); // ''
+console.log(toString(0)); // '0'
+console.log(toString(-0)); // '-0'
+console.log(toString(123)); // '123'
+console.log(toString(() => {})); // '()=>{}'
+console.log(toString([])); // '[]'
+console.log(toString({})); // '{}'
+console.log(toString(Symbol(1))); // 'Symbol(1)'
+
+// stringifyArgs参数, 相当于，JSON.stringify([1,2,3], null, 2));
+console.log(toString([1,2,3], null, 2));
+// `[
+//   1,
+//   2,
+//   3
+// ]`
+
+// 部分数据因为赋值给函数时，已被浏览器自动调整，故无法完整原样转为字符串。
+console.log(toString(Symbol.iterator)); // 'Symbol(Symbol.iterator)'
+console.log(toString(Number.POSITIVE_INFINITY)); // 'Infinity'
+console.log(toString(Number.NEGATIVE_INFINITY)); // '-Infinity'
+console.log(toString(Number.MIN_VALUE)); // '5e-324'
+ */const toString=(data,...stringifyArgs)=>{if(data===null)return'';if(data===undefined)return'';if(typeof data==='string')return data;let str='';if(typeof data==='number'||typeof data==='boolean'){str=`${data}`;}else if((0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(data)==='Symbol'){str=data.toString();}else if(Array.isArray(data)||(0,_getType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(data)==='Object'){str=JSON.stringify(data,...stringifyArgs);}else{str=String(data);}if(`${str}`==='0'&&1/data===Number.NEGATIVE_INFINITY){str='-0';}return str;};/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toString);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ }
+
+}]);
