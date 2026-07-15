@@ -28,7 +28,8 @@ const config: Config = {
   // 插件
   plugins: [
     require.resolve('./plugins/unocss-plugin'),
-    require.resolve('./plugins/ssr-fix-plugin'), // SSR fix + form-generator aliases // also handles form-generator webpack aliases
+    require.resolve('./plugins/ssr-fix-plugin'),
+    require.resolve('./plugins/mimo-proxy-plugin'), // 开发服务器代理，解决 MiMo API CORS 问题
     // utils 文档
     [
       '@docusaurus/plugin-content-docs',
@@ -70,17 +71,6 @@ const config: Config = {
         path: 'docs-demo',
         routeBasePath: 'demo',
         sidebarPath: require.resolve('./config/sidebars-demo'),
-        breadcrumbs: true,
-      },
-    ],
-    // generator 文档
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'generator',
-        path: 'docs-generator',
-        routeBasePath: 'generator',
-        sidebarPath: require.resolve('./config/sidebars-generator'),
         breadcrumbs: true,
       },
     ],
@@ -172,11 +162,9 @@ const config: Config = {
           label: 'Demo',
         },
         {
-          type: 'doc',
-          docId: 'editorPanel/index',
-          docsPluginId: 'generator',
-          position: 'left',
-          label: 'Generator',
+          to: '/chat',
+          label: 'AI Chat',
+          position: 'right',
         },
         {
           href: 'https://github.com/zpcscc/zpcscc.github.io/',

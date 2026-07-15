@@ -1,7 +1,7 @@
 import Cascade from '@/components/Cascade';
+import { provinceCityAreaCascadeData } from '@/components/Cascade/data/province-city-china';
 import ResultTextarea from '@/components/ResultTextarea';
 import Space from '@/components/Space';
-import { provinceCityAreaCascadeData } from '@/generator/fieldConfig/form/cascades/province-city-china';
 import { useState, type FC } from 'react';
 
 const App: FC = () => {
