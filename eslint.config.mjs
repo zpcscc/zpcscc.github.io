@@ -264,6 +264,7 @@ export default tseslint.config(
       '**/*.build.js',
       '**/*.built.js',
       '**/*.config.js',
+      '**/*.config.cjs',
       '**/*.config.ts',
     ],
   },

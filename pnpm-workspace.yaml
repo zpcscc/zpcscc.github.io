@@ -8,3 +8,7 @@ allowBuilds:
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - prettier@3.9.5
+  - '@types/three@0.185.4'
+overrides:
+  dompurify: 3.4.13
+  serialize-javascript: 7.0.7
