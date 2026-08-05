@@ -1,0 +1,19 @@
+"use strict";
+(globalThis["webpackChunkwebsite"] ||= []).push([[6274],{
+
+/***/ 58226
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _docusaurus_Link__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(93953);
+/* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(64317);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(91987);
+const HomepageHeader=()=>{const{siteConfig}=(0,_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)();return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("header",{className:"animate-shift-bg relative overflow-hidden bg-[linear-gradient(-45deg,#e8eeff,#f0f4ff,#e0e8ff,#f5f0ff,#e8eeff)] bg-[length:400%_400%] px-0 py-24 text-center",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",{className:"animate-blob pointer-events-none absolute -top-25 -right-25 h-100 w-100 rounded-full bg-[var(--ifm-color-primary-lightest)] opacity-35 blur-3xl"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",{className:"animate-blob pointer-events-none absolute -bottom-20 -left-15 h-75 w-75 rounded-full bg-[var(--ifm-color-primary-lighter)] opacity-35 blur-3xl [animation-delay:-3s]"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",{className:"animate-blob pointer-events-none absolute top-1/2 left-1/2 h-50 w-50 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--ifm-color-primary)] opacity-10 blur-3xl [animation-delay:-5s]"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div",{className:"container relative z-1",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1",{className:"animate-fade-in-up m-0 bg-[linear-gradient(135deg,var(--ifm-color-primary-darkest),var(--ifm-color-primary))] bg-clip-text text-5xl font-extrabold tracking-tight text-transparent",children:siteConfig.title}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p",{className:"animate-fade-in-up mt-3 text-lg text-slate-500 delay-150",children:siteConfig.tagline}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div",{className:"animate-fade-in-up mt-8 flex items-center justify-center gap-4 delay-300",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A,{className:"inline-flex items-center gap-2 rounded-lg bg-[#3b7ddd] px-8 py-3 text-base font-semibold text-white no-underline shadow-lg transition-colors duration-150 hover:bg-[#1e4e8e] hover:shadow-xl hover:text-white",to:"/docs/web/javascript/intro",children:"\uD83D\uDCD8 \u5F00\u59CB\u9605\u8BFB"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A,{className:"inline-flex items-center gap-2 rounded-lg border border-[#7aabee] px-8 py-3 text-base font-semibold text-[#3b7ddd] no-underline transition-all duration-150 hover:border-[#3b7ddd] hover:bg-[#a8cbf5] hover:text-[#2d6bc4]",to:"/docs/tools/git/\u57FA\u7840\u4ECB\u7ECD",children:"\uD83D\uDD27 \u5F00\u53D1\u5DE5\u5177"})]})]})]});};/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomepageHeader);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "default", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ }
+
+}]);
