@@ -29,7 +29,9 @@ const embedBackground = async <T extends HTMLElement>(clonedNode: T, options: Op
     await embedProp('background-image', clonedNode, options);
   }
   if (!(await embedProp('mask', clonedNode, options))) {
-    await embedProp('mask-image', clonedNode, options);
+    await embedProp('-webkit-mask', clonedNode, options) ||
+      await embedProp('mask-image', clonedNode, options) ||
+      await embedProp('-webkit-mask-image', clonedNode, options);
   }
 };
 
@@ -48,9 +50,23 @@ const embedImageNode = async <T extends HTMLElement | SVGImageElement>(
   const url = isImageElement ? clonedNode.src : clonedNode.href.baseVal;
 
   const dataURL = await resourceToDataURL(url, getMimeType(url), options);
-  await new Promise((resolve, reject) => {
-    clonedNode.addEventListener('load', resolve);
-    clonedNode.addEventListener('error', reject);
+
+  // 如果获取失败（空字符串），跳过此图片，不中断流程
+  if (!dataURL) {
+    console.warn(`Failed to fetch image data: ${url}`);
+    return;
+  }
+
+  await new Promise<void>((resolve) => {
+    clonedNode.addEventListener('load', () => resolve(), { once: true });
+    clonedNode.addEventListener(
+      'error',
+      () => {
+        console.warn(`Failed to load image: ${url}`);
+        resolve();
+      },
+      { once: true }
+    );
 
     const image = clonedNode as HTMLImageElement;
     if (image.decode) {

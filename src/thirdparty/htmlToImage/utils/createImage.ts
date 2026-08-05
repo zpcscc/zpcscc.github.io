@@ -1,6 +1,7 @@
 import getDocument from './getDocument';
 
 const createImage = (url: string, ownerDocument?: Document | null): HTMLImageElement => {
+  // eslint-disable-next-line unicorn/prefer-https -- SVG namespace URI, not a URL
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   const img = getDocument(ownerDocument).createElement('img');
   img.addEventListener('load', () => svg.remove());

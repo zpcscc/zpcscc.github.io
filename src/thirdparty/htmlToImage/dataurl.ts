@@ -1,7 +1,7 @@
 import type { Options } from './types';
 
 const getContentFromDataUrl = (dataURL: string) => {
-  return dataURL.split(/,/)[1];
+  return dataURL.split(/,/, 2)[1];
 };
 
 export const isDataUrl = (url: string) => {
@@ -17,14 +17,23 @@ export const fetchAsDataURL = async <T>(
   init: RequestInit | undefined,
   process: (data: { result: string; res: Response }) => T
 ): Promise<T> => {
-  const res = await fetch(url, init);
-  if (res.status === 404) {
-    throw new Error(`Resource "${res.url}" not found`);
+  let res: Response;
+  try {
+    res = await fetch(url, init);
+  } catch (fetchError) {
+    console.warn(`[htmlToImage] fetch failed for: ${url}`, fetchError);
+    throw fetchError;
   }
+
+  if (!res.ok) {
+    console.warn(`[htmlToImage] fetch response not ok: ${res.status} ${res.statusText} for ${url}`);
+    throw new Error(`Resource "${res.url}" returned ${res.status}`);
+  }
+
   const blob = await res.blob();
   return new Promise<T>((resolve, reject) => {
     const reader = new FileReader();
-    reader.addEventListener('error', reject);
+    reader.addEventListener('error', () => reject(new Error('Failed to read data URL')));
     reader.onloadend = () => {
       try {
         resolve(process({ res, result: reader.result as string }));
@@ -65,7 +74,7 @@ export const resourceToDataURL = async (
 ) => {
   const cacheKey = getCacheKey(resourceUrl, contentType, options.includeQueryParams);
 
-  if (cache[cacheKey] !== null) {
+  if (cacheKey in cache) {
     return cache[cacheKey];
   }
 
@@ -92,14 +101,8 @@ export const resourceToDataURL = async (
   } catch (error) {
     dataURL = options.imagePlaceholder || '';
 
-    let msg = `Failed to fetch resource: ${resourceUrl}`;
-    if (error) {
-      msg = typeof error === 'string' ? error : (error as { message: string }).message;
-    }
-
-    if (msg) {
-      console.warn(msg);
-    }
+    const errMsg = error instanceof Error ? error.message : String(error);
+    console.warn(`[htmlToImage] Failed to fetch resource: ${resourceUrl}`, errMsg);
   }
 
   // eslint-disable-next-line require-atomic-updates

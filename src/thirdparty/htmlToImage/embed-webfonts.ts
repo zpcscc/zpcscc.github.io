@@ -12,7 +12,7 @@ const cssFetchCache: { [href: string]: Metadata } = {};
 
 const fetchCSS = async (url: string) => {
   let cache = cssFetchCache[url];
-  if (cache !== null) {
+  if (cache !== undefined && cache !== null) {
     return cache;
   }
 
@@ -179,6 +179,29 @@ const getWebFontRules = (cssRules: CSSStyleRule[]): CSSStyleRule[] => {
     .filter((rule) => shouldEmbed(rule.style.getPropertyValue('src')));
 };
 
+const normalizeFontFamily = (font: string) => {
+  return font.trim().replaceAll(/["']/g, '');
+};
+
+const getUsedFonts = (node: HTMLElement) => {
+  const fonts = new Set<string>();
+  const traverse = (currentNode: HTMLElement) => {
+    const fontFamily =
+      currentNode.style.fontFamily || getComputedStyle(currentNode).fontFamily;
+    for (const font of fontFamily.split(',')) {
+      fonts.add(normalizeFontFamily(font));
+    }
+
+    for (const child of currentNode.children) {
+      if (child instanceof HTMLElement) {
+        traverse(child);
+      }
+    }
+  };
+  traverse(node);
+  return fonts;
+};
+
 const parseWebFontRules = async <T extends HTMLElement>(node: T, options: Options) => {
   if (node.ownerDocument === null) {
     throw new Error('Provided element is not within a Document');
@@ -195,11 +218,14 @@ export const getWebFontCSS = async <T extends HTMLElement>(
   options: Options
 ): Promise<string> => {
   const rules = await parseWebFontRules(node, options);
+  const usedFonts = getUsedFonts(node);
   const cssTexts = await Promise.all(
-    rules.map((rule) => {
-      const baseUrl = rule.parentStyleSheet ? rule.parentStyleSheet.href : null;
-      return embedResources(rule.cssText, baseUrl, options);
-    })
+    rules
+      .filter((rule) => usedFonts.has(normalizeFontFamily(rule.style.fontFamily)))
+      .map((rule) => {
+        const baseUrl = rule.parentStyleSheet ? rule.parentStyleSheet.href : null;
+        return embedResources(rule.cssText, baseUrl, options);
+      })
   );
 
   return cssTexts.join('\n');

@@ -66,6 +66,7 @@ const loadMedia = (media: any, options?: LoadMediaOptions): Promise<any> => {
       node.addEventListener('loadeddata', onLoadeddata, { once: true });
       node.addEventListener('error', onError, { once: true });
     } else {
+      // eslint-disable-next-line unicorn/prefer-https -- SVG namespace URI, not a URL
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       svg.append(node);
       document.body.append(svg);
@@ -85,43 +86,66 @@ const loadMedia = (media: any, options?: LoadMediaOptions): Promise<any> => {
             await node.decode();
 
             if (isApple()) {
-              // 获取图像并确保 SVG 内部的所有图像已加载
-              const svgDoc = new DOMParser().parseFromString(
-                decodeURIComponent(node.src.split(',')[1]),
-                'image/svg+xml'
-              );
+              try {
+                // 获取图像并确保 SVG 内部的所有图像已加载
+                const svgContent = decodeURIComponent(node.src.split(',', 2)[1]);
+                const svgDoc = new DOMParser().parseFromString(svgContent, 'image/svg+xml');
 
-              const webpImages = [...svgDoc.querySelectorAll('img, div')]
-                .map((element: any) => {
-                  // 检查 <image> 标签
-                  if (element.tagName.toLowerCase() === 'img') {
-                    return element.getAttribute('src');
+                // 收集所有 data URL 图片（img src、background-image、SVG image 等）
+                const imageUrls = new Set<string>();
+
+                // 1. 查找所有 <img> 标签的 src
+                for (const el of svgDoc.querySelectorAll('img')) {
+                  const src = el.getAttribute('src');
+                  if (src && /^data:image\//.test(src)) {
+                    imageUrls.add(src);
                   }
-                  // 检查 <div> 或其他带背景图片的元素
-                  if (element.tagName.toLowerCase() === 'div' && element.style.backgroundImage) {
-                    const backgroundImage = element.style.backgroundImage;
-                    // 提取 background-image 的 URL，例如 url("data:image/webp;base64,...")
-                    const match = backgroundImage.match(
-                      /url\(["']?(data:image\/webp;base64,[^"']+)["']?\)/
+                }
+
+                // 2. 查找所有带 background-image 的元素
+                for (const el of svgDoc.querySelectorAll('*')) {
+                  const bgImage = (el as HTMLElement).style?.backgroundImage;
+                  if (bgImage) {
+                    const match = bgImage.match(
+                      /url\(["']?(data:image\/[^"']+)["']?\)/
                     );
-                    return match ? match[1] : null;
+                    if (match?.[1]) {
+                      imageUrls.add(match[1]);
+                    }
                   }
+                }
 
-                  return null;
-                })
-                .filter((src) => src && /^data:image\/(webp|png);base64,/.test(src));
+                // 3. 查找 SVG <image> 标签
+                for (const el of svgDoc.querySelectorAll('image')) {
+                  const href = el.getAttribute('href') || el.getAttribute('xlink:href');
+                  if (href && /^data:image\//.test(href)) {
+                    imageUrls.add(href);
+                  }
+                }
 
-              const loadImagesPromises = [...webpImages].map((url) => {
-                return new Promise((resolve, reject) => {
-                  const imgElement = new Image();
-                  imgElement.src = url || '';
-                  imgElement.addEventListener('load', resolve);
-                  imgElement.addEventListener('error', reject);
-                });
-              });
+                if (imageUrls.size > 0) {
+                  const loadImagesPromises = [...imageUrls].map((url) => {
+                    return new Promise<void>((resolve) => {
+                      const imgElement = new Image();
+                      imgElement.addEventListener('load', () => {
+                        // 使用 decode() 确保图片完全解码
+                        if ('decode' in imgElement) {
+                          imgElement.decode().then(resolve).catch(resolve);
+                        } else {
+                          resolve();
+                        }
+                      });
+                      imgElement.addEventListener('error', () => resolve()); // 错误时也继续
+                      imgElement.src = url;
+                    });
+                  });
 
-              // 等待所有图像加载完成
-              await Promise.all(loadImagesPromises);
+                  // 等待所有图像加载并解码完成
+                  await Promise.all(loadImagesPromises);
+                }
+              } catch (error) {
+                console.log('Apple SVG image preload error:', error);
+              }
             }
           } catch (error) {
             console.log('error:', error);

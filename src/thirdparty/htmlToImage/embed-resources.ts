@@ -10,7 +10,7 @@ const FONT_SRC_REGEX = /src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;
 const toRegex = (url: string): RegExp => {
 
   const escaped = url.replaceAll(/([$()*+./?[\\\]^{|}])/g, String.raw`\$1`);
-  return new RegExp(`(url\\(['"]?)(${escaped})(['"]?\\))`, 'g');
+  return new RegExp(String.raw`(url\(['"]?)(${escaped})(['"]?\))`, 'g');
 };
 
 export const parseURLs = (cssText: string): string[] => {

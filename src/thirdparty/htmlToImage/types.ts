@@ -24,15 +24,15 @@ export type Options = {
    */
   style?: Partial<CSSStyleDeclaration>;
   /**
-   * 一个以DOM节点为参数的函数。如果传递的节点应包含在输出中，则应返回“true”。排除节点意味着也排除其子节点.
+   * 一个以DOM节点为参数的函数。如果传递的节点应包含在输出中，则应返回"true"。排除节点意味着也排除其子节点.
    */
   filter?: (domNode: HTMLElement) => boolean;
   /**
-   * 介于“0”和“1”之间的数字，表示JPEG图像的图像质量（例如0.92=>92%）.
+   * 介于"0"和"1"之间的数字，表示JPEG图像的图像质量（例如0.92=>92%）.
    */
   quality?: number;
   /**
-   * 设置为“true”，将当前时间作为查询字符串附加到URL请求中，以启用缓存破坏.
+   * 设置为"true"，将当前时间作为查询字符串附加到URL请求中，以启用缓存破坏.
    */
   cacheBust?: boolean;
   /**
@@ -81,7 +81,7 @@ export type Options = {
    */
   timeout?: number;
   /**
-   * 画布“drawImage”间隔
+   * 画布"drawImage"间隔
    * 用于修复Safari、Firefox中解码图像时的错误
    * 默认值：100
    */
@@ -96,4 +96,13 @@ export type Options = {
    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas#maximum_canvas_size
    */
   maximumCanvasSize?: number;
+  /**
+   * 要复制到节点样式的样式属性数组。
+   * 对于性能敏感的场景，用户可以只指定必需的属性而不是所有样式。
+   */
+  includeStyleProperties?: string[];
+  /**
+   * HTML 中任何图片加载出错时的事件处理函数。
+   */
+  onImageErrorHandler?: OnErrorEventHandler;
 };

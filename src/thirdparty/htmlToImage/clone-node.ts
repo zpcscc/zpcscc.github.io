@@ -62,13 +62,20 @@ const cloneSingleNode = async <T extends HTMLElement>(
 };
 
 const isSlotElement = (node: HTMLElement): node is HTMLSlotElement =>
-  node.tagName !== null && node.tagName.toUpperCase() === 'SLOT';
+  node.tagName?.toUpperCase() === 'SLOT';
+
+const isSVGElement = (node: HTMLElement): boolean =>
+  node.tagName?.toUpperCase() === 'SVG';
 
 const cloneChildren = async <T extends HTMLElement>(
   nativeNode: T,
   clonedNode: T,
   options: Options
 ): Promise<T> => {
+  if (isSVGElement(clonedNode)) {
+    return clonedNode;
+  }
+
   let children: T[] = [];
 
   if (isSlotElement(nativeNode) && nativeNode.assignedNodes) {
@@ -101,7 +108,7 @@ const cloneChildren = async <T extends HTMLElement>(
   return clonedNode;
 };
 
-const cloneCSSStyle = <T extends HTMLElement>(nativeNode: T, clonedNode: T) => {
+const cloneCSSStyle = <T extends HTMLElement>(nativeNode: T, clonedNode: T, options: Options) => {
   const targetStyle = clonedNode.style;
   if (!targetStyle) {
     return;
@@ -112,7 +119,8 @@ const cloneCSSStyle = <T extends HTMLElement>(nativeNode: T, clonedNode: T) => {
     targetStyle.cssText = sourceStyle.cssText;
     targetStyle.transformOrigin = sourceStyle.transformOrigin;
   } else {
-    toArray<string>(sourceStyle).forEach((name) => {
+    const styleProperties = options.includeStyleProperties ?? toArray<string>(sourceStyle);
+    styleProperties.forEach((name) => {
       let value = sourceStyle.getPropertyValue(name);
       if (name === 'font-size' && value.endsWith('px')) {
         const reducedFont =
@@ -195,9 +203,9 @@ const cloneScrollPosition = <T extends HTMLElement>(nativeNode: T, clonedNode: T
   }
 };
 
-const decorate = <T extends HTMLElement>(nativeNode: T, clonedNode: T): T => {
+const decorate = <T extends HTMLElement>(nativeNode: T, clonedNode: T, options: Options): T => {
   if (isInstanceOfElement(clonedNode, Element)) {
-    cloneCSSStyle(nativeNode, clonedNode);
+    cloneCSSStyle(nativeNode, clonedNode, options);
     clonePseudoElements(nativeNode, clonedNode);
     cloneInputValue(nativeNode, clonedNode);
     cloneSelectValue(nativeNode, clonedNode);
@@ -227,6 +235,7 @@ const ensureSVGSymbols = async <T extends HTMLElement>(clone: T, options: Option
 
   const nodes = Object.values(processedDefs);
   if (nodes.length > 0) {
+    // eslint-disable-next-line unicorn/prefer-https -- XML namespace URI, not a URL
     const ns = 'http://www.w3.org/1999/xhtml';
     const svg = document.createElementNS(ns, 'svg');
     svg.setAttribute('xmlns', ns);
@@ -261,6 +270,6 @@ export const cloneNode = async <T extends HTMLElement>(
   return Promise.resolve(node)
     .then((clonedNode) => cloneSingleNode(clonedNode, options) as Promise<T>)
     .then((clonedNode) => cloneChildren(node, clonedNode, options))
-    .then((clonedNode) => decorate(node, clonedNode))
+    .then((clonedNode) => decorate(node, clonedNode, options))
     .then((clonedNode) => ensureSVGSymbols(clonedNode, options));
 };

@@ -38,7 +38,7 @@ export const uuid = (() => {
   // We should not use GUIDs, otherwise pseudo elements sometimes cannot be captured.
   let counter = 0;
 
-  // ref: http://stackoverflow.com/a/6248722/2519373
+  // ref: https://stackoverflow.com/a/6248722/2519373
   const random = () =>
 
     `0000${Math.trunc(Math.random() * 36 ** 4).toString(36)}`.slice(-4);
@@ -122,7 +122,7 @@ export const canvasToBlob = (
 
   return new Promise((resolve) => {
     const binaryString = globalThis.atob(
-      canvas.toDataURL(options.type ?? undefined, options.quality ?? undefined).split(',')[1]
+      canvas.toDataURL(options.type ?? undefined, options.quality ?? undefined).split(',', 2)[1]
     );
     const len = binaryString.length;
     const binaryArray = new Uint8Array(len);
@@ -141,6 +141,7 @@ export const canvasToBlob = (
 
 export const createImage = (url: string): Promise<HTMLImageElement> => {
   return new Promise((resolve, reject) => {
+    // eslint-disable-next-line unicorn/prefer-https -- SVG namespace URI, not a URL
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     const img = new Image();
     img.addEventListener('load', () => {
@@ -153,9 +154,9 @@ export const createImage = (url: string): Promise<HTMLImageElement> => {
         resolve(img);
       }
     });
-    img.addEventListener('error', (error) => {
+    img.addEventListener('error', () => {
       svg.remove();
-      reject(error);
+      reject(new Error(`Failed to load image: ${url}`));
     });
     svg.append(img);
     img.crossOrigin = 'anonymous';
@@ -203,25 +204,37 @@ export const shouldEmbed = (url: string): boolean => {
 export const svgImgToWebP = (svgStr: string) => {
   return new Promise<string>((resolve) => {
     if (isApple()) {
-      let svgData = svgStr ?? '';
-      const base64Regex = /data:image\/(png|jpeg);base64,([\d+/=A-Za-z]+)/g;
-      let match: RegExpExecArray | null;
-      const promises: Promise<void>[] = [];
+      const svgData = svgStr ?? '';
+      const base64Regex = /data:image\/(png|jpeg|jpg);base64,([A-Za-z0-9+/=]+)/g;
+      const matches: Array<{ fullMatch: string; mimeType: string; base64Data: string }> = [];
 
+      let match: RegExpExecArray | null;
       while ((match = base64Regex.exec(svgData)) !== null) {
-        if (match) {
-          const mimeType = match[1];
-          const base64Data = match[2];
-          promises.push(
-            convertToWebP(base64Data, mimeType, match).then(({ webpDataUrl, matchArr }) => {
-              svgData = svgData.replace(matchArr?.[0], webpDataUrl);
-            })
-          );
-        }
+        matches.push({
+          fullMatch: match[0],
+          mimeType: match[1],
+          base64Data: match[2],
+        });
       }
 
-      Promise.all(promises).then(() => {
+      if (matches.length === 0) {
         resolve(svgData);
+        return;
+      }
+
+      const promises = matches.map(({ fullMatch, mimeType, base64Data }) =>
+        convertToWebP(base64Data, mimeType).then((webpDataUrl) => ({
+          original: fullMatch,
+          replacement: webpDataUrl,
+        }))
+      );
+
+      Promise.all(promises).then((replacements) => {
+        let result = svgData;
+        for (const { original, replacement } of replacements) {
+          result = result.replace(original, replacement);
+        }
+        resolve(result);
       });
     } else {
       resolve(svgStr);
@@ -229,33 +242,38 @@ export const svgImgToWebP = (svgStr: string) => {
   });
 };
 
-const convertToWebP = (base64Data: string, mimeType: string, matchArr: any[]) => {
-  return new Promise<{ webpDataUrl: string; matchArr: any[] }>((resolve, reject) => {
+const convertToWebP = (base64Data: string, mimeType: string): Promise<string> => {
+  return new Promise<string>((resolve, reject) => {
     const img = new Image();
-    img.src = `data:image/${mimeType};base64,${base64Data}`;
     img.addEventListener('load', () => {
       const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
+      canvas.width = img.naturalWidth || img.width;
+      canvas.height = img.naturalHeight || img.height;
       const ctx = canvas.getContext('2d');
-      ctx?.drawImage(img, 0, 0);
+      if (!ctx) {
+        reject(new Error('Failed to get canvas context'));
+        return;
+      }
+      ctx.drawImage(img, 0, 0);
 
       canvas.toBlob(
         (blob) => {
           if (blob) {
             const reader = new FileReader();
-            reader.onloadend = function () {
-              resolve({ webpDataUrl: reader.result as string, matchArr });
-            };
-            reader.addEventListener('error', reject);
+            reader.addEventListener('loadend', () => {
+              resolve(reader.result as string);
+            });
+            reader.addEventListener('error', () => reject(new Error('Failed to read blob as data URL')));
             reader.readAsDataURL(blob);
+          } else {
+            reject(new Error('Failed to convert to WebP'));
           }
         },
         'image/webp',
-        0.75 // 这里的质量参数可以调整
+        0.75
       );
     });
-
-    img.addEventListener('error', reject);
+    img.addEventListener('error', () => reject(new Error(`Failed to load image: ${mimeType}`)));
+    img.src = `data:image/${mimeType};base64,${base64Data}`;
   });
 };
