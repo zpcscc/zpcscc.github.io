@@ -1,7 +1,6 @@
 import { useCallback, useRef } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
 import getUuId from '@/utils/getUuId';
-import { isStreamingAtom, settingsAtom } from '../store/atoms';
+import { useChatContext } from '../store/ChatContext';
 import { createChatCompletion } from '../services/mimoApi';
 import { useConversation } from './useConversation';
 import { API_CONFIG, getApiKey } from '../config';
@@ -24,8 +23,7 @@ const attachmentsToParts = (attachments: FileAttachment[]): ContentPart[] =>
   });
 
 export const useChat = () => {
-  const [isStreaming, setIsStreaming] = useRecoilState(isStreamingAtom);
-  const settings = useRecoilValue(settingsAtom);
+  const { isStreaming, setIsStreaming, settings } = useChatContext();
   const controllerRef = useRef<AbortController | null>(null);
 
   const {

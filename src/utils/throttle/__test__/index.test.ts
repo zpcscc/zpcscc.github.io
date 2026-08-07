@@ -54,7 +54,7 @@ describe('throttle', () => {
   test('上下文绑定', () => {
     const context = { value: 42 };
     const mockFn = jest.fn(function () {
-      return this.value;
+      return this.value; // eslint-disable-line unicorn/no-this-outside-of-class -- 测试上下文绑定
     });
 
     const throttledFn = throttle(mockFn.bind(context), 1000);

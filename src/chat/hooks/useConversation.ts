@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
-import { useRecoilState } from 'recoil';
 import getUuId from '@/utils/getUuId';
-import { conversationsAtom, activeConversationIdAtom } from '../store/atoms';
+import { useChatContext } from '../store/ChatContext';
 import type { Conversation, ContentPart, Message } from '../types';
 
 /** 从用户消息提取标题 */
@@ -17,8 +16,7 @@ const extractTitle = (content: string | ContentPart[]): string => {
 };
 
 export const useConversation = () => {
-  const [conversations, setConversations] = useRecoilState(conversationsAtom);
-  const [activeId, setActiveId] = useRecoilState(activeConversationIdAtom);
+  const { conversations, setConversations, activeConversationId: activeId, setActiveConversationId: setActiveId } = useChatContext();
 
   const activeConversation = conversations.find((c) => c.id === activeId) || null;
 

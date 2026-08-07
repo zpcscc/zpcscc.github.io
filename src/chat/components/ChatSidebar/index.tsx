@@ -1,16 +1,13 @@
 import type { FC } from 'react';
 import { useState } from 'react';
-import { useRecoilState } from 'recoil';
 import { Button, Select, Popconfirm } from 'antd';
 import { PlusOutlined, DeleteOutlined, MenuOutlined } from '@ant-design/icons';
-import { conversationsAtom, activeConversationIdAtom, settingsAtom } from '../../store/atoms';
+import { useChatContext } from '../../store/ChatContext';
 import { useConversation } from '../../hooks/useConversation';
 import { MODEL_OPTIONS } from '../../config';
 
 const ChatSidebar: FC = () => {
-  const [conversations] = useRecoilState(conversationsAtom);
-  const [activeId, setActiveId] = useRecoilState(activeConversationIdAtom);
-  const [settings, setSettings] = useRecoilState(settingsAtom);
+  const { conversations, activeConversationId: activeId, setActiveConversationId: setActiveId, settings, setSettings } = useChatContext();
   const { deleteConversation } = useConversation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
