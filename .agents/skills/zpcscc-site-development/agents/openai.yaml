@@ -1,0 +1,4 @@
+interface:
+  display_name: '站点项目开发规范'
+  short_description: '遵循当前 Docusaurus、React 与 UnoCSS 项目规范'
+  default_prompt: '使用 $zpcscc-site-development 按当前项目规范实现或调整站点功能。'

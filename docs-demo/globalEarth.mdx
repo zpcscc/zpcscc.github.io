@@ -1,0 +1,30 @@
+---
+title: '全球 3D 卫星地球'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const GlobalEarthDemo = createClientDemo(() => import('@/demo/GlobalEarth'));
+
+# 全球 3D 卫星地球
+
+基于 [CesiumJS](https://cesium.com/platform/cesiumjs/) 构建的 WGS84 球形 3D 地球。默认影像使用 EOX 提供的 Sentinel-2 Cloudless 2025，另可切换免费的 [NASA GIBS](https://www.earthdata.nasa.gov/data/tools/gibs) 公共影像，包括 Blue Marble、MODIS Terra 及三个 VIIRS 每日真彩图层，均无需 API Key。
+
+## 在线演示
+
+<GlobalEarthDemo />
+
+## 操作说明
+
+- 左键拖拽：旋转地球
+- 滚轮或双指：放大、缩小
+- 右键拖拽：调整俯仰视角
+- 工具栏：切换 Sentinel-2 Cloudless、Blue Marble、VIIRS 或 MODIS Terra 影像，复位视角或进入全屏
+
+## 数据说明
+
+默认的 Sentinel-2 Cloudless 2025 影像由 EOX 基于 Copernicus Sentinel 数据制作，按照 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可用于非商业场景。Blue Marble 由 NASA 提供、EOX 托管，适合稳定查看全球卫星底图。
+
+VIIRS NOAA-20、NOAA-21 和 Suomi NPP 由 NASA GIBS 按日期提供全球每日真彩影像。VIIRS 的扫描范围比 MODIS 更宽，全球预览通常更连续；但每日观测仍会受到云层、轨道覆盖、极区投影和数据发布时间影响。MODIS Terra 保留用于查看其每日轨道观测，全球视角下可能出现明显的扫描条带。所有每日影像默认选取延迟两天的稳定日期，并自动选择可用的 GIBS 官方节点；遇到持续网络错误时可以手动重新加载。
+
+当前版本使用椭球地表，不包含商业街景和精细三维建筑。

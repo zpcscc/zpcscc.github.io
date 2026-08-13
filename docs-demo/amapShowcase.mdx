@@ -1,0 +1,45 @@
+---
+title: '高德多地图展示'
+---
+
+import { createClientDemo } from '@/components/ClientDemo';
+
+export const AMapShowcaseDemo = createClientDemo(() => import('@/demo/AMapShowcase'));
+
+# 高德多地图展示
+
+基于[高德地图 JavaScript API 2.0](https://lbs.amap.com/api/javascript-api-v2/summary/)构建的交互式地图展示，集中呈现高德官方底图、卫星影像、行政区划、3D 城市和实时交通能力。
+
+## 在线演示
+
+<AMapShowcaseDemo />
+
+## 地图模式
+
+- 基础图层：全国标准地图、全国简洁路网、全国卫星影像、卫星影像与路网混合图
+- 行政与交通专题：全国省市区划、广东省市县区划、全球国家与地区区划、北京实时交通
+- 3D 与室内：上海 3D 城市楼块、深圳 3D 夜间地图、北京室内地图
+- 官方主题：幻影黑、月光银、草色青、雅士灰、涂鸦、马卡龙、靛青蓝、酱籽
+
+## 操作说明
+
+- 鼠标拖拽或单指滑动：移动地图
+- 滚轮或双指：放大、缩小
+- 在 3D 城市模式中使用高德方向控件或地图手势：旋转、调整俯仰
+- 顶部工具栏：切换地图、复位视角和进入全屏
+
+## 能力与权限说明
+
+高德 JSAPI 2.0 的 `viewMode: '3D'` 提供可俯仰、旋转的平面城市地图和建筑楼块，不提供类似 Cesium 的球形 3D 地球，因此本示例采用高德官方 3D 地图样式。
+
+“北京室内地图”依赖高德室内图层数据，地图缩放级别高于 17 且当前位置存在室内数据时，会自动显示楼层、通道和室内地点；实际覆盖范围以高德数据为准。
+
+“全球行政区划”模式已启用 `showOversea`，但高德世界地图属于高级能力。只有当前 Web Key 已通过工单开通世界地图权限时，海外区域才会显示详细道路和地点；否则仍以全国地图能力为主。相关限制请参阅[高德世界地图说明](https://lbs.amap.com/api/javascript-api-v2/guide/map/world-map)。
+
+全球国家与地区名称使用高德官方的 [SOC 国家代码、名称与范围数据](https://a.amap.com/jsapi_demos/static/demo-center/js/soc-list.json)，并通过 `LabelsLayer` 的碰撞避让随缩放级别显示；全球视角会优先保留面积较大的区域名称，放大后可查看更多名称。
+
+本页面按照高德官方要求在线加载 JSAPI。由于站点部署在 GitHub Pages，Web Key 与安全密钥会在浏览器中使用，当前生产白名单为 `zpcscc.top`，本地开发白名单为 `127.0.0.1`。
+
+运行 `pnpm dev` 或 `pnpm start` 本地调试时，开发服务器会默认绑定到已授权的 `127.0.0.1`。项目同时按照高德官方方案，通过同源的 `/_AMapService` 开发代理访问地图样式与 Web 服务并在服务端追加安全密钥；该代理不会进入生产构建。
+
+高德 JSAPI 仍会在浏览器中校验当前页面域名，代理不能绕过 `INVALID_USER_DOMAIN`。本地预览请使用 `http://127.0.0.1:3000/demo/amapShowcase`；`localhost` 与 `127.0.0.1` 会被视为不同域名，未单独加入白名单时不要改用 `localhost`。
