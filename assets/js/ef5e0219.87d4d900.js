@@ -1,0 +1,11 @@
+"use strict";
+(globalThis["webpackChunkwebsite"] ||= []).push([[2540],{
+
+/***/ 62116
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"version":{"pluginId":"demo","version":"current","label":"Next","banner":null,"badge":false,"noIndex":false,"className":"docs-version-current","isLast":true,"docsSidebars":{"demo":[{"type":"link","href":"/demo/amapShowcase","label":"高德多地图展示","docId":"amapShowcase","unlisted":false},{"type":"link","href":"/demo/canvasTools","label":"画布笔刷工具","docId":"canvasTools","unlisted":false},{"type":"link","href":"/demo/chineseChess","label":"中国象棋","docId":"chineseChess","unlisted":false},{"type":"link","href":"/demo/globalEarth","label":"全球 3D 卫星地球","docId":"globalEarth","unlisted":false},{"type":"link","href":"/demo/goBang","label":"五子棋","docId":"goBang","unlisted":false},{"type":"link","href":"/demo/judgePoint24","label":"计算24点","docId":"judgePoint24","unlisted":false},{"type":"link","href":"/demo/threeLayerGraph","label":"三层关系图谱","docId":"threeLayerGraph","unlisted":false}]},"docs":{"amapShowcase":{"id":"amapShowcase","title":"高德多地图展示","description":"基于高德地图 JavaScript API 2.0构建的交互式地图展示，集中呈现高德官方底图、卫星影像、行政区划、3D 城市和实时交通能力。","sidebar":"demo"},"canvasTools":{"id":"canvasTools","title":"画布笔刷工具","description":"基于 Fabric.js 实现的画布笔刷工具，支持多种画笔类型和颜色选择。","sidebar":"demo"},"chineseChess":{"id":"chineseChess","title":"中国象棋","description":"基于 Canvas 实现的中国象棋，支持人机对战，AI 使用极大极小值搜索算法。","sidebar":"demo"},"globalEarth":{"id":"globalEarth","title":"全球 3D 卫星地球","description":"基于 CesiumJS 构建的 WGS84 球形 3D 地球。默认影像使用 EOX 提供的 Sentinel-2 Cloudless 2025，另可切换免费的 NASA GIBS 公共影像，包括 Blue Marble、MODIS Terra 及三个 VIIRS 每日真彩图层，均无需 API Key。","sidebar":"demo"},"goBang":{"id":"goBang","title":"五子棋","description":"基于 Canvas 实现的五子棋，支持人机对战，包含禁手判断。","sidebar":"demo"},"judgePoint24":{"id":"judgePoint24","title":"计算24点","description":"输入 4 个数字，使用加减乘除计算是否能得出 24 点。","sidebar":"demo"},"threeLayerGraph":{"id":"threeLayerGraph","title":"三层关系图谱","description":"基于 Three.js 实现的 3D 三层关系图谱可视化。","sidebar":"demo"}}}}');
+
+/***/ }
+
+}]);
